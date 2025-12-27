@@ -1,4 +1,4 @@
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, ArrowRight } from 'lucide-react';
 
 export function BuyingProcess() {
   const steps = [
@@ -35,37 +35,43 @@ export function BuyingProcess() {
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">BUYING</h2>
-          <div className="w-20 h-1 bg-blue-900"></div>
+    <section className="py-32 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-3xl mb-20">
+          <p className="text-sm tracking-[0.2em] text-gray-500 mb-6">PROCESS</p>
+          <h2 className="text-5xl lg:text-6xl font-light text-gray-900 mb-6 leading-tight">
+            The Buying Process
+          </h2>
+          <p className="text-xl text-gray-600 font-light leading-relaxed">
+            A seamless journey from first meeting to keys in hand
+          </p>
         </div>
 
-        <div className="space-y-12 mb-12">
+        <div className="grid lg:grid-cols-2 gap-x-16 gap-y-12 mb-20">
           {steps.map((step, index) => (
-            <div key={index} className="flex gap-8">
-              <div className="flex-shrink-0">
-                <div className="text-5xl font-bold text-blue-900">{step.number}</div>
-                <div className="text-2xl text-gray-400 ml-2">/</div>
-              </div>
-              <div className="flex-1">
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
+            <div key={index} className="group">
+              <div className="flex items-start gap-6 mb-4">
+                <div className="text-6xl font-light text-gray-200 group-hover:text-gray-900 transition-colors duration-300">
+                  {step.number}
+                </div>
+                <div className="flex-1 pt-2">
+                  <h3 className="text-xl mb-4 text-gray-900 tracking-tight">{step.title}</h3>
+                  <p className="text-gray-600 font-light leading-relaxed">{step.description}</p>
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="bg-blue-50 p-8 rounded-lg">
-          <h3 className="text-2xl font-bold mb-4 text-gray-900">Smooth Buying Process</h3>
-          <p className="text-gray-600 mb-6">
-            People don\'t buy just listings; they buy lifestyles. Our process do not just reiterate specs and data. 
-            Instead, develop a special narrative in what it\'s like to live in the home.
+        <div className="max-w-4xl bg-gray-900 text-white p-12 lg:p-16">
+          <h3 className="text-3xl font-light mb-6">Smooth Buying Process</h3>
+          <p className="text-gray-300 font-light leading-relaxed mb-8 text-lg">
+            People don't buy just listings; they buy lifestyles. Our process do not just reiterate specs and data. 
+            Instead, develop a special narrative in what it's like to live in the home.
           </p>
-          <button className="inline-flex items-center gap-2 px-6 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors">
-            VIEW MORE
-            <ChevronRight className="w-5 h-5" />
+          <button className="inline-flex items-center gap-3 text-white hover:gap-4 transition-all duration-300 group">
+            <span className="tracking-wide">VIEW MORE</span>
+            <ArrowRight className="w-5 h-5" />
           </button>
         </div>
       </div>

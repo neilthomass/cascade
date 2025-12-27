@@ -1,4 +1,4 @@
-import { MapPin, Bed, Bath, Square, Heart } from 'lucide-react';
+import { MapPin, Bed, Bath, Square, Heart, ArrowRight } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useState } from 'react';
 
@@ -93,79 +93,80 @@ export function PropertiesSection() {
   };
 
   return (
-    <section id="properties" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">FEATURED PROPERTIES</h2>
-          <p className="text-xl text-gray-600">Discover Your Dream Home in the Bay Area</p>
+    <section id="properties" className="py-32 bg-white">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-3xl mb-20">
+          <p className="text-sm tracking-[0.2em] text-gray-500 mb-6">PORTFOLIO</p>
+          <h2 className="text-5xl lg:text-6xl font-light text-gray-900 mb-6 leading-tight">
+            Featured Properties
+          </h2>
+          <p className="text-xl text-gray-600 font-light leading-relaxed">
+            Discover exceptional homes in the San Francisco Bay Area
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {properties.map((property) => (
-            <div key={property.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow group">
-              <div className="relative overflow-hidden h-64">
+            <div key={property.id} className="group cursor-pointer">
+              {/* Image */}
+              <div className="relative overflow-hidden aspect-[4/3] mb-6">
                 <ImageWithFallback
                   src={property.image}
                   alt={property.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <button
                   onClick={() => toggleFavorite(property.id)}
-                  className="absolute top-4 right-4 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 transition-colors"
+                  className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm p-3 hover:bg-white transition-colors"
                 >
                   <Heart
                     className={`w-5 h-5 ${
-                      favorites.has(property.id) ? 'fill-red-500 text-red-500' : 'text-gray-600'
+                      favorites.has(property.id) ? 'fill-gray-900 text-gray-900' : 'text-gray-900'
                     }`}
                   />
                 </button>
                 {property.featured && (
-                  <div className="absolute top-4 left-4 bg-blue-900 text-white px-3 py-1 rounded-md">
-                    Featured
+                  <div className="absolute top-6 left-6 bg-gray-900 text-white px-4 py-2 text-xs tracking-wider">
+                    FEATURED
                   </div>
                 )}
-                <div className="absolute bottom-4 left-4 bg-white px-3 py-1 rounded-md">
-                  {property.status}
-                </div>
               </div>
 
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{property.title}</h3>
-                <div className="flex items-center gap-2 text-gray-600 mb-4">
+              {/* Content */}
+              <div>
+                <div className="flex items-start justify-between mb-3">
+                  <h3 className="text-2xl text-gray-900 group-hover:text-gray-600 transition-colors">{property.title}</h3>
+                  <ArrowRight className="w-5 h-5 text-gray-400 group-hover:translate-x-1 transition-transform" />
+                </div>
+                
+                <div className="flex items-center gap-2 text-gray-500 mb-4">
                   <MapPin className="w-4 h-4" />
-                  <span>{property.location}</span>
+                  <span className="text-sm">{property.location}</span>
                 </div>
 
-                <div className="flex items-center justify-between mb-4 pb-4 border-b">
-                  <div className="flex items-center gap-4 text-gray-600">
-                    <div className="flex items-center gap-1">
-                      <Bed className="w-4 h-4" />
-                      <span>{property.beds}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Bath className="w-4 h-4" />
-                      <span>{property.baths}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Square className="w-4 h-4" />
-                      <span>{property.sqft} sqft</span>
-                    </div>
+                <div className="flex items-center gap-6 text-sm text-gray-600 mb-6 pb-6 border-b border-gray-200">
+                  <div className="flex items-center gap-2">
+                    <Bed className="w-4 h-4" />
+                    <span>{property.beds}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Bath className="w-4 h-4" />
+                    <span>{property.baths}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Square className="w-4 h-4" />
+                    <span>{property.sqft} sqft</span>
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <span className="text-3xl font-bold text-blue-900">{property.price}</span>
-                  <button className="px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors">
-                    View Details
-                  </button>
-                </div>
+                <div className="text-2xl text-gray-900">{property.price}</div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <button className="px-8 py-3 border-2 border-blue-900 text-blue-900 rounded-lg hover:bg-blue-900 hover:text-white transition-colors">
+        <div className="text-center mt-20">
+          <button className="px-10 py-4 border border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-300 tracking-wide">
             VIEW ALL PROPERTIES
           </button>
         </div>

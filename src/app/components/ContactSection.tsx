@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Send } from 'lucide-react';
+import { MapPin, Phone, Mail, Send, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import type { FormEvent, ChangeEvent } from 'react';
 
@@ -25,80 +25,61 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">GET IN TOUCH</h2>
-          <p className="text-xl text-gray-600">We'd Love to Hear From You</p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-12">
+    <section id="contact" className="py-32 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-20">
           {/* Contact Information */}
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
-            <p className="text-gray-600 mb-8">
-              Have questions about buying or selling a property? Our team of experienced agents
-              is ready to help you find your dream home in the Bay Area.
-            </p>
+            <div className="mb-16">
+              <p className="text-sm tracking-[0.2em] text-gray-500 mb-6">CONTACT</p>
+              <h2 className="text-5xl lg:text-6xl font-light text-gray-900 mb-6 leading-tight">
+                Get In Touch
+              </h2>
+              <p className="text-xl text-gray-600 font-light leading-relaxed">
+                Let's discuss your real estate needs
+              </p>
+            </div>
 
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="bg-blue-100 p-3 rounded-lg">
-                  <MapPin className="w-6 h-6 text-blue-900" />
-                </div>
-                <div>
-                  <div className="font-bold text-gray-900 mb-1">Office Address</div>
-                  <div className="text-gray-600">
-                    123 Market Street, Suite 400<br />
-                    San Francisco, CA 94103
-                  </div>
+            <div className="space-y-8 mb-12">
+              <div>
+                <div className="text-sm tracking-[0.2em] text-gray-500 mb-2">OFFICE</div>
+                <div className="text-gray-900">
+                  3370 Ashbourne Circle<br />
+                  San Ramon, CA 94583
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="bg-blue-100 p-3 rounded-lg">
-                  <Phone className="w-6 h-6 text-blue-900" />
-                </div>
-                <div>
-                  <div className="font-bold text-gray-900 mb-1">Phone Number</div>
-                  <div className="text-gray-600">
-                    Office: (415) 555-0123<br />
-                    Mobile: (415) 555-0124
-                  </div>
+              <div>
+                <div className="text-sm tracking-[0.2em] text-gray-500 mb-2">PHONE</div>
+                <div className="text-gray-900">
+                  (408) 757-7353
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="bg-blue-100 p-3 rounded-lg">
-                  <Mail className="w-6 h-6 text-blue-900" />
-                </div>
-                <div>
-                  <div className="font-bold text-gray-900 mb-1">Email Address</div>
-                  <div className="text-gray-600">
-                    info@cascadecalifornia.com<br />
-                    sales@cascadecalifornia.com
-                  </div>
+              <div>
+                <div className="text-sm tracking-[0.2em] text-gray-500 mb-2">EMAIL</div>
+                <div className="text-gray-900">
+                  info@cascadecaliforniarealty.com
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 bg-blue-900 text-white p-6 rounded-lg">
-              <h4 className="font-bold mb-2">Office Hours</h4>
-              <div className="text-blue-100">
-                Monday - Friday: 9:00 AM - 6:00 PM<br />
-                Saturday: 10:00 AM - 4:00 PM<br />
-                Sunday: By Appointment
+            <div className="pt-12 border-t border-gray-200">
+              <div className="text-sm tracking-[0.2em] text-gray-500 mb-4">OFFICE HOURS</div>
+              <div className="text-gray-700 font-light leading-relaxed space-y-1">
+                <div>Monday - Friday: 9:00 AM - 6:00 PM</div>
+                <div>Saturday: 10:00 AM - 4:00 PM</div>
+                <div>Sunday: By Appointment</div>
               </div>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white p-8 rounded-lg shadow-md">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
+          <div className="bg-white p-12">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block font-medium text-gray-900 mb-2">
-                  Full Name *
+                <label htmlFor="name" className="block text-sm tracking-wide text-gray-900 mb-3">
+                  FULL NAME *
                 </label>
                 <input
                   type="text"
@@ -107,14 +88,14 @@ export function ContactSection() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none"
-                  placeholder="John Doe"
+                  className="w-full px-0 py-3 border-0 border-b border-gray-300 focus:border-gray-900 focus:ring-0 outline-none transition-colors bg-transparent"
+                  placeholder="Enter your name"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block font-medium text-gray-900 mb-2">
-                  Email Address *
+                <label htmlFor="email" className="block text-sm tracking-wide text-gray-900 mb-3">
+                  EMAIL ADDRESS *
                 </label>
                 <input
                   type="email"
@@ -123,14 +104,14 @@ export function ContactSection() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none"
-                  placeholder="john@example.com"
+                  className="w-full px-0 py-3 border-0 border-b border-gray-300 focus:border-gray-900 focus:ring-0 outline-none transition-colors bg-transparent"
+                  placeholder="Enter your email"
                 />
               </div>
 
               <div>
-                <label htmlFor="phone" className="block font-medium text-gray-900 mb-2">
-                  Phone Number
+                <label htmlFor="phone" className="block text-sm tracking-wide text-gray-900 mb-3">
+                  PHONE NUMBER
                 </label>
                 <input
                   type="tel"
@@ -138,14 +119,14 @@ export function ContactSection() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none"
-                  placeholder="(415) 555-0123"
+                  className="w-full px-0 py-3 border-0 border-b border-gray-300 focus:border-gray-900 focus:ring-0 outline-none transition-colors bg-transparent"
+                  placeholder="Enter your phone"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block font-medium text-gray-900 mb-2">
-                  Message *
+                <label htmlFor="message" className="block text-sm tracking-wide text-gray-900 mb-3">
+                  MESSAGE *
                 </label>
                 <textarea
                   id="message"
@@ -154,17 +135,17 @@ export function ContactSection() {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent outline-none resize-none"
-                  placeholder="Tell us about your real estate needs..."
+                  className="w-full px-0 py-3 border-0 border-b border-gray-300 focus:border-gray-900 focus:ring-0 outline-none resize-none transition-colors bg-transparent"
+                  placeholder="Tell us about your needs"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-blue-900 text-white py-3 rounded-lg hover:bg-blue-800 transition-colors flex items-center justify-center gap-2"
+                className="w-full bg-gray-900 text-white py-4 hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-3 group mt-8"
               >
-                <Send className="w-5 h-5" />
-                Send Message
+                <span className="tracking-wide">SEND MESSAGE</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </form>
           </div>

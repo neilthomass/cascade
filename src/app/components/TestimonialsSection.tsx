@@ -30,39 +30,32 @@ export function TestimonialsSection() {
   ];
 
   return (
-    <section className="py-20 bg-blue-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">CLIENT TESTIMONIALS</h2>
-          <p className="text-xl text-blue-200">What Our Happy Clients Say About Us</p>
+    <section className="py-32 bg-white">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-3xl mb-20">
+          <p className="text-sm tracking-[0.2em] text-gray-500 mb-6">TESTIMONIALS</p>
+          <h2 className="text-5xl lg:text-6xl font-light text-gray-900 mb-6 leading-tight">
+            Client Stories
+          </h2>
+          <p className="text-xl text-gray-600 font-light leading-relaxed">
+            What our happy clients say about us
+          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="bg-white text-gray-900 p-8 rounded-lg shadow-xl">
-              <div className="flex items-center justify-between mb-6">
-                <Quote className="w-12 h-12 text-blue-900 opacity-20" />
-                <div className="flex gap-1">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
+            <div key={testimonial.id} className="border border-gray-200 p-10 hover:border-gray-900 transition-colors duration-300 group">
+              <div className="flex gap-1 mb-8">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <div key={i} className="w-8 h-[1px] bg-gray-900"></div>
+                ))}
               </div>
 
-              <p className="text-gray-700 mb-6 italic">{testimonial.text}</p>
+              <p className="text-gray-700 font-light leading-relaxed mb-10 text-lg">{testimonial.text}</p>
 
-              <div className="flex items-center gap-4 border-t pt-6">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center overflow-hidden">
-                  <ImageWithFallback
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div>
-                  <div className="font-bold text-gray-900">{testimonial.name}</div>
-                  <div className="text-gray-600">{testimonial.role}</div>
-                </div>
+              <div className="pt-6 border-t border-gray-200">
+                <div className="font-light text-gray-900 mb-1">{testimonial.name}</div>
+                <div className="text-sm text-gray-500 tracking-wide">{testimonial.role}</div>
               </div>
             </div>
           ))}

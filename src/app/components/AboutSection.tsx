@@ -1,124 +1,125 @@
-import { Users, Award, Star, TrendingUp, GraduationCap, Building2 } from 'lucide-react';
+import { Award, GraduationCap, Building2, TrendingUp } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">ABOUT CASCADE</h2>
-          <p className="text-xl text-gray-600">Best-in-Class Market Services</p>
+    <section id="about" className="py-32 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="max-w-3xl mb-20">
+          <p className="text-sm tracking-[0.2em] text-gray-500 mb-6">LEADERSHIP</p>
+          <h2 className="text-5xl lg:text-6xl font-light text-gray-900 mb-6 leading-tight">
+            Meet Manoj Thomas
+          </h2>
+          <p className="text-xl text-gray-600 font-light leading-relaxed">
+            Founder & CEO
+          </p>
         </div>
 
-        {/* Manoj Thomas - Founder & CEO Section */}
-        <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-16">
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Image */}
-            <div className="relative h-96 md:h-auto">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1737574821698-862e77f044c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzc21hbiUyMHBvcnRyYWl0fGVufDF8fHx8MTc2NjgzMTQ3M3ww&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Manoj Thomas - Founder & CEO"
-                className="w-full h-full object-cover"
-              />
-            </div>
+        {/* Manoj Thomas Profile */}
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 mb-32">
+          {/* Image */}
+          <div className="relative aspect-[4/5] overflow-hidden">
+            <ImageWithFallback
+              src="https://images.unsplash.com/photo-1737574821698-862e77f044c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzc21hbiUyMHBvcnRyYWl0fGVufDF8fHx8MTc2NjgzMTQ3M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+              alt="Manoj Thomas - Founder & CEO"
+              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+            />
+          </div>
 
-            {/* Content */}
-            <div className="p-8 md:p-12 flex flex-col justify-center">
-              <div className="mb-6">
-                <h3 className="text-3xl font-bold text-gray-900 mb-2">MANOJ THOMAS</h3>
-                <p className="text-xl text-blue-900 font-semibold mb-4">Founder & CEO</p>
-                <div className="w-20 h-1 bg-blue-900"></div>
-              </div>
+          {/* Content */}
+          <div className="flex flex-col justify-center">
+            <p className="text-lg text-gray-700 font-light leading-relaxed mb-12">
+              A seasoned real estate professional who brings fifteen years of experience in the San Francisco Bay area real estate with extensive market knowledge, and unsurpassed dedication to his clients. He always keeps his clients' best interests in mind and guides them through one of the biggest investments of their lives.
+            </p>
 
-              <p className="text-gray-700 mb-6">
-                Manoj is a seasoned real estate professional who brings fifteen years of experience in the San Francisco Bay area real estate with extensive market knowledge, and unsurpassed dedication to his clients. He always keeps his clients' best interests in mind and guides them through one of the biggest investments of their lives.
-              </p>
-
-              {/* Awards */}
-              <div className="mb-6">
-                <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                  <Award className="w-5 h-5 text-blue-900" />
-                  Awards & Recognition
-                </h4>
-                <ul className="space-y-2 text-gray-700">
-                  <li className="flex items-start gap-2">
-                    <Star className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" />
-                    <span>Platinum Award of the BayEast Association of Realtors (2021-2023)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Star className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" />
-                    <span>Pinnacle Award of the BayEast Association of Realtors (2020)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Star className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" />
-                    <span>Grand Master Award of the BayEast Association of Realtors (2016-2019)</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Additional Info */}
-              <div className="grid grid-cols-1 gap-4 pt-4 border-t border-gray-200">
-                <div className="flex items-start gap-3">
-                  <Building2 className="w-5 h-5 text-blue-900 flex-shrink-0 mt-1" />
+            {/* Awards */}
+            <div className="space-y-6 mb-12 pb-12 border-b border-gray-200">
+              <h3 className="text-sm tracking-[0.2em] text-gray-900 mb-6">AWARDS & RECOGNITION</h3>
+              <div className="space-y-4">
+                <div className="flex items-start gap-4">
+                  <div className="w-2 h-2 bg-gray-900 mt-2 flex-shrink-0"></div>
                   <div>
-                    <p className="font-semibold text-gray-900">Active Investor</p>
-                    <p className="text-gray-600">Experienced in California's real estate market, guiding aspiring investors</p>
+                    <p className="text-gray-900">Platinum Award</p>
+                    <p className="text-sm text-gray-600">BayEast Association of Realtors, 2021-2023</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <GraduationCap className="w-5 h-5 text-blue-900 flex-shrink-0 mt-1" />
+                <div className="flex items-start gap-4">
+                  <div className="w-2 h-2 bg-gray-900 mt-2 flex-shrink-0"></div>
                   <div>
-                    <p className="font-semibold text-gray-900">Education</p>
-                    <p className="text-gray-600">Executive MBA, Haas School of Business at UC Berkeley (2018)</p>
+                    <p className="text-gray-900">Pinnacle Award</p>
+                    <p className="text-sm text-gray-600">BayEast Association of Realtors, 2020</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-2 h-2 bg-gray-900 mt-2 flex-shrink-0"></div>
+                  <div>
+                    <p className="text-gray-900">Grand Master Award</p>
+                    <p className="text-sm text-gray-600">BayEast Association of Realtors, 2016-2019</p>
                   </div>
                 </div>
               </div>
             </div>
+
+            {/* Additional Info */}
+            <div className="grid grid-cols-1 gap-8">
+              <div>
+                <Building2 className="w-8 h-8 text-gray-900 mb-4" />
+                <h4 className="text-gray-900 mb-2">Active Investor</h4>
+                <p className="text-gray-600 font-light leading-relaxed">
+                  Experienced in California's real estate market, using knowledge to guide aspiring investors
+                </p>
+              </div>
+              <div>
+                <GraduationCap className="w-8 h-8 text-gray-900 mb-4" />
+                <h4 className="text-gray-900 mb-2">Executive MBA</h4>
+                <p className="text-gray-600 font-light leading-relaxed">
+                  Haas School of Business at UC Berkeley, 2018
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-            <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-              <Users className="w-8 h-8 text-blue-900" />
+        {/* Company Values */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-1 bg-white">
+          <div className="bg-white p-12 hover:bg-gray-50 transition-colors duration-300 group">
+            <div className="w-12 h-12 border border-gray-900 flex items-center justify-center mb-8 group-hover:bg-gray-900 transition-colors duration-300">
+              <TrendingUp className="w-6 h-6 text-gray-900 group-hover:text-white transition-colors duration-300" />
             </div>
-            <h3 className="text-xl font-bold mb-3 text-gray-900">COMMITTED TEAM</h3>
-            <p className="text-gray-600">
-              Our team commitment has improved bottom line results. Good leadership and shared vision usually 
-              contribute to our workplace where employees show commitment on all levels.
+            <h3 className="text-xl mb-4 text-gray-900 tracking-tight">Industry Experts</h3>
+            <p className="text-gray-600 font-light leading-relaxed">
+              Thought leaders who add meaningful value to the community and their clients' lives
             </p>
           </div>
 
-          <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-            <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-              <TrendingUp className="w-8 h-8 text-blue-900" />
+          <div className="bg-white p-12 hover:bg-gray-50 transition-colors duration-300 group">
+            <div className="w-12 h-12 border border-gray-900 flex items-center justify-center mb-8 group-hover:bg-gray-900 transition-colors duration-300">
+              <Award className="w-6 h-6 text-gray-900 group-hover:text-white transition-colors duration-300" />
             </div>
-            <h3 className="text-xl font-bold mb-3 text-gray-900">INDUSTRY EXPERTS</h3>
-            <p className="text-gray-600">
-              We have a team of thought leaders and influencers of the real estate industry; they add meaningful 
-              value to the community and their clients' lives, and use that influence to build up the businesses.
+            <h3 className="text-xl mb-4 text-gray-900 tracking-tight">Experienced Agents</h3>
+            <p className="text-gray-600 font-light leading-relaxed">
+              Know how to navigate the market and understand the pulse of the industry
             </p>
           </div>
 
-          <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-            <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-              <Star className="w-8 h-8 text-blue-900" />
+          <div className="bg-white p-12 hover:bg-gray-50 transition-colors duration-300 group">
+            <div className="w-12 h-12 border border-gray-900 flex items-center justify-center mb-8 group-hover:bg-gray-900 transition-colors duration-300">
+              <Building2 className="w-6 h-6 text-gray-900 group-hover:text-white transition-colors duration-300" />
             </div>
-            <h3 className="text-xl font-bold mb-3 text-gray-900">AMAZING REVIEWS</h3>
-            <p className="text-gray-600">
-              Gaining trust is no easy feat in the time of the empowered buyer, but our amazing reviews gain 
-              consumer trust and also help Cascade California Realty's overall reputation and success.
+            <h3 className="text-xl mb-4 text-gray-900 tracking-tight">Committed Team</h3>
+            <p className="text-gray-600 font-light leading-relaxed">
+              Good leadership and shared vision contribute to workplace commitment on all levels
             </p>
           </div>
 
-          <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-            <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-              <Award className="w-8 h-8 text-blue-900" />
+          <div className="bg-white p-12 hover:bg-gray-50 transition-colors duration-300 group">
+            <div className="w-12 h-12 border border-gray-900 flex items-center justify-center mb-8 group-hover:bg-gray-900 transition-colors duration-300">
+              <TrendingUp className="w-6 h-6 text-gray-900 group-hover:text-white transition-colors duration-300" />
             </div>
-            <h3 className="text-xl font-bold mb-3 text-gray-900">EXPERIENCED AGENTS</h3>
-            <p className="text-gray-600">
-              Our team of experienced real estate agents know how to navigate the market and understand the pulse 
-              of the industry. Their experience is valuable and worth the costs involved.
+            <h3 className="text-xl mb-4 text-gray-900 tracking-tight">Amazing Reviews</h3>
+            <p className="text-gray-600 font-light leading-relaxed">
+              Building trust and reputation through exceptional service and client satisfaction
             </p>
           </div>
         </div>

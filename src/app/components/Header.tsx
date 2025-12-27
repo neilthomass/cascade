@@ -14,31 +14,31 @@ export function Header() {
 
   return (
     <>
-      <header className="bg-white shadow-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+      <header className="bg-white/95 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex justify-between items-center h-24">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <button onClick={() => scrollToSection('home')} className="flex items-center">
-                <div className="text-2xl font-bold text-blue-900">
-                  CASCADE
-                  <span className="block text-xs font-normal text-gray-600">CALIFORNIA REALTY</span>
+              <button onClick={() => scrollToSection('home')} className="flex items-center group">
+                <div className="tracking-tight">
+                  <div className="text-xl font-light text-gray-900 tracking-[0.2em]">CASCADE</div>
+                  <div className="text-[10px] font-light text-gray-500 tracking-[0.3em] mt-0.5">CALIFORNIA REALTY</div>
                 </div>
               </button>
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
-              <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-blue-900 transition-colors">
+            <nav className="hidden md:flex items-center gap-12">
+              <button onClick={() => scrollToSection('home')} className="text-sm tracking-wide text-gray-600 hover:text-gray-900 transition-colors duration-300">
                 Home
               </button>
-              <button onClick={() => scrollToSection('properties')} className="text-gray-700 hover:text-blue-900 transition-colors">
-                Our Properties
+              <button onClick={() => scrollToSection('properties')} className="text-sm tracking-wide text-gray-600 hover:text-gray-900 transition-colors duration-300">
+                Properties
               </button>
-              <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-blue-900 transition-colors">
-                About Cascade
+              <button onClick={() => scrollToSection('about')} className="text-sm tracking-wide text-gray-600 hover:text-gray-900 transition-colors duration-300">
+                About
               </button>
-              <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-blue-900 transition-colors">
+              <button onClick={() => scrollToSection('contact')} className="text-sm tracking-wide px-6 py-3 bg-gray-900 text-white hover:bg-gray-800 transition-all duration-300">
                 Contact
               </button>
             </nav>
@@ -46,26 +46,26 @@ export function Header() {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-gray-100"
+              className="md:hidden p-2 hover:bg-gray-50 transition-colors"
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <nav className="md:hidden py-4 border-t">
-              <div className="flex flex-col space-y-4">
-                <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-blue-900 transition-colors text-left">
+            <nav className="md:hidden py-6 border-t border-gray-100">
+              <div className="flex flex-col gap-6">
+                <button onClick={() => scrollToSection('home')} className="text-sm tracking-wide text-gray-600 hover:text-gray-900 transition-colors text-left">
                   Home
                 </button>
-                <button onClick={() => scrollToSection('properties')} className="text-gray-700 hover:text-blue-900 transition-colors text-left">
-                  Our Properties
+                <button onClick={() => scrollToSection('properties')} className="text-sm tracking-wide text-gray-600 hover:text-gray-900 transition-colors text-left">
+                  Properties
                 </button>
-                <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-blue-900 transition-colors text-left">
-                  About Cascade
+                <button onClick={() => scrollToSection('about')} className="text-sm tracking-wide text-gray-600 hover:text-gray-900 transition-colors text-left">
+                  About
                 </button>
-                <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-blue-900 transition-colors text-left">
+                <button onClick={() => scrollToSection('contact')} className="text-sm tracking-wide px-6 py-3 bg-gray-900 text-white hover:bg-gray-800 transition-all duration-300 text-center">
                   Contact
                 </button>
               </div>
