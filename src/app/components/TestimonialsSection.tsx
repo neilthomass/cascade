@@ -9,57 +9,57 @@ export function TestimonialsSection() {
   const testimonials = [
     {
       id: 1,
+      address: '5069 Pharlap Ave, San Jose, CA',
+      type: 'First-Time Buyer',
+      price: '$720K',
+      rating: 5,
+      image: '/cascade/images/5069-pharlap-ave-hero.jpeg',
+      text: 'When we started looking for a house, we weren\'t sure how to proceed. Manoj walked us through the process and really simplified it for us. He was very patient and understanding, and never pushed us into buying something we weren\'t fully satisfied with. He showed great professionalism and utmost respect for our choices. We would highly recommend Manoj to anybody.'
+    },
+    {
+      id: 2,
+      address: '1824 Pine Hollow Cir, San Jose, CA',
+      type: 'First-Time Buyer',
+      price: '$820K',
+      rating: 5,
+      image: '/cascade/images/pine_hollow.jpg',
+      text: 'Since we were first time buyers, we were initially overwhelmed with all the details. But Manoj guided us through the entire process with ease. He provided detailed analysis on all the houses we were interested in before we considered making an offer. His attention to detail gave us confidence in making a decision quickly. He was always available to answer our queries.'
+    },
+    {
+      id: 3,
+      address: '214 Kent Place, San Ramon, CA',
+      type: 'First-Time Buyer',
+      price: '$875K',
+      rating: 5,
+      image: '/cascade/images/kent.jpg',
+      text: 'Manoj is an excellent agent and a gem of a person. Throughout our search, he was patient and answered all our questions. He even stopped us from making hasty decisions. With his guidance, the whole process from offer to closing went very smoothly. We highly recommend him.'
+    },
+    {
+      id: 4,
+      address: '7156 Emerald Ave, Dublin, CA',
+      type: 'Home Seller',
+      price: '$840K',
+      rating: 5,
+      image: '/cascade/images/emerald.jpg',
+      text: 'Manoj is truly professional and well organized. I have dealt with other agents and Manoj outperforms all of them. He communicates very well with customers and clients. Looking forward to doing more transactions with him.'
+    },
+    {
+      id: 5,
+      address: '3440 65th Ave, Oakland, CA',
+      type: 'Multi-Family Buyer',
+      price: '$782K',
+      rating: 5,
+      image: '/cascade/images/65th.jpg',
+      text: 'I have purchased two homes using Manoj\'s services and was highly satisfied both times. He is not pushy, he is a great negotiator, and he is always on your side. I have seen many buyers get burned with agents who did not know the market or were not good at negotiation. I don\'t think I will ever use another agent\'s services in the Bay Area.'
+    },
+    {
+      id: 6,
       address: 'San Jose, CA',
       type: 'First-Time Buyer',
       price: '$1.27M',
       rating: 5,
       image: '',
       text: 'Manoj is excellent at guiding first time buyers like myself. He explained all the details about home ownership and gave a fair, unbiased opinion. His communication and negotiation skills really helped close the deal in our favor. The entire process was smooth with no hiccups. I would highly recommend Manoj to anyone looking to own a home.'
-    },
-    {
-      id: 2,
-      address: '5069 Pharlap Ave, San Jose, CA',
-      type: 'First-Time Buyer',
-      price: '$720K',
-      rating: 5,
-      image: '/Cascade/images/5069-pharlap-ave-hero.jpeg',
-      text: 'When we started looking for a house, we weren\'t sure how to proceed. Manoj walked us through the process and really simplified it for us. He was very patient and understanding, and never pushed us into buying something we weren\'t fully satisfied with. He showed great professionalism and utmost respect for our choices. We would highly recommend Manoj to anybody.'
-    },
-    {
-      id: 3,
-      address: '1824 Pine Hollow Cir, San Jose, CA',
-      type: 'First-Time Buyer',
-      price: '$820K',
-      rating: 5,
-      image: '/Cascade/images/pine_hollow.jpg',
-      text: 'Since we were first time buyers, we were initially overwhelmed with all the details. But Manoj guided us through the entire process with ease. He provided detailed analysis on all the houses we were interested in before we considered making an offer. His attention to detail gave us confidence in making a decision quickly. He was always available to answer our queries.'
-    },
-    {
-      id: 4,
-      address: '214 Kent Place, San Ramon, CA',
-      type: 'First-Time Buyer',
-      price: '$875K',
-      rating: 5,
-      image: '/Cascade/images/kent.jpg',
-      text: 'Manoj is an excellent agent and a gem of a person. Throughout our search, he was patient and answered all our questions. He even stopped us from making hasty decisions. With his guidance, the whole process from offer to closing went very smoothly. We highly recommend him.'
-    },
-    {
-      id: 5,
-      address: '7156 Emerald Ave, Dublin, CA',
-      type: 'Home Seller',
-      price: '$840K',
-      rating: 5,
-      image: '/Cascade/images/emerald.jpg',
-      text: 'Manoj is truly professional and well organized. I have dealt with other agents and Manoj outperforms all of them. He communicates very well with customers and clients. Looking forward to doing more transactions with him.'
-    },
-    {
-      id: 6,
-      address: '3440 65th Ave, Oakland, CA',
-      type: 'Multi-Family Buyer',
-      price: '$782K',
-      rating: 5,
-      image: '/Cascade/images/65th.jpg',
-      text: 'I have purchased two homes using Manoj\'s services and was highly satisfied both times. He is not pushy, he is a great negotiator, and he is always on your side. I have seen many buyers get burned with agents who did not know the market or were not good at negotiation. I don\'t think I will ever use another agent\'s services in the Bay Area.'
     }
   ];
 
@@ -206,12 +206,6 @@ export function TestimonialsSection() {
             </div>
           </div>
 
-          {/* Counter */}
-          <div className="absolute top-6 right-6 lg:top-auto lg:bottom-8 lg:right-8 text-sm text-gray-500 tracking-wide">
-            <span className="text-gray-900 font-medium">{String(currentIndex + 1).padStart(2, '0')}</span>
-            <span className="mx-2">/</span>
-            <span>{String(testimonials.length).padStart(2, '0')}</span>
-          </div>
         </div>
       </div>
     </section>

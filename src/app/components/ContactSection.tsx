@@ -43,16 +43,16 @@ export function ContactSection() {
             <div className="space-y-8 mb-12">
               <div>
                 <div className="text-sm tracking-[0.2em] text-gray-500 mb-2">PHONE</div>
-                <div className="text-gray-900">
+                <a href="tel:+14087577353" className="text-gray-900 hover:underline">
                   (408) 757-7353
-                </div>
+                </a>
               </div>
 
               <div>
                 <div className="text-sm tracking-[0.2em] text-gray-500 mb-2">EMAIL</div>
-                <div className="text-gray-900">
+                <a href="mailto:info@cascadecaliforniarealty.com" className="text-gray-900 hover:underline">
                   info@cascadecaliforniarealty.com
-                </div>
+                </a>
               </div>
             </div>
           </div>

@@ -1,9 +1,7 @@
-import { MapPin, Bed, Bath, Square, Heart, ArrowRight } from 'lucide-react';
+import { MapPin, Bed, Bath, Square, ArrowRight } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import { useState } from 'react';
 
 export function PropertiesSection() {
-  const [favorites, setFavorites] = useState<Set<number>>(new Set());
 
   const properties = [
     {
@@ -15,8 +13,7 @@ export function PropertiesSection() {
       beds: 4,
       baths: 3,
       sqft: '3,200',
-      status: 'For Sale',
-      featured: true
+      link: '#'
     },
     {
       id: 2,
@@ -27,8 +24,7 @@ export function PropertiesSection() {
       beds: 5,
       baths: 4,
       sqft: '5,400',
-      status: 'For Sale',
-      featured: true
+      link: '#'
     },
     {
       id: 3,
@@ -39,8 +35,7 @@ export function PropertiesSection() {
       beds: 2,
       baths: 2,
       sqft: '1,450',
-      status: 'For Sale',
-      featured: false
+      link: '#'
     },
     {
       id: 4,
@@ -51,8 +46,7 @@ export function PropertiesSection() {
       beds: 4,
       baths: 3,
       sqft: '4,100',
-      status: 'For Sale',
-      featured: false
+      link: '#'
     },
     {
       id: 5,
@@ -63,8 +57,7 @@ export function PropertiesSection() {
       beds: 3,
       baths: 2,
       sqft: '2,800',
-      status: 'For Sale',
-      featured: false
+      link: '#'
     },
     {
       id: 6,
@@ -75,22 +68,9 @@ export function PropertiesSection() {
       beds: 6,
       baths: 5,
       sqft: '6,200',
-      status: 'For Sale',
-      featured: true
+      link: '#'
     }
   ];
-
-  const toggleFavorite = (id: number) => {
-    setFavorites((prev) => {
-      const newFavorites = new Set(prev);
-      if (newFavorites.has(id)) {
-        newFavorites.delete(id);
-      } else {
-        newFavorites.add(id);
-      }
-      return newFavorites;
-    });
-  };
 
   return (
     <section id="properties" className="py-32 bg-white">
@@ -107,7 +87,13 @@ export function PropertiesSection() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {properties.map((property) => (
-            <div key={property.id} className="group cursor-pointer">
+            <a
+              key={property.id}
+              href={property.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
+            >
               {/* Image */}
               <div className="relative overflow-hidden aspect-[4/3] mb-6">
                 <ImageWithFallback
@@ -115,21 +101,6 @@ export function PropertiesSection() {
                   alt={property.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <button
-                  onClick={() => toggleFavorite(property.id)}
-                  className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm p-3 hover:bg-white transition-colors"
-                >
-                  <Heart
-                    className={`w-5 h-5 ${
-                      favorites.has(property.id) ? 'fill-gray-900 text-gray-900' : 'text-gray-900'
-                    }`}
-                  />
-                </button>
-                {property.featured && (
-                  <div className="absolute top-6 left-6 bg-gray-900 text-white px-4 py-2 text-xs tracking-wider">
-                    FEATURED
-                  </div>
-                )}
               </div>
 
               {/* Content */}
@@ -138,7 +109,7 @@ export function PropertiesSection() {
                   <h3 className="text-2xl text-gray-900 group-hover:text-gray-600 transition-colors">{property.title}</h3>
                   <ArrowRight className="w-5 h-5 text-gray-400 group-hover:translate-x-1 transition-transform" />
                 </div>
-                
+
                 <div className="flex items-center gap-2 text-gray-500 mb-4">
                   <MapPin className="w-4 h-4" />
                   <span className="text-sm">{property.location}</span>
@@ -161,15 +132,10 @@ export function PropertiesSection() {
 
                 <div className="text-2xl text-gray-900">{property.price}</div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
 
-        <div className="text-center mt-20">
-          <button className="px-10 py-4 border border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-300 tracking-wide">
-            VIEW ALL PROPERTIES
-          </button>
-        </div>
       </div>
     </section>
   );

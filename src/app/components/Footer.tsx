@@ -47,8 +47,8 @@ export function Footer() {
           <div>
             <h3 className="text-sm tracking-[0.2em] mb-6">CONTACT</h3>
             <ul className="space-y-3 text-gray-400 font-light text-sm">
-              <li>(408) 757-7353</li>
-              <li>info@cascadecaliforniarealty.com</li>
+              <li><a href="tel:+14087577353" className="hover:text-white transition-colors">(408) 757-7353</a></li>
+              <li><a href="mailto:info@cascadecaliforniarealty.com" className="hover:text-white transition-colors">info@cascadecaliforniarealty.com</a></li>
             </ul>
           </div>
         </div>
@@ -56,7 +56,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-center items-center">
           <p className="text-gray-500 text-sm font-light tracking-wide">
-            Cascade California Realty Inc.
+            © {currentYear} Cascade California Realty Inc. All rights reserved.
           </p>
         </div>
       </div>

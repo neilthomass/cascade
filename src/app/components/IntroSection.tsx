@@ -11,7 +11,7 @@ export function IntroSection() {
           </h2>
           <p className="text-lg text-gray-600 font-light leading-relaxed max-w-3xl mx-auto">
             Cascade California Realty is a full-service boutique residential brokerage
-            serving the San Francisco Bay Area with over $100 million in annual sales.
+            serving the San Francisco Bay Area.
             We take pride in delivering personalized guidance tailored to each client.
           </p>
         </div>

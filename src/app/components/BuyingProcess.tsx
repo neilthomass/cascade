@@ -1,4 +1,4 @@
-import { ChevronRight, ArrowRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 
 export function BuyingProcess() {
   const steps = [
@@ -47,7 +47,7 @@ export function BuyingProcess() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-x-16 gap-y-12 mb-20">
+        <div className="grid lg:grid-cols-2 gap-x-16 gap-y-12">
           {steps.map((step, index) => (
             <div key={index} className="group">
               <div className="flex items-start gap-6 mb-4">
@@ -61,18 +61,6 @@ export function BuyingProcess() {
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="max-w-4xl bg-gray-900 text-white p-12 lg:p-16">
-          <h3 className="text-3xl font-light mb-6">Smooth Buying Process</h3>
-          <p className="text-gray-300 font-light leading-relaxed mb-8 text-lg">
-            People don't just buy listings—they buy lifestyles. We go beyond specs and data to help you
-            envision what it's like to live in each home.
-          </p>
-          <button className="inline-flex items-center gap-3 text-white hover:gap-4 transition-all duration-300 group">
-            <span className="tracking-wide">VIEW MORE</span>
-            <ArrowRight className="w-5 h-5" />
-          </button>
         </div>
       </div>
     </section>
