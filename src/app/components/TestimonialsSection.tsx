@@ -38,7 +38,7 @@ export function TestimonialsSection() {
             Client Stories
           </h2>
           <p className="text-xl text-gray-600 font-light leading-relaxed">
-            What our happy clients say about us
+            Hear from homeowners and investors we've helped
           </p>
         </div>
 

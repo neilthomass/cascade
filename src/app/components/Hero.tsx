@@ -1,4 +1,4 @@
-import { Search, MapPin, Home } from 'lucide-react';
+import { Home } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function Hero() {
@@ -27,26 +27,6 @@ export function Hero() {
           <p className="text-xl text-gray-300 font-light leading-relaxed">
             Premium residential real estate services with over $100M in annual sales
           </p>
-        </div>
-
-        {/* Search Box */}
-        <div className="max-w-4xl mb-20">
-          <div className="bg-white p-6 lg:p-8 shadow-2xl">
-            <div className="flex flex-col lg:flex-row gap-4">
-              <div className="flex-1 relative">
-                <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                <input
-                  type="text"
-                  placeholder="Enter location or property type"
-                  className="w-full pl-12 pr-4 py-4 border-0 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-gray-900 transition-all text-gray-900 placeholder:text-gray-500"
-                />
-              </div>
-              <button className="px-10 py-4 bg-gray-900 text-white hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-3 group">
-                <Search className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="tracking-wide">Search</span>
-              </button>
-            </div>
-          </div>
         </div>
 
         {/* Stats */}

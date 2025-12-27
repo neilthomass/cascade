@@ -10,9 +10,9 @@ export function IntroSection() {
             Personalized Real Estate<br />Services You Can Trust
           </h2>
           <p className="text-lg text-gray-600 font-light leading-relaxed max-w-3xl mx-auto">
-            Cascade California Realty Inc is a full service boutique residential real estate brokerage firm 
-            servicing all of the San Francisco Bay Area with more than 100 million US dollars in annual sales. 
-            We take pride in providing personalized real estate services to our clients.
+            Cascade California Realty is a full-service boutique residential brokerage
+            serving the San Francisco Bay Area with over $100 million in annual sales.
+            We take pride in delivering personalized guidance tailored to each client.
           </p>
         </div>
       </div>

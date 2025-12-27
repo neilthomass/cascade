@@ -5,17 +5,17 @@ export function BuyingProcess() {
     {
       number: '01',
       title: 'MEETING WITH THE CLIENT',
-      description: 'At Cascade, we aim to meet our client\'s needs, to ensure that we fully understand the individual requirements and expectations of each. Whether you are looking for a new home or an investment property, we are here to help you find your dream home. We would like to have an opportunity to build a long-lasting relationship and to develop a full understanding of a client\'s needs. It paves the best way to work together in the future.'
+      description: 'We begin by understanding your unique requirements and expectations. Whether you\'re seeking a new home or an investment property, we take the time to learn what matters most to you. This foundation helps us build a lasting relationship and sets the stage for a successful partnership.'
     },
     {
       number: '02',
       title: 'PROPERTY RESEARCH',
-      description: 'With the expertise of our expanded property research we can help find you the perfect home. The information gathered during our real estate market research will help identify opportunities within the marketplace and guide your buying decisions. Effective property research provides an analysis that informs the current market situation and trend.'
+      description: 'Our team conducts thorough market research to find properties that match your criteria. We analyze current market conditions and trends to identify the best opportunities, giving you the insights you need to make confident buying decisions.'
     },
     {
       number: '03',
       title: 'MAKE AN OFFER',
-      description: 'Everything we do is done to make the home buying process simple. After locating the proper home and analyzing the property, we will assist you to put together an offer on your dream home. We are committed to making sure our clients have an excellent viable experience once they buy a property through us.'
+      description: 'Once we\'ve found the right property, we help you craft a competitive offer. We handle the details so the process feels simple and straightforward, ensuring you feel confident every step of the way.'
     },
     {
       number: '04',
@@ -66,8 +66,8 @@ export function BuyingProcess() {
         <div className="max-w-4xl bg-gray-900 text-white p-12 lg:p-16">
           <h3 className="text-3xl font-light mb-6">Smooth Buying Process</h3>
           <p className="text-gray-300 font-light leading-relaxed mb-8 text-lg">
-            People don't buy just listings; they buy lifestyles. Our process do not just reiterate specs and data. 
-            Instead, develop a special narrative in what it's like to live in the home.
+            People don't just buy listings—they buy lifestyles. We go beyond specs and data to help you
+            envision what it's like to live in each home.
           </p>
           <button className="inline-flex items-center gap-3 text-white hover:gap-4 transition-all duration-300 group">
             <span className="tracking-wide">VIEW MORE</span>

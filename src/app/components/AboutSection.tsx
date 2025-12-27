@@ -21,7 +21,7 @@ export function AboutSection() {
           {/* Image */}
           <div className="relative aspect-[4/5] overflow-hidden">
             <ImageWithFallback
-              src="https://images.unsplash.com/photo-1737574821698-862e77f044c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzc21hbiUyMHBvcnRyYWl0fGVufDF8fHx8MTc2NjgzMTQ3M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+              src="https://cascadecaliforniarealty.com/wp-content/uploads/2021/10/manoj-hs.png"
               alt="Manoj Thomas - Founder & CEO"
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
             />
@@ -30,7 +30,7 @@ export function AboutSection() {
           {/* Content */}
           <div className="flex flex-col justify-center">
             <p className="text-lg text-gray-700 font-light leading-relaxed mb-12">
-              A seasoned real estate professional who brings fifteen years of experience in the San Francisco Bay area real estate with extensive market knowledge, and unsurpassed dedication to his clients. He always keeps his clients' best interests in mind and guides them through one of the biggest investments of their lives.
+              A seasoned professional with fifteen years of experience in San Francisco Bay Area real estate, Manoj combines deep market knowledge with unwavering dedication to his clients. He keeps their best interests at the forefront and guides them through one of the biggest investments of their lives.
             </p>
 
             {/* Awards */}
@@ -66,8 +66,8 @@ export function AboutSection() {
               <div>
                 <Building2 className="w-8 h-8 text-gray-900 mb-4" />
                 <h4 className="text-gray-900 mb-2">Active Investor</h4>
-                <p className="text-gray-600 font-light leading-relaxed">
-                  Experienced in California's real estate market, using knowledge to guide aspiring investors
+            <p className="text-gray-600 font-light leading-relaxed">
+                  An active investor himself, he uses firsthand experience to guide aspiring investors
                 </p>
               </div>
               <div>
@@ -99,7 +99,7 @@ export function AboutSection() {
             </div>
             <h3 className="text-xl mb-4 text-gray-900 tracking-tight">Experienced Agents</h3>
             <p className="text-gray-600 font-light leading-relaxed">
-              Know how to navigate the market and understand the pulse of the industry
+              Skilled at navigating the market with a deep understanding of industry trends
             </p>
           </div>
 
@@ -109,7 +109,7 @@ export function AboutSection() {
             </div>
             <h3 className="text-xl mb-4 text-gray-900 tracking-tight">Committed Team</h3>
             <p className="text-gray-600 font-light leading-relaxed">
-              Good leadership and shared vision contribute to workplace commitment on all levels
+              United by a shared vision and commitment to excellence at every level
             </p>
           </div>
 
