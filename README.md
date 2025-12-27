@@ -1,7 +1,7 @@
 
   # Cascade California Realty Website
 
-  This is a code bundle for Cascade California Realty Website. The original project is available at https://www.figma.com/design/l1tYvAhu1gzJNnHzRWMhqh/Cascade-California-Realty-Website.
+View the site [here](https://neilthomass.github.io/cascade/).
 
   ## Running the code
 
