@@ -42,14 +42,6 @@ export function ContactSection() {
 
             <div className="space-y-8 mb-12">
               <div>
-                <div className="text-sm tracking-[0.2em] text-gray-500 mb-2">OFFICE</div>
-                <div className="text-gray-900">
-                  3370 Ashbourne Circle<br />
-                  San Ramon, CA 94583
-                </div>
-              </div>
-
-              <div>
                 <div className="text-sm tracking-[0.2em] text-gray-500 mb-2">PHONE</div>
                 <div className="text-gray-900">
                   (408) 757-7353
@@ -61,15 +53,6 @@ export function ContactSection() {
                 <div className="text-gray-900">
                   info@cascadecaliforniarealty.com
                 </div>
-              </div>
-            </div>
-
-            <div className="pt-12 border-t border-gray-200">
-              <div className="text-sm tracking-[0.2em] text-gray-500 mb-4">OFFICE HOURS</div>
-              <div className="text-gray-700 font-light leading-relaxed space-y-1">
-                <div>Monday - Friday: 9:00 AM - 6:00 PM</div>
-                <div>Saturday: 10:00 AM - 4:00 PM</div>
-                <div>Sunday: By Appointment</div>
               </div>
             </div>
           </div>

@@ -47,7 +47,6 @@ export function Footer() {
           <div>
             <h3 className="text-sm tracking-[0.2em] mb-6">CONTACT</h3>
             <ul className="space-y-3 text-gray-400 font-light text-sm">
-              <li>3370 Ashbourne Circle<br />San Ramon, CA 94583</li>
               <li>(408) 757-7353</li>
               <li>info@cascadecaliforniarealty.com</li>
             </ul>
