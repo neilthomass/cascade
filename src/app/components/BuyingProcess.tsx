@@ -5,7 +5,7 @@ export function BuyingProcess() {
     {
       number: '01',
       title: 'MEETING WITH THE CLIENT',
-      description: 'At Cascade, we aim to meet our client's needs, to ensure that we fully understand the individual requirements and expectations of each. Whether you are looking for a new home or an investment property, we are here to help you find your dream home. We would like to have an opportunity to build a long-lasting relationship and to develop a full understanding of a client's needs. It paves the best way to work together in the future.'
+      description: 'At Cascade, we aim to meet our client\'s needs, to ensure that we fully understand the individual requirements and expectations of each. Whether you are looking for a new home or an investment property, we are here to help you find your dream home. We would like to have an opportunity to build a long-lasting relationship and to develop a full understanding of a client\'s needs. It paves the best way to work together in the future.'
     },
     {
       number: '02',
@@ -20,7 +20,7 @@ export function BuyingProcess() {
     {
       number: '04',
       title: 'GETTING INTO CONTRACT',
-      description: 'Once your offer is accepted, our team will assist you through the closing process. We will ensure that you aren't missing any milestones in the buyer transaction procedure. We will be honest and transparent and will be there for you at each turn while working with the escrow officer, your mortgage agent and the listing agent.'
+      description: 'Once your offer is accepted, our team will assist you through the closing process. We will ensure that you aren\'t missing any milestones in the buyer transaction procedure. We will be honest and transparent and will be there for you at each turn while working with the escrow officer, your mortgage agent and the listing agent.'
     },
     {
       number: '05',
@@ -30,7 +30,7 @@ export function BuyingProcess() {
     {
       number: '06',
       title: 'GET KEYS',
-      description: 'Congratulations! You did it – you have successfully bought your new home. The closing disclosures and other documents are signed, bills are exchanged, and eventually, the wait is over: you get the keys!'
+      description: 'Congratulations! You did it - you have successfully bought your new home. The closing disclosures and other documents are signed, bills are exchanged, and eventually, the wait is over: you get the keys!'
     }
   ];
 
@@ -60,8 +60,8 @@ export function BuyingProcess() {
         <div className="bg-blue-50 p-8 rounded-lg">
           <h3 className="text-2xl font-bold mb-4 text-gray-900">Smooth Buying Process</h3>
           <p className="text-gray-600 mb-6">
-            People don't buy just listings; they buy lifestyles. Our process do not just reiterate specs and data. 
-            Instead, develop a special narrative in what it's like to live in the home.
+            People don\'t buy just listings; they buy lifestyles. Our process do not just reiterate specs and data. 
+            Instead, develop a special narrative in what it\'s like to live in the home.
           </p>
           <button className="inline-flex items-center gap-2 px-6 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors">
             VIEW MORE

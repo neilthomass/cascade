@@ -1,10 +1,8 @@
 import { useState } from 'react';
-import { Menu, X, User } from 'lucide-react';
-import { LoginModal } from './LoginModal';
+import { Menu, X } from 'lucide-react';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLoginOpen, setIsLoginOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -43,13 +41,6 @@ export function Header() {
               <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-blue-900 transition-colors">
                 Contact
               </button>
-              <button
-                onClick={() => setIsLoginOpen(true)}
-                className="flex items-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors"
-              >
-                <User className="w-4 h-4" />
-                Login / Register
-              </button>
             </nav>
 
             {/* Mobile menu button */}
@@ -77,23 +68,11 @@ export function Header() {
                 <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-blue-900 transition-colors text-left">
                   Contact
                 </button>
-                <button
-                  onClick={() => {
-                    setIsLoginOpen(true);
-                    setIsMenuOpen(false);
-                  }}
-                  className="flex items-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors w-full justify-center"
-                >
-                  <User className="w-4 h-4" />
-                  Login / Register
-                </button>
               </div>
             </nav>
           )}
         </div>
       </header>
-
-      <LoginModal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
     </>
   );
 }
