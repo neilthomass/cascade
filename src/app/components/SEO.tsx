@@ -4,8 +4,8 @@ interface SEOProps {
   title: string;
   description: string;
   canonical: string;
-  city: string;
-  coordinates: { lat: number; lng: number };
+  city?: string;
+  coordinates?: { lat: number; lng: number };
 }
 
 export function SEO({ title, description, canonical, city, coordinates }: SEOProps) {
@@ -42,10 +42,14 @@ export function SEO({ title, description, canonical, city, coordinates }: SEOPro
     setMeta('twitter:description', description);
     setMeta('twitter:image', 'https://cascaderealtors.com/images/logo.webp');
 
-    // Geo tags
-    setMeta('geo.region', 'US-CA');
-    setMeta('geo.placename', `${city}, California`);
-    setMeta('geo.position', `${coordinates.lat};${coordinates.lng}`);
+    // Geo tags (only if city/coordinates provided)
+    if (city) {
+      setMeta('geo.region', 'US-CA');
+      setMeta('geo.placename', `${city}, California`);
+    }
+    if (coordinates) {
+      setMeta('geo.position', `${coordinates.lat};${coordinates.lng}`);
+    }
 
     // Canonical link
     let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;

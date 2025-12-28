@@ -44,12 +44,15 @@ import { SouthSanFranciscoFAQ } from "./app/pages/SouthSanFranciscoFAQ.tsx";
 import { PacificaFAQ } from "./app/pages/PacificaFAQ.tsx";
 import { HalfMoonBayFAQ } from "./app/pages/HalfMoonBayFAQ.tsx";
 import { NotFound } from "./app/pages/NotFound.tsx";
+import { CascadeFAQ } from "./app/pages/CascadeFAQ.tsx";
 import "./styles/index.css";
 
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
+      {/* Company FAQ */}
+      <Route path="/faq" element={<CascadeFAQ />} />
       {/* San Francisco */}
       <Route path="/sfo" element={<SanFranciscoFAQ />} />
       {/* Santa Clara County */}
