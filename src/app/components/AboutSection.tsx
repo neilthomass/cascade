@@ -11,7 +11,7 @@ export function AboutSection() {
             {/* Left: Photo */}
             <div className="w-32 sm:w-48 md:w-64 lg:w-80 flex-shrink-0 bg-gray-100">
               <ImageWithFallback
-                src="https://cascadecaliforniarealty.com/wp-content/uploads/2021/10/manoj-hs.png"
+                src="/images/manoj-hs.webp"
                 alt="Manoj Thomas"
                 className="w-full h-full object-cover object-top"
               />

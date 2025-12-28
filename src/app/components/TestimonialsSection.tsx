@@ -13,7 +13,7 @@ export function TestimonialsSection() {
       type: 'First-Time Buyer',
       price: '$720K',
       rating: 5,
-      image: '/cascade/images/5069-pharlap-ave-hero.webp',
+      image: '/images/5069-pharlap-ave-hero.webp',
       text: 'When we started looking for a house, we weren\'t sure how to proceed. Manoj walked us through the process and really simplified it for us. He was very patient and understanding, and never pushed us into buying something we weren\'t fully satisfied with. He showed great professionalism and utmost respect for our choices. We would highly recommend Manoj to anybody.'
     },
     {
@@ -22,7 +22,7 @@ export function TestimonialsSection() {
       type: 'First-Time Buyer',
       price: '$820K',
       rating: 5,
-      image: '/cascade/images/pine_hollow.webp',
+      image: '/images/pine_hollow.webp',
       text: 'Since we were first time buyers, we were initially overwhelmed with all the details. But Manoj guided us through the entire process with ease. He provided detailed analysis on all the houses we were interested in before we considered making an offer. His attention to detail gave us confidence in making a decision quickly. He was always available to answer our queries.'
     },
     {
@@ -31,7 +31,7 @@ export function TestimonialsSection() {
       type: 'First-Time Buyer',
       price: '$875K',
       rating: 5,
-      image: '/cascade/images/kent.webp',
+      image: '/images/kent.webp',
       text: 'Manoj is an excellent agent and a gem of a person. Throughout our search, he was patient and answered all our questions. He even stopped us from making hasty decisions. With his guidance, the whole process from offer to closing went very smoothly. We highly recommend him.'
     },
     {
@@ -40,7 +40,7 @@ export function TestimonialsSection() {
       type: 'Home Seller',
       price: '$840K',
       rating: 5,
-      image: '/cascade/images/emerald.webp',
+      image: '/images/emerald.webp',
       text: 'Manoj is truly professional and well organized. I have dealt with other agents and Manoj outperforms all of them. He communicates very well with customers and clients. Looking forward to doing more transactions with him.'
     },
     {
@@ -49,7 +49,7 @@ export function TestimonialsSection() {
       type: 'Multi-Family Buyer',
       price: '$782K',
       rating: 5,
-      image: '/cascade/images/65th.webp',
+      image: '/images/65th.webp',
       text: 'I have purchased two homes using Manoj\'s services and was highly satisfied both times. He is not pushy, he is a great negotiator, and he is always on your side. I have seen many buyers get burned with agents who did not know the market or were not good at negotiation. I don\'t think I will ever use another agent\'s services in the Bay Area.'
     },
     {

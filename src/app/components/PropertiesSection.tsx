@@ -6,7 +6,7 @@ export function PropertiesSection() {
   const properties = [
     {
       id: 1,
-      image: '/cascade/images/novara.webp',
+      image: '/images/novara.webp',
       title: '3242 Novara Way',
       location: 'Pleasanton, CA',
       price: '$3,300,000',
@@ -17,7 +17,7 @@ export function PropertiesSection() {
     },
     {
       id: 2,
-      image: '/cascade/images/williamsburg.webp',
+      image: '/images/williamsburg.webp',
       title: '20356 Williamsburg Lane',
       location: 'Saratoga, CA',
       price: '$3,325,000',
@@ -28,7 +28,7 @@ export function PropertiesSection() {
     },
     {
       id: 3,
-      image: '/cascade/images/scott.webp',
+      image: '/images/scott.webp',
       title: '2000 Scott Lane',
       location: 'Los Altos, CA',
       price: '$3,330,000',
@@ -39,7 +39,7 @@ export function PropertiesSection() {
     },
     {
       id: 4,
-      image: '/cascade/images/wycombe.webp',
+      image: '/images/wycombe.webp',
       title: '548 Wycombe Ct',
       location: 'San Ramon, CA',
       price: '$3,715,000',
@@ -50,7 +50,7 @@ export function PropertiesSection() {
     },
     {
       id: 5,
-      image: '/cascade/images/shadowoaks.webp',
+      image: '/images/shadowoaks.webp',
       title: '13962 Shadow Oaks Way',
       location: 'Saratoga, CA',
       price: '$3,850,000',
@@ -61,7 +61,7 @@ export function PropertiesSection() {
     },
     {
       id: 6,
-      image: '/cascade/images/sleeperave.webp',
+      image: '/images/sleeperave.webp',
       title: '587 Sleeper Ave',
       location: 'Mountain View, CA',
       price: '$4,925,000',
