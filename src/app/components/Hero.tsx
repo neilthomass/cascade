@@ -1,46 +1,75 @@
-import { Home } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export function Hero() {
   return (
     <header id="home" className="relative bg-white" role="banner" aria-label="Cascade California Realty - Bay Area Luxury Real Estate">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1685514823717-7e1ff6ee0563?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBob21lJTIwZXh0ZXJpb3J8ZW58MXx8fHwxNzY2NzkxNzY5fDA&ixlib=rb-4.1.0&q=80&w=1080')`,
-          }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-gray-900/70 to-gray-900/60"></div>
-      </div>
-
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-32 lg:py-40">
-        {/* Hero Content */}
-        <div className="max-w-3xl mb-16">
-          <div className="inline-block mb-6 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs tracking-[0.2em]">
-            SAN FRANCISCO BAY AREA
+      <div className="max-w-7xl mx-auto">
+        {/* Main Hero Grid */}
+        <div className="grid lg:grid-cols-2 min-h-[85vh]">
+          {/* Left Content */}
+          <div className="flex flex-col justify-center px-6 lg:px-12 xl:px-20 py-20 lg:py-32">
+            <p className="text-sm tracking-[0.2em] text-gray-500 mb-6">
+              SAN FRANCISCO BAY AREA
+            </p>
+            <h1 className="text-5xl md:text-6xl xl:text-7xl font-light text-gray-900 mb-8 tracking-tight leading-[1.1]">
+              Find Your Dream<br />
+              <span className="text-gray-400">Home Today</span>
+            </h1>
+            <p className="text-lg text-gray-600 font-light leading-relaxed mb-10 max-w-lg">
+              With over 15 years of experience and $1B+ in lifetime sales, we guide you through every step of your real estate journey in Silicon Valley.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-8 py-4 text-sm tracking-wide hover:bg-gray-800 transition-colors duration-300"
+              >
+                Schedule a Consultation
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <a
+                href="#properties"
+                className="inline-flex items-center justify-center gap-2 border border-gray-300 text-gray-900 px-8 py-4 text-sm tracking-wide hover:border-gray-900 transition-colors duration-300"
+              >
+                View Portfolio
+              </a>
+            </div>
           </div>
-          <h1 className="text-6xl lg:text-7xl font-light text-white mb-6 tracking-tight leading-[1.1]">
-            Find Your Dream<br />Home Today
-          </h1>
-          <p className="text-xl text-gray-300 font-light leading-relaxed">
-            Premium residential real estate services with over $100M in annual sales
-          </p>
+
+          {/* Right Image */}
+          <div className="relative h-[50vh] lg:h-auto">
+            <img
+              src="/images/sleeperave.webp"
+              alt="Luxury home in Silicon Valley"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            {/* Featured Property Tag */}
+            <div className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-sm p-6">
+              <p className="text-xs tracking-[0.15em] text-gray-500 mb-2">RECENTLY SOLD</p>
+              <p className="text-lg text-gray-900 font-light">Sleeper Ave, Mountain View</p>
+              <p className="text-gray-500 text-sm">$3.2M</p>
+            </div>
+          </div>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl">
-          <div className="text-white">
-            <div className="text-5xl font-light mb-3 tracking-tight">$100M+</div>
-            <div className="text-sm text-gray-400 tracking-wide">ANNUAL SALES</div>
-          </div>
-          <div className="text-white border-l-0 md:border-l border-white/20 md:pl-12">
-            <div className="text-5xl font-light mb-3 tracking-tight">415+</div>
-            <div className="text-sm text-gray-400 tracking-wide">TRANSACTIONS</div>
-          </div>
-          <div className="text-white border-l-0 md:border-l border-white/20 md:pl-12">
-            <div className="text-5xl font-light mb-3 tracking-tight">100%</div>
-            <div className="text-sm text-gray-400 tracking-wide">SATISFACTION RATE</div>
+        {/* Stats Bar */}
+        <div className="border-t border-gray-200">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-200">
+            <div className="px-6 lg:px-12 py-8">
+              <div className="text-3xl lg:text-4xl font-light text-gray-900 mb-1">15+</div>
+              <div className="text-xs tracking-[0.1em] text-gray-500">YEARS EXPERIENCE</div>
+            </div>
+            <div className="px-6 lg:px-12 py-8">
+              <div className="text-3xl lg:text-4xl font-light text-gray-900 mb-1">$1B+</div>
+              <div className="text-xs tracking-[0.1em] text-gray-500">LIFETIME SALES</div>
+            </div>
+            <div className="px-6 lg:px-12 py-8">
+              <div className="text-3xl lg:text-4xl font-light text-gray-900 mb-1">415+</div>
+              <div className="text-xs tracking-[0.1em] text-gray-500">TRANSACTIONS</div>
+            </div>
+            <div className="px-6 lg:px-12 py-8">
+              <div className="text-3xl lg:text-4xl font-light text-gray-900 mb-1">5.0</div>
+              <div className="text-xs tracking-[0.1em] text-gray-500">CLIENT RATING</div>
+            </div>
           </div>
         </div>
       </div>
