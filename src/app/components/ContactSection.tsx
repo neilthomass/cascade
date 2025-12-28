@@ -4,6 +4,27 @@ import type { FormEvent, ChangeEvent } from 'react';
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
 
+function isValidEmail(email: string): boolean {
+  // Check for basic structure: something@something.something
+  // Must have: local part, @, domain, dot, TLD (at least 2 chars)
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  if (!emailRegex.test(email)) return false;
+
+  // Additional checks for edge cases
+  const [localPart, domain] = email.split('@');
+
+  // Check for multiple @ symbols
+  if (email.split('@').length !== 2) return false;
+
+  // Local part shouldn't start/end with dot or have consecutive dots
+  if (localPart.startsWith('.') || localPart.endsWith('.') || localPart.includes('..')) return false;
+
+  // Domain shouldn't start/end with dot or hyphen
+  if (domain.startsWith('.') || domain.startsWith('-') || domain.endsWith('-')) return false;
+
+  return true;
+}
+
 export function ContactSection() {
   const [formData, setFormData] = useState({
     name: '',
@@ -12,9 +33,17 @@ export function ContactSection() {
     message: ''
   });
   const [status, setStatus] = useState<FormStatus>('idle');
+  const [emailError, setEmailError] = useState('');
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Validate email before submitting
+    if (!isValidEmail(formData.email)) {
+      setEmailError('Please enter a valid email address');
+      return;
+    }
+
     setStatus('submitting');
 
     try {
@@ -41,6 +70,7 @@ export function ContactSection() {
       [e.target.name]: e.target.value
     });
     if (status === 'error') setStatus('idle');
+    if (e.target.name === 'email' && emailError) setEmailError('');
   };
 
   if (status === 'success') {
@@ -157,20 +187,20 @@ export function ContactSection() {
                   EMAIL ADDRESS *
                 </label>
                 <input
-                  type="email"
+                  type="text"
                   id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
                   required
                   disabled={status === 'submitting'}
-                  className="w-full px-0 py-3 border-0 border-b border-gray-300 focus:border-gray-900 focus:ring-0 outline-none transition-colors bg-transparent disabled:opacity-50"
+                  className={`w-full px-0 py-3 border-0 border-b focus:ring-0 outline-none transition-colors bg-transparent disabled:opacity-50 ${emailError ? 'border-red-500 focus:border-red-500' : 'border-gray-300 focus:border-gray-900'}`}
                   placeholder="Enter your email"
                 />
-              </div>
-
-              <div>
-                <label htmlFor="phone" className="block text-sm tracking-wide text-gray-900 mb-3">
+                {emailError && (
+                  <p className="text-red-500 text-sm mt-2">{emailError}</p>
+                )}
+                <label htmlFor="phone" className="block text-sm tracking-wide text-gray-900 mb-3 mt-6">
                   PHONE NUMBER
                 </label>
                 <input

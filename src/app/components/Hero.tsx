@@ -3,7 +3,7 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function Hero() {
   return (
-    <div id="home" className="relative bg-white">
+    <header id="home" className="relative bg-white" role="banner" aria-label="Cascade California Realty - Bay Area Luxury Real Estate">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <div
@@ -45,6 +45,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 }

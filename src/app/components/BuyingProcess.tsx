@@ -51,7 +51,7 @@ export function BuyingProcess() {
           {steps.map((step, index) => (
             <div key={index} className="group">
               <div className="flex items-start gap-6 mb-4">
-                <div className="text-6xl font-light text-gray-200 group-hover:text-gray-900 transition-colors duration-300">
+                <div className="text-6xl font-light text-gray-900 group-hover:text-gray-200 transition-colors duration-300">
                   {step.number}
                 </div>
                 <div className="flex-1 pt-2">

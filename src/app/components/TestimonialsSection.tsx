@@ -90,7 +90,7 @@ export function TestimonialsSection() {
   const current = testimonials[currentIndex];
 
   return (
-    <section className="py-32 bg-white">
+    <section id="testimonials" className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="max-w-3xl mb-16">
           <p className="text-sm tracking-[0.2em] text-gray-500 mb-6">TESTIMONIALS</p>
