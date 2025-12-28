@@ -14,8 +14,8 @@ export default function App() {
       <Header />
       <Hero />
       <IntroSection />
-      <PropertiesSection />
       <AboutSection />
+      <PropertiesSection />
       <BuyingProcess />
       <TestimonialsSection />
       <ContactSection />

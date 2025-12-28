@@ -131,6 +131,26 @@ export function PropertiesSection() {
           ))}
         </div>
 
+        {/* Transaction Map */}
+        <div className="mt-20">
+          <h3 className="text-3xl lg:text-4xl font-light text-gray-900 mb-8">
+            Where We've Closed Deals
+          </h3>
+          <div className="overflow-hidden" style={{ height: 485 }}>
+            <iframe
+              src="https://www.google.com/maps/d/u/0/embed?mid=1P_jfwFUk4ODIY_Rr-dvx0KkRCUxP7og&ehbc=2E312F&noprof=1&z=9&ll=37.67,-122.08"
+              width="100%"
+              height="560"
+              style={{ border: 0, position: 'relative', top: -60 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Properties Map"
+              className="w-full"
+            />
+          </div>
+        </div>
+
       </div>
     </section>
   );
