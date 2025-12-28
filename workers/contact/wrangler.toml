@@ -1,0 +1,7 @@
+name = "cascade-contact"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+[vars]
+TO_EMAIL = "manojthomas@berkeley.edu"
+FROM_EMAIL = "contact@cascaderealtors.com"

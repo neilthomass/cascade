@@ -1,6 +1,8 @@
-import { MapPin, Phone, Mail, Send, ArrowRight } from 'lucide-react';
+import { ArrowRight, Check, Loader2 } from 'lucide-react';
 import { useState } from 'react';
 import type { FormEvent, ChangeEvent } from 'react';
+
+type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -9,12 +11,28 @@ export function ContactSection() {
     phone: '',
     message: ''
   });
+  const [status, setStatus] = useState<FormStatus>('idle');
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Mock form submission
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ name: '', email: '', phone: '', message: '' });
+    setStatus('submitting');
+
+    try {
+      const response = await fetch('https://cascade-contact.manoj-thomas-c22.workers.dev', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -22,7 +40,64 @@ export function ContactSection() {
       ...formData,
       [e.target.name]: e.target.value
     });
+    if (status === 'error') setStatus('idle');
   };
+
+  if (status === 'success') {
+    return (
+      <section id="contact" className="py-32 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-20">
+            {/* Contact Information */}
+            <div>
+              <div className="mb-16">
+                <p className="text-sm tracking-[0.2em] text-gray-500 mb-6">CONTACT</p>
+                <h2 className="text-5xl lg:text-6xl font-light text-gray-900 mb-6 leading-tight">
+                  Get In Touch
+                </h2>
+                <p className="text-xl text-gray-600 font-light leading-relaxed">
+                  Let's discuss your real estate needs
+                </p>
+              </div>
+
+              <div className="space-y-8 mb-12">
+                <div>
+                  <div className="text-sm tracking-[0.2em] text-gray-500 mb-2">PHONE</div>
+                  <a href="tel:+14087577353" className="text-gray-900 hover:underline">
+                    (408) 757-7353
+                  </a>
+                </div>
+
+                <div>
+                  <div className="text-sm tracking-[0.2em] text-gray-500 mb-2">EMAIL</div>
+                  <a href="mailto:contact@cascaderealtors.com" className="text-gray-900 hover:underline">
+                    contact@cascaderealtors.com
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Success State */}
+            <div className="bg-white p-12 flex flex-col items-center justify-center text-center min-h-[500px]">
+              <div className="w-16 h-16 bg-gray-900 flex items-center justify-center mb-8">
+                <Check className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-3xl font-light text-gray-900 mb-4">Message Sent</h3>
+              <p className="text-gray-600 font-light mb-8 max-w-sm">
+                Thank you for reaching out. We'll get back to you within 24 hours.
+              </p>
+              <button
+                onClick={() => setStatus('idle')}
+                className="text-gray-900 border-b border-gray-900 pb-1 hover:text-gray-600 hover:border-gray-600 transition-colors"
+              >
+                Send another message
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="contact" className="py-32 bg-gray-50">
@@ -50,8 +125,8 @@ export function ContactSection() {
 
               <div>
                 <div className="text-sm tracking-[0.2em] text-gray-500 mb-2">EMAIL</div>
-                <a href="mailto:info@cascadecaliforniarealty.com" className="text-gray-900 hover:underline">
-                  info@cascadecaliforniarealty.com
+                <a href="mailto:contact@cascaderealtors.com" className="text-gray-900 hover:underline">
+                  contact@cascaderealtors.com
                 </a>
               </div>
             </div>
@@ -71,7 +146,8 @@ export function ContactSection() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-0 py-3 border-0 border-b border-gray-300 focus:border-gray-900 focus:ring-0 outline-none transition-colors bg-transparent"
+                  disabled={status === 'submitting'}
+                  className="w-full px-0 py-3 border-0 border-b border-gray-300 focus:border-gray-900 focus:ring-0 outline-none transition-colors bg-transparent disabled:opacity-50"
                   placeholder="Enter your name"
                 />
               </div>
@@ -87,7 +163,8 @@ export function ContactSection() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-0 py-3 border-0 border-b border-gray-300 focus:border-gray-900 focus:ring-0 outline-none transition-colors bg-transparent"
+                  disabled={status === 'submitting'}
+                  className="w-full px-0 py-3 border-0 border-b border-gray-300 focus:border-gray-900 focus:ring-0 outline-none transition-colors bg-transparent disabled:opacity-50"
                   placeholder="Enter your email"
                 />
               </div>
@@ -102,7 +179,8 @@ export function ContactSection() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-0 py-3 border-0 border-b border-gray-300 focus:border-gray-900 focus:ring-0 outline-none transition-colors bg-transparent"
+                  disabled={status === 'submitting'}
+                  className="w-full px-0 py-3 border-0 border-b border-gray-300 focus:border-gray-900 focus:ring-0 outline-none transition-colors bg-transparent disabled:opacity-50"
                   placeholder="Enter your phone"
                 />
               </div>
@@ -117,18 +195,35 @@ export function ContactSection() {
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  disabled={status === 'submitting'}
                   rows={5}
-                  className="w-full px-0 py-3 border-0 border-b border-gray-300 focus:border-gray-900 focus:ring-0 outline-none resize-none transition-colors bg-transparent"
+                  className="w-full px-0 py-3 border-0 border-b border-gray-300 focus:border-gray-900 focus:ring-0 outline-none resize-none transition-colors bg-transparent disabled:opacity-50"
                   placeholder="Tell us about your needs"
                 />
               </div>
 
+              {status === 'error' && (
+                <p className="text-red-600 text-sm">
+                  Something went wrong. Please try again.
+                </p>
+              )}
+
               <button
                 type="submit"
-                className="w-full bg-gray-900 text-white py-4 hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-3 group mt-8"
+                disabled={status === 'submitting'}
+                className="w-full bg-gray-900 text-white py-4 hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-3 group mt-8 disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                <span className="tracking-wide">SEND MESSAGE</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                {status === 'submitting' ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    <span className="tracking-wide">SENDING...</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="tracking-wide">SEND MESSAGE</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </>
+                )}
               </button>
             </form>
           </div>

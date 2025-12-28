@@ -37,7 +37,7 @@ export function Footer() {
             <h3 className="text-sm tracking-[0.2em] mb-6">NAVIGATION</h3>
             <ul className="space-y-3 text-gray-400 font-light">
               <li><a href="#home" className="hover:text-white transition-colors">Home</a></li>
-              <li><a href="#properties" className="hover:text-white transition-colors">Properties</a></li>
+              <li><a href="#properties" className="hover:text-white transition-colors">Portfolio</a></li>
               <li><a href="#about" className="hover:text-white transition-colors">About</a></li>
               <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
             </ul>

@@ -36,12 +36,12 @@ export function Hero() {
             <div className="text-sm text-gray-400 tracking-wide">ANNUAL SALES</div>
           </div>
           <div className="text-white border-l-0 md:border-l border-white/20 md:pl-12">
-            <div className="text-5xl font-light mb-3 tracking-tight">325+</div>
+            <div className="text-5xl font-light mb-3 tracking-tight">415+</div>
             <div className="text-sm text-gray-400 tracking-wide">TRANSACTIONS</div>
           </div>
           <div className="text-white border-l-0 md:border-l border-white/20 md:pl-12">
-            <div className="text-5xl font-light mb-3 tracking-tight">350+</div>
-            <div className="text-sm text-gray-400 tracking-wide">HAPPY CLIENTS</div>
+            <div className="text-5xl font-light mb-3 tracking-tight">100%</div>
+            <div className="text-sm text-gray-400 tracking-wide">SATISFACTION RATE</div>
           </div>
         </div>
       </div>
