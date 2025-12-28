@@ -35,7 +35,7 @@ export function BuyingProcess() {
   ];
 
   return (
-    <section className="py-32 bg-gray-50">
+    <section className="pt-8 pb-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="max-w-3xl mb-20">
           <p className="text-sm tracking-[0.2em] text-gray-500 mb-6">PROCESS</p>

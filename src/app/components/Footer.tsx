@@ -39,11 +39,11 @@ export function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="min-w-0">
             <h3 className="text-sm tracking-[0.2em] mb-6">CONTACT</h3>
             <ul className="space-y-3 text-gray-400 font-light text-sm">
               <li><a href="tel:+14087577353" className="hover:text-white transition-colors">(408) 757-7353</a></li>
-              <li><a href="mailto:info@cascadecaliforniarealty.com" className="hover:text-white transition-colors">info@cascadecaliforniarealty.com</a></li>
+              <li><a href="mailto:info@cascadecaliforniarealty.com" className="hover:text-white transition-colors break-all">info@cascadecaliforniarealty.com</a></li>
             </ul>
           </div>
         </div>

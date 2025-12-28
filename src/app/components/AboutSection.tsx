@@ -2,7 +2,7 @@ import { Award, GraduationCap, Building2, TrendingUp } from 'lucide-react';
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-32 bg-gray-50">
+    <section id="about" className="pt-32 pb-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Profile Section */}
         <div className="bg-white mb-20">
