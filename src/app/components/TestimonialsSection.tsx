@@ -2,8 +2,9 @@ import { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
 
 export function TestimonialsSection() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(1); // Start at 1 because of cloned slide at beginning
   const [isPaused, setIsPaused] = useState(false);
+  const [enableTransition, setEnableTransition] = useState(true);
 
   const testimonials = [
     {
@@ -62,17 +63,53 @@ export function TestimonialsSection() {
     }
   ];
 
+  // Clone first and last slides for infinite loop effect
+  const extendedTestimonials = [
+    testimonials[testimonials.length - 1], // Clone of last slide at the beginning
+    ...testimonials,
+    testimonials[0], // Clone of first slide at the end
+  ];
+
   const goToSlide = useCallback((index: number) => {
-    setCurrentIndex(index);
+    setEnableTransition(true);
+    setCurrentIndex(index + 1); // +1 because of cloned slide at beginning
   }, []);
 
   const nextSlide = useCallback(() => {
-    goToSlide((currentIndex + 1) % testimonials.length);
-  }, [currentIndex, testimonials.length, goToSlide]);
+    setEnableTransition(true);
+    setCurrentIndex(prev => {
+      // Don't go beyond the cloned last slide
+      if (prev >= testimonials.length + 1) return prev;
+      return prev + 1;
+    });
+  }, [testimonials.length]);
 
   const prevSlide = useCallback(() => {
-    goToSlide((currentIndex - 1 + testimonials.length) % testimonials.length);
-  }, [currentIndex, testimonials.length, goToSlide]);
+    setEnableTransition(true);
+    setCurrentIndex(prev => {
+      // Don't go before the cloned first slide
+      if (prev <= 0) return prev;
+      return prev - 1;
+    });
+  }, []);
+
+  // Handle infinite loop reset after transition ends
+  useEffect(() => {
+    if (!enableTransition) return;
+
+    // If we're at a cloned slide, wait for transition then jump
+    if (currentIndex === 0 || currentIndex === testimonials.length + 1) {
+      const timeout = setTimeout(() => {
+        setEnableTransition(false);
+        if (currentIndex === 0) {
+          setCurrentIndex(testimonials.length);
+        } else {
+          setCurrentIndex(1);
+        }
+      }, 500); // Match transition duration
+      return () => clearTimeout(timeout);
+    }
+  }, [currentIndex, testimonials.length, enableTransition]);
 
   // Auto-advance slides
   useEffect(() => {
@@ -83,7 +120,12 @@ export function TestimonialsSection() {
     return () => clearInterval(interval);
   }, [isPaused, nextSlide]);
 
-  const current = testimonials[currentIndex];
+  // Get the actual index for the dots (0-based, within real testimonials)
+  const actualIndex = currentIndex === 0
+    ? testimonials.length - 1
+    : currentIndex === testimonials.length + 1
+      ? 0
+      : currentIndex - 1;
 
   return (
     <section id="testimonials" className="py-32 bg-white">
@@ -103,57 +145,69 @@ export function TestimonialsSection() {
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          {/* Main Card */}
-          <div className="grid lg:grid-cols-2 gap-0 bg-gray-50 overflow-hidden">
-            {/* Image Section */}
-            <div className="relative aspect-[4/3] lg:aspect-auto bg-gray-200">
-              {current.image ? (
-                <img
-                  src={current.image}
-                  alt={current.address}
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-gray-400">
-                    <div className="w-16 h-16 border-2 border-gray-300 mx-auto mb-4 flex items-center justify-center">
-                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                      </svg>
+          {/* Slides Container */}
+          <div className="overflow-hidden">
+            <div
+              className={`flex ${enableTransition ? 'transition-transform duration-500 ease-out' : ''}`}
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            >
+              {extendedTestimonials.map((testimonial, index) => (
+                <div key={`${testimonial.id}-${index}`} className="w-full flex-shrink-0">
+                  {/* Main Card */}
+                  <div className="grid lg:grid-cols-2 gap-0 bg-gray-50 overflow-hidden">
+                    {/* Image Section */}
+                    <div className="relative aspect-[4/3] lg:aspect-auto bg-gray-200">
+                      {testimonial.image ? (
+                        <img
+                          src={testimonial.image}
+                          alt={testimonial.address}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="text-center text-gray-400">
+                            <div className="w-16 h-16 border-2 border-gray-300 mx-auto mb-4 flex items-center justify-center">
+                              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                              </svg>
+                            </div>
+                            <p className="text-sm tracking-wide">Property Image</p>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Price Badge */}
+                      <div className="absolute top-6 left-6 bg-gray-900 text-white px-4 py-2">
+                        <span className="text-lg font-light">{testimonial.price}</span>
+                      </div>
                     </div>
-                    <p className="text-sm tracking-wide">Property Image</p>
+
+                    {/* Content Section */}
+                    <div className="p-10 lg:p-16 flex flex-col justify-center">
+                      {/* Quote Icon */}
+                      <Quote className="w-12 h-12 text-gray-200 mb-8" />
+
+                      {/* Testimonial Text */}
+                      <blockquote className="text-xl lg:text-2xl text-gray-800 font-light leading-relaxed mb-10">
+                        "{testimonial.text}"
+                      </blockquote>
+
+                      {/* Rating */}
+                      <div className="flex gap-1 mb-6">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Star key={i} className="w-5 h-5 fill-gray-900 text-gray-900" />
+                        ))}
+                      </div>
+
+                      {/* Address & Type */}
+                      <div className="pt-6 border-t border-gray-200">
+                        <div className="text-gray-900 font-medium mb-1">{testimonial.address}</div>
+                        <div className="text-sm text-gray-500 tracking-wide">{testimonial.type}</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              )}
-
-              {/* Price Badge */}
-              <div className="absolute top-6 left-6 bg-gray-900 text-white px-4 py-2">
-                <span className="text-lg font-light">{current.price}</span>
-              </div>
-            </div>
-
-            {/* Content Section */}
-            <div className="p-10 lg:p-16 flex flex-col justify-center">
-              {/* Quote Icon */}
-              <Quote className="w-12 h-12 text-gray-200 mb-8" />
-
-              {/* Testimonial Text */}
-              <blockquote className="text-xl lg:text-2xl text-gray-800 font-light leading-relaxed mb-10">
-                "{current.text}"
-              </blockquote>
-
-              {/* Rating */}
-              <div className="flex gap-1 mb-6">
-                {[...Array(current.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-gray-900 text-gray-900" />
-                ))}
-              </div>
-
-              {/* Address & Type */}
-              <div className="pt-6 border-t border-gray-200">
-                <div className="text-gray-900 font-medium mb-1">{current.address}</div>
-                <div className="text-sm text-gray-500 tracking-wide">{current.type}</div>
-              </div>
+              ))}
             </div>
           </div>
 
@@ -166,7 +220,7 @@ export function TestimonialsSection() {
                   key={index}
                   onClick={() => goToSlide(index)}
                   className={`h-[2px] transition-all duration-300 ${
-                    index === currentIndex
+                    index === actualIndex
                       ? 'w-8 bg-gray-900'
                       : 'w-4 bg-gray-300 hover:bg-gray-400'
                   }`}
