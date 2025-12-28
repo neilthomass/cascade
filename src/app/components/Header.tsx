@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,16 +16,17 @@ export function Header() {
   return (
     <>
       <header className="bg-white/95 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="w-full px-4">
           <div className="flex justify-between items-center h-24">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <button onClick={() => scrollToSection('home')} className="flex items-center group">
-                <div className="tracking-tight">
+              <Link to="/" className="flex items-end gap-1 group">
+                <img src="/images/logo.webp" alt="Cascade California Realty Logo" className="h-16 w-auto mb-1" />
+                <div className="pb-0.5">
                   <div className="text-xl font-light text-gray-900 tracking-[0.2em]">CASCADE</div>
-                  <div className="text-[10px] font-light text-gray-500 tracking-[0.3em] mt-0.5">CALIFORNIA REALTY</div>
+                  <div className="text-[10px] font-light text-gray-500 tracking-[0.2em] mt-0.5">CALIFORNIA REALTY</div>
                 </div>
-              </button>
+              </Link>
             </div>
 
             {/* Desktop Navigation */}

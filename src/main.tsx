@@ -43,6 +43,7 @@ import { DalyCityFAQ } from "./app/pages/DalyCityFAQ.tsx";
 import { SouthSanFranciscoFAQ } from "./app/pages/SouthSanFranciscoFAQ.tsx";
 import { PacificaFAQ } from "./app/pages/PacificaFAQ.tsx";
 import { HalfMoonBayFAQ } from "./app/pages/HalfMoonBayFAQ.tsx";
+import { NotFound } from "./app/pages/NotFound.tsx";
 import "./styles/index.css";
 
 createRoot(document.getElementById("root")!).render(
@@ -97,6 +98,8 @@ createRoot(document.getElementById("root")!).render(
       <Route path="/south-san-francisco" element={<SouthSanFranciscoFAQ />} />
       <Route path="/pacifica" element={<PacificaFAQ />} />
       <Route path="/half-moon-bay" element={<HalfMoonBayFAQ />} />
+      {/* 404 - Must be last */}
+      <Route path="*" element={<NotFound />} />
     </Routes>
   </BrowserRouter>
 );

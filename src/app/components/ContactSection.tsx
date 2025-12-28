@@ -77,12 +77,12 @@ export function ContactSection() {
     return (
       <section id="contact" className="py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-20">
+          <div className="grid md:grid-cols-2 gap-20">
             {/* Contact Information */}
             <div>
               <div className="mb-16">
                 <p className="text-sm tracking-[0.2em] text-gray-500 mb-6">CONTACT</p>
-                <h2 className="text-5xl lg:text-6xl font-light text-gray-900 mb-6 leading-tight">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-6 leading-tight">
                   Get In Touch
                 </h2>
                 <p className="text-xl text-gray-600 font-light leading-relaxed">
@@ -132,12 +132,12 @@ export function ContactSection() {
   return (
     <section id="contact" className="py-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-20">
+        <div className="grid md:grid-cols-2 gap-20">
           {/* Contact Information */}
           <div>
             <div className="mb-16">
               <p className="text-sm tracking-[0.2em] text-gray-500 mb-6">CONTACT</p>
-              <h2 className="text-5xl lg:text-6xl font-light text-gray-900 mb-6 leading-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-6 leading-tight">
                 Get In Touch
               </h2>
               <p className="text-xl text-gray-600 font-light leading-relaxed">

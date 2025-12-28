@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Linkedin } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,22 +11,16 @@ export function Footer() {
           <div className="md:col-span-2">
             <div className="mb-8">
               <div className="text-xl font-light tracking-[0.2em] mb-1">CASCADE</div>
-              <div className="text-[10px] font-light text-gray-500 tracking-[0.3em]">CALIFORNIA REALTY</div>
+              <div className="text-[10px] font-light text-gray-500 tracking-[0.2em]">CALIFORNIA REALTY</div>
             </div>
             <p className="text-gray-400 font-light leading-relaxed mb-8 max-w-md">
               Full service boutique residential real estate brokerage firm servicing all of the San Francisco Bay Area.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 border border-gray-700 flex items-center justify-center hover:border-white hover:bg-white hover:text-gray-900 transition-all duration-300">
+              <a href="https://www.facebook.com/CascadeRealty/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-gray-700 flex items-center justify-center hover:border-white hover:bg-white hover:text-gray-900 transition-all duration-300">
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href="#" className="w-10 h-10 border border-gray-700 flex items-center justify-center hover:border-white hover:bg-white hover:text-gray-900 transition-all duration-300">
-                <Twitter className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-10 h-10 border border-gray-700 flex items-center justify-center hover:border-white hover:bg-white hover:text-gray-900 transition-all duration-300">
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-10 h-10 border border-gray-700 flex items-center justify-center hover:border-white hover:bg-white hover:text-gray-900 transition-all duration-300">
+              <a href="https://www.linkedin.com/company/cascaderealty" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-gray-700 flex items-center justify-center hover:border-white hover:bg-white hover:text-gray-900 transition-all duration-300">
                 <Linkedin className="w-4 h-4" />
               </a>
             </div>
@@ -36,10 +30,10 @@ export function Footer() {
           <div>
             <h3 className="text-sm tracking-[0.2em] mb-6">NAVIGATION</h3>
             <ul className="space-y-3 text-gray-400 font-light">
-              <li><a href="#home" className="hover:text-white transition-colors">Home</a></li>
-              <li><a href="#properties" className="hover:text-white transition-colors">Portfolio</a></li>
-              <li><a href="#about" className="hover:text-white transition-colors">About</a></li>
-              <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="/#home" className="hover:text-white transition-colors">Home</a></li>
+              <li><a href="/#properties" className="hover:text-white transition-colors">Portfolio</a></li>
+              <li><a href="/#about" className="hover:text-white transition-colors">About</a></li>
+              <li><a href="/#contact" className="hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>
 

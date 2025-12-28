@@ -59,13 +59,17 @@ export function AboutSection() {
                   <GraduationCap className="w-3 h-3 sm:w-4 sm:h-4" />
                   <span className="text-xs sm:text-sm">Berkeley MBA</span>
                 </div>
-                <div className="hidden md:flex items-center gap-2 px-4 py-2 border border-gray-300 text-gray-700">
-                  <Award className="w-4 h-4" />
-                  <span className="text-sm">Platinum Award 2021–23</span>
+                <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-4 py-1.5 sm:py-2 border border-gray-300 text-gray-700">
+                  <Award className="w-3 h-3 sm:w-4 sm:h-4" />
+                  <span className="text-xs sm:text-sm">Platinum 2021–23</span>
                 </div>
-                <div className="hidden lg:flex items-center gap-2 px-4 py-2 border border-gray-300 text-gray-700">
-                  <Award className="w-4 h-4" />
-                  <span className="text-sm">Pinnacle Award 2020</span>
+                <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-4 py-1.5 sm:py-2 border border-gray-300 text-gray-700">
+                  <Award className="w-3 h-3 sm:w-4 sm:h-4" />
+                  <span className="text-xs sm:text-sm">Pinnacle 2020</span>
+                </div>
+                <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-4 py-1.5 sm:py-2 border border-gray-300 text-gray-700">
+                  <Award className="w-3 h-3 sm:w-4 sm:h-4" />
+                  <span className="text-xs sm:text-sm">Grand Master 2016–19</span>
                 </div>
               </div>
             </div>

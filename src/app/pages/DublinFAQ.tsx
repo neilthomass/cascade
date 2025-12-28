@@ -1,4 +1,7 @@
-import { ChevronDown, Phone, Mail, ArrowLeft, ArrowRight, Check, Loader2 } from 'lucide-react';
+import { ChevronDown, Phone, Mail, ArrowRight, Check, Loader2 } from 'lucide-react';
+import { FAQHeader } from '../components/FAQHeader';
+import { FAQHero } from '../components/FAQHero';
+import { Footer } from '../components/Footer';
 import { useState } from 'react';
 import type { FormEvent, ChangeEvent } from 'react';
 import { Link } from 'react-router-dom';
@@ -300,30 +303,11 @@ export function DublinFAQ() {
         city="Dublin"
         coordinates={{ lat: 37.7022, lng: -121.9358 }}
       />
-      {/* Header */}
-      <header className="bg-gray-900 text-white py-6">
-        <div className="max-w-4xl mx-auto px-6">
-          <Link to="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-4">
-            <ArrowLeft className="w-4 h-4" />
-            <span className="text-sm">Back to Home</span>
-          </Link>
-          <div className="text-xl font-light tracking-[0.2em] mb-1">CASCADE</div>
-          <div className="text-[10px] font-light text-gray-500 tracking-[0.3em]">CALIFORNIA REALTY</div>
-        </div>
-      </header>
-
-      {/* Hero */}
-      <section className="bg-gray-50 py-16 lg:py-24">
-        <div className="max-w-4xl mx-auto px-6">
-          <p className="text-sm tracking-[0.2em] text-gray-500 mb-4">HOMEBUYER GUIDE</p>
-          <h1 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6 leading-tight">
-            Dublin Real Estate FAQ
-          </h1>
-          <p className="text-xl text-gray-600 font-light leading-relaxed max-w-2xl">
-            Everything you need to know about buying a home in Dublin. Expert answers from a Bay Area real estate professional with 15+ years of experience.
-          </p>
-        </div>
-      </section>
+      <FAQHeader />
+      <FAQHero
+        title="Dublin Real Estate FAQ"
+        description="Everything you need to know about buying a home in Dublin. Expert answers from a Bay Area real estate professional with 15+ years of experience."
+      />
 
       {/* FAQ Section */}
       <section className="py-16 lg:py-24">
@@ -362,14 +346,7 @@ export function DublinFAQ() {
       {/* Related Cities */}
       <RelatedCities currentCity="dublin" />
 
-      {/* Footer */}
-      <footer className="bg-gray-900 border-t border-gray-800 text-white py-8">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <p className="text-gray-500 text-sm font-light">
-            © {new Date().getFullYear()} Cascade California Realty Inc. All rights reserved.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

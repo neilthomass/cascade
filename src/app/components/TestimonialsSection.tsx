@@ -3,7 +3,6 @@ import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
 
 export function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
 
   const testimonials = [
@@ -64,11 +63,8 @@ export function TestimonialsSection() {
   ];
 
   const goToSlide = useCallback((index: number) => {
-    if (isAnimating) return;
-    setIsAnimating(true);
     setCurrentIndex(index);
-    setTimeout(() => setIsAnimating(false), 500);
-  }, [isAnimating]);
+  }, []);
 
   const nextSlide = useCallback(() => {
     goToSlide((currentIndex + 1) % testimonials.length);
@@ -110,11 +106,7 @@ export function TestimonialsSection() {
           {/* Main Card */}
           <div className="grid lg:grid-cols-2 gap-0 bg-gray-50 overflow-hidden">
             {/* Image Section */}
-            <div
-              className={`relative aspect-[4/3] lg:aspect-auto bg-gray-200 transition-all duration-500 ease-out ${
-                isAnimating ? 'opacity-0 scale-105' : 'opacity-100 scale-100'
-              }`}
-            >
+            <div className="relative aspect-[4/3] lg:aspect-auto bg-gray-200">
               {current.image ? (
                 <img
                   src={current.image}
@@ -141,11 +133,7 @@ export function TestimonialsSection() {
             </div>
 
             {/* Content Section */}
-            <div
-              className={`p-10 lg:p-16 flex flex-col justify-center transition-all duration-500 ease-out ${
-                isAnimating ? 'opacity-0 translate-x-4' : 'opacity-100 translate-x-0'
-              }`}
-            >
+            <div className="p-10 lg:p-16 flex flex-col justify-center">
               {/* Quote Icon */}
               <Quote className="w-12 h-12 text-gray-200 mb-8" />
 

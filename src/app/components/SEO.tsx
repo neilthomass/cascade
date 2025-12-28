@@ -34,13 +34,13 @@ export function SEO({ title, description, canonical, city, coordinates }: SEOPro
     setMeta('og:description', description, true);
     setMeta('og:url', canonical, true);
     setMeta('og:type', 'article', true);
-    setMeta('og:image', 'https://cascaderealtors.com/images/manoj-hs.webp', true);
+    setMeta('og:image', 'https://cascaderealtors.com/images/logo.webp', true);
 
     // Twitter
     setMeta('twitter:card', 'summary_large_image');
     setMeta('twitter:title', title);
     setMeta('twitter:description', description);
-    setMeta('twitter:image', 'https://cascaderealtors.com/images/manoj-hs.webp');
+    setMeta('twitter:image', 'https://cascaderealtors.com/images/logo.webp');
 
     // Geo tags
     setMeta('geo.region', 'US-CA');
