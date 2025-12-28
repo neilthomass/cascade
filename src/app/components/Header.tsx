@@ -22,7 +22,7 @@ export function Header() {
             <div className="flex-shrink-0">
               <Link to="/" className="flex items-end gap-1 group">
                 <img src="/images/logo.webp" alt="Cascade California Realty Logo" className="h-16 w-auto mb-1" />
-                <div className="pb-0.5">
+                <div className="pb-0.5 text-center">
                   <div className="text-xl font-light text-gray-900 tracking-[0.2em]">CASCADE</div>
                   <div className="text-[10px] font-light text-gray-500 tracking-[0.2em] mt-0.5">CALIFORNIA REALTY</div>
                 </div>
