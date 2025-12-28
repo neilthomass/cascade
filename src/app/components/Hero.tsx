@@ -16,7 +16,7 @@ export function Hero() {
               <span className="text-gray-400">Home Today</span>
             </h1>
             <p className="text-lg text-gray-600 font-light leading-relaxed mb-10 max-w-lg">
-              With over 15 years of experience and $1B+ in lifetime sales, we guide you through every step of your real estate journey in Silicon Valley.
+              With over $1 billion in closed transactions, we guide you through every step of your real estate journey in Silicon Valley.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a

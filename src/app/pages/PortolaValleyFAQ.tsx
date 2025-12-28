@@ -82,7 +82,7 @@ function ContactForm() {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-light text-gray-900 mb-4">Ready to Explore Portola Valley?</h2>
           <p className="text-gray-600 font-light">
-            Get personalized guidance from a local expert with 15+ years of Bay Area experience.
+            Connect with a dedicated local specialist who knows the market inside and out.
           </p>
         </div>
 

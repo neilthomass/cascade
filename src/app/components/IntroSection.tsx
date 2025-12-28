@@ -7,7 +7,7 @@ export function IntroSection() {
         <div className="text-center">
           <p className="text-sm tracking-[0.2em] text-gray-500 mb-8">PREMIUM SERVICE</p>
           <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-8 leading-tight">
-            Personalized Real Estate<br />Services You Can Trust
+            Expert Real Estate<br />Services You Can Trust
           </h2>
           <p className="text-lg text-gray-600 font-light leading-relaxed max-w-3xl mx-auto">
             Cascade California Realty is a full-service boutique residential brokerage

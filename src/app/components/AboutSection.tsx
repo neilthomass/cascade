@@ -1,4 +1,4 @@
-import { Award, GraduationCap, Building2, TrendingUp } from 'lucide-react';
+import { Award, GraduationCap, Building2, TrendingUp, Star } from 'lucide-react';
 
 export function AboutSection() {
   return (
@@ -61,15 +61,15 @@ export function AboutSection() {
                 </div>
                 <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-4 py-1.5 sm:py-2 border border-gray-300 text-gray-700">
                   <Award className="w-3 h-3 sm:w-4 sm:h-4" />
-                  <span className="text-xs sm:text-sm">Platinum 2021–23</span>
+                  <span className="text-xs sm:text-sm">Platinum Award 2021–23</span>
                 </div>
                 <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-4 py-1.5 sm:py-2 border border-gray-300 text-gray-700">
                   <Award className="w-3 h-3 sm:w-4 sm:h-4" />
-                  <span className="text-xs sm:text-sm">Pinnacle 2020</span>
+                  <span className="text-xs sm:text-sm">Pinnacle Award 2020</span>
                 </div>
                 <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-4 py-1.5 sm:py-2 border border-gray-300 text-gray-700">
                   <Award className="w-3 h-3 sm:w-4 sm:h-4" />
-                  <span className="text-xs sm:text-sm">Grand Master 2016–19</span>
+                  <span className="text-xs sm:text-sm">Grand Master Award 2016–19</span>
                 </div>
               </div>
             </div>
@@ -110,7 +110,7 @@ export function AboutSection() {
 
           <div className="bg-white p-5 lg:p-10 border border-gray-200 hover:border-gray-900 hover:shadow-lg transition-all duration-300 group">
             <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gray-900 flex items-center justify-center mb-4 lg:mb-8">
-              <TrendingUp className="w-4 h-4 lg:w-5 lg:h-5 text-white" />
+              <Star className="w-4 h-4 lg:w-5 lg:h-5 text-white" />
             </div>
             <h3 className="text-base lg:text-xl mb-2 lg:mb-4 text-gray-900 tracking-tight">Amazing Reviews</h3>
             <p className="text-gray-600 font-light leading-relaxed text-xs lg:text-sm">

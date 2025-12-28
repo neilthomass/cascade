@@ -163,8 +163,8 @@ export function ContactSection() {
 
               <div>
                 <div className="text-sm tracking-[0.2em] text-gray-500 mb-2">EMAIL</div>
-                <a href="mailto:contact@cascaderealtors.com" className="text-gray-900 hover:underline">
-                  contact@cascaderealtors.com
+                <a href="mailto:info@cascadecaliforniarealty.com" className="text-gray-900 hover:underline">
+                  info@cascadecaliforniarealty.com
                 </a>
               </div>
             </div>

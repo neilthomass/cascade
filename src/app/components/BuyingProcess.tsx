@@ -19,7 +19,7 @@ export function BuyingProcess() {
     },
     {
       number: '04',
-      title: 'GETTING INTO CONTRACT',
+      title: 'OPENING ESCROW',
       description: 'Once your offer is accepted, our team will assist you through the closing process. We will ensure that you aren\'t missing any milestones in the buyer transaction procedure. We will be honest and transparent and will be there for you at each turn while working with the escrow officer, your mortgage agent and the listing agent.'
     },
     {
