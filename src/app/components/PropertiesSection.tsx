@@ -6,69 +6,69 @@ export function PropertiesSection() {
   const properties = [
     {
       id: 1,
-      image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBob3VzZSUyMGV4dGVyaW9yfGVufDF8fHx8MTc2Njc0NTkyMnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      title: 'Modern Family Home',
-      location: 'San Francisco, CA',
-      price: '$2,450,000',
-      beds: 4,
-      baths: 3,
-      sqft: '3,200',
-      link: '#'
+      image: '/cascade/images/novara.webp',
+      title: '3242 Novara Way',
+      location: 'Pleasanton, CA',
+      price: '$3,300,000',
+      beds: 5,
+      baths: 6,
+      sqft: '6,997',
+      link: 'https://www.redfin.com/CA/Pleasanton/3242-Novara-Way-94566/home/1204973'
     },
     {
       id: 2,
-      image: 'https://images.unsplash.com/photo-1694967832949-09984640b143?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjB2aWxsYSUyMHBvb2x8ZW58MXx8fHwxNzY2NzQxNjk5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      title: 'Luxury Villa with Pool',
-      location: 'Palo Alto, CA',
-      price: '$4,850,000',
-      beds: 5,
-      baths: 4,
-      sqft: '5,400',
-      link: '#'
+      image: '/cascade/images/williamsburg.webp',
+      title: '20356 Williamsburg Lane',
+      location: 'Saratoga, CA',
+      price: '$3,325,000',
+      beds: 4,
+      baths: 2,
+      sqft: '2,534',
+      link: 'https://www.redfin.com/CA/Saratoga/20356-Williamsburg-Ln-95070/home/1688732'
     },
     {
       id: 3,
-      image: 'https://images.unsplash.com/photo-1520106392146-ef585c111254?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb250ZW1wb3JhcnklMjBhcGFydG1lbnQlMjBpbnRlcmlvcnxlbnwxfHx8fDE3NjY4Mjc5MjJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      title: 'Downtown Apartment',
-      location: 'San Jose, CA',
-      price: '$1,250,000',
-      beds: 2,
+      image: '/cascade/images/scott.webp',
+      title: '2000 Scott Lane',
+      location: 'Los Altos, CA',
+      price: '$3,330,000',
+      beds: 3,
       baths: 2,
-      sqft: '1,450',
-      link: '#'
+      sqft: '2,131',
+      link: 'https://www.redfin.com/CA/Los-Altos/2000-Scott-Ln-94024/home/1216357'
     },
     {
       id: 4,
-      image: 'https://images.unsplash.com/photo-1630270744694-d4679f92ac9a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWF1dGlmdWwlMjBob21lJTIwZ2FyZGVufGVufDF8fHx8MTc2NjgzNTI0Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      title: 'Garden Estate',
-      location: 'Oakland, CA',
-      price: '$3,200,000',
-      beds: 4,
-      baths: 3,
-      sqft: '4,100',
-      link: '#'
+      image: '/cascade/images/wycombe.webp',
+      title: '548 Wycombe Ct',
+      location: 'San Ramon, CA',
+      price: '$3,715,000',
+      beds: 6,
+      baths: 6.5,
+      sqft: '5,632',
+      link: 'https://www.redfin.com/CA/San-Ramon/548-Wycombe-Ct-94583/home/18242161'
     },
     {
       id: 5,
-      image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBob3VzZSUyMGV4dGVyaW9yfGVufDF8fHx8MTc2Njc0NTkyMnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      title: 'Contemporary Residence',
-      location: 'Berkeley, CA',
-      price: '$2,850,000',
-      beds: 3,
-      baths: 2,
-      sqft: '2,800',
-      link: '#'
+      image: '/cascade/images/shadowoaks.webp',
+      title: '13962 Shadow Oaks Way',
+      location: 'Saratoga, CA',
+      price: '$3,850,000',
+      beds: 4,
+      baths: 3,
+      sqft: '2,629',
+      link: 'https://www.redfin.com/CA/Saratoga/13962-Shadow-Oaks-Way-95070/home/1623309'
     },
     {
       id: 6,
-      image: 'https://images.unsplash.com/photo-1694967832949-09984640b143?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjB2aWxsYSUyMHBvb2x8ZW58MXx8fHwxNzY2NzQxNjk5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      title: 'Executive Home',
+      image: '/cascade/images/sleeperave.webp',
+      title: '587 Sleeper Ave',
       location: 'Mountain View, CA',
-      price: '$5,500,000',
-      beds: 6,
-      baths: 5,
-      sqft: '6,200',
-      link: '#'
+      price: '$4,925,000',
+      beds: 5,
+      baths: 4,
+      sqft: '3,336',
+      link: 'https://www.redfin.com/CA/Mountain-View/587-Sleeper-Ave-94040/home/1423108'
     }
   ];
 
