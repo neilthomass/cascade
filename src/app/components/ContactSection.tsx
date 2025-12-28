@@ -41,6 +41,7 @@ export function ContactSection() {
     // Validate email before submitting
     if (!isValidEmail(formData.email)) {
       setEmailError('Please enter a valid email address');
+      setStatus('idle');
       return;
     }
 
@@ -65,9 +66,16 @@ export function ContactSection() {
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    let value = e.target.value;
+
+    // Only allow valid phone characters for phone field
+    if (e.target.name === 'phone') {
+      value = value.replace(/[^0-9()\-\s+]/g, '');
+    }
+
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: value
     });
     if (status === 'error') setStatus('idle');
     if (e.target.name === 'email' && emailError) setEmailError('');

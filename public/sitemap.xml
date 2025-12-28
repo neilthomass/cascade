@@ -6,6 +6,13 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <!-- Company FAQ -->
+  <url>
+    <loc>https://cascaderealtors.com/faq</loc>
+    <lastmod>2025-12-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <!-- San Francisco -->
   <url>
     <loc>https://cascaderealtors.com/sfo</loc>
