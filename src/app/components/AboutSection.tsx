@@ -77,43 +77,43 @@ export function AboutSection() {
         </div>
 
         {/* Company Values */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-1 bg-white">
-          <div className="bg-white p-12 hover:bg-gray-50 transition-colors duration-300 group">
-            <div className="w-12 h-12 border border-gray-900 flex items-center justify-center mb-8 group-hover:bg-gray-900 transition-colors duration-300">
-              <TrendingUp className="w-6 h-6 text-gray-900 group-hover:text-white transition-colors duration-300" />
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+          <div className="bg-white p-5 lg:p-10 border border-gray-200 hover:border-gray-900 hover:shadow-lg transition-all duration-300 group">
+            <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gray-900 flex items-center justify-center mb-4 lg:mb-8">
+              <TrendingUp className="w-4 h-4 lg:w-5 lg:h-5 text-white" />
             </div>
-            <h3 className="text-xl mb-4 text-gray-900 tracking-tight">Industry Experts</h3>
-            <p className="text-gray-600 font-light leading-relaxed">
+            <h3 className="text-base lg:text-xl mb-2 lg:mb-4 text-gray-900 tracking-tight">Industry Experts</h3>
+            <p className="text-gray-600 font-light leading-relaxed text-xs lg:text-sm">
               Thought leaders who add meaningful value to the community and their clients' lives
             </p>
           </div>
 
-          <div className="bg-white p-12 hover:bg-gray-50 transition-colors duration-300 group">
-            <div className="w-12 h-12 border border-gray-900 flex items-center justify-center mb-8 group-hover:bg-gray-900 transition-colors duration-300">
-              <Award className="w-6 h-6 text-gray-900 group-hover:text-white transition-colors duration-300" />
+          <div className="bg-white p-5 lg:p-10 border border-gray-200 hover:border-gray-900 hover:shadow-lg transition-all duration-300 group">
+            <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gray-900 flex items-center justify-center mb-4 lg:mb-8">
+              <Award className="w-4 h-4 lg:w-5 lg:h-5 text-white" />
             </div>
-            <h3 className="text-xl mb-4 text-gray-900 tracking-tight">Experienced Agents</h3>
-            <p className="text-gray-600 font-light leading-relaxed">
+            <h3 className="text-base lg:text-xl mb-2 lg:mb-4 text-gray-900 tracking-tight">Experienced Agents</h3>
+            <p className="text-gray-600 font-light leading-relaxed text-xs lg:text-sm">
               Skilled at navigating the market with a deep understanding of industry trends
             </p>
           </div>
 
-          <div className="bg-white p-12 hover:bg-gray-50 transition-colors duration-300 group">
-            <div className="w-12 h-12 border border-gray-900 flex items-center justify-center mb-8 group-hover:bg-gray-900 transition-colors duration-300">
-              <Building2 className="w-6 h-6 text-gray-900 group-hover:text-white transition-colors duration-300" />
+          <div className="bg-white p-5 lg:p-10 border border-gray-200 hover:border-gray-900 hover:shadow-lg transition-all duration-300 group">
+            <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gray-900 flex items-center justify-center mb-4 lg:mb-8">
+              <Building2 className="w-4 h-4 lg:w-5 lg:h-5 text-white" />
             </div>
-            <h3 className="text-xl mb-4 text-gray-900 tracking-tight">Committed Team</h3>
-            <p className="text-gray-600 font-light leading-relaxed">
+            <h3 className="text-base lg:text-xl mb-2 lg:mb-4 text-gray-900 tracking-tight">Committed Team</h3>
+            <p className="text-gray-600 font-light leading-relaxed text-xs lg:text-sm">
               United by a shared vision and commitment to excellence at every level
             </p>
           </div>
 
-          <div className="bg-white p-12 hover:bg-gray-50 transition-colors duration-300 group">
-            <div className="w-12 h-12 border border-gray-900 flex items-center justify-center mb-8 group-hover:bg-gray-900 transition-colors duration-300">
-              <TrendingUp className="w-6 h-6 text-gray-900 group-hover:text-white transition-colors duration-300" />
+          <div className="bg-white p-5 lg:p-10 border border-gray-200 hover:border-gray-900 hover:shadow-lg transition-all duration-300 group">
+            <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gray-900 flex items-center justify-center mb-4 lg:mb-8">
+              <TrendingUp className="w-4 h-4 lg:w-5 lg:h-5 text-white" />
             </div>
-            <h3 className="text-xl mb-4 text-gray-900 tracking-tight">Amazing Reviews</h3>
-            <p className="text-gray-600 font-light leading-relaxed">
+            <h3 className="text-base lg:text-xl mb-2 lg:mb-4 text-gray-900 tracking-tight">Amazing Reviews</h3>
+            <p className="text-gray-600 font-light leading-relaxed text-xs lg:text-sm">
               Building trust and reputation through exceptional service and client satisfaction
             </p>
           </div>
