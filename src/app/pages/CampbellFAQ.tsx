@@ -3,6 +3,7 @@ import { useState } from 'react';
 import type { FormEvent, ChangeEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { RelatedCities } from '../components/RelatedCities';
+import { SEO } from '../components/SEO';
 
 interface FAQItem {
   question: string;
@@ -292,6 +293,13 @@ export function CampbellFAQ() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Campbell Real Estate FAQ | Home Buying Guide 2025"
+        description="Expert answers to common Campbell home buying questions. Learn about prices, neighborhoods, and more from a Bay Area realtor with 15+ years experience."
+        canonical="https://cascaderealtors.com/campbell"
+        city="Campbell"
+        coordinates={{ lat: 37.2872, lng: -121.9500 }}
+      />
       {/* Header */}
       <header className="bg-gray-900 text-white py-6">
         <div className="max-w-4xl mx-auto px-6">

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import type { FormEvent, ChangeEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { RelatedCities } from '../components/RelatedCities';
+import { SEO } from '../components/SEO';
 
 interface FAQItem {
   question: string;
@@ -292,6 +293,13 @@ export function UnionCityFAQ() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Union City Real Estate FAQ - Home Buying Guide | Cascade California Realty"
+        description="Expert answers to your Union City real estate questions. Learn about home prices, schools, neighborhoods, and buying in Union City from a 15+ year Bay Area expert."
+        canonical="https://cascaderealtors.com/union-city-faq"
+        city="Union City"
+        coordinates={{ lat: 37.5934, lng: -122.0439 }}
+      />
       {/* Header */}
       <header className="bg-gray-900 text-white py-6">
         <div className="max-w-4xl mx-auto px-6">

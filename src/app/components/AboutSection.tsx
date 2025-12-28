@@ -1,5 +1,4 @@
 import { Award, GraduationCap, Building2, TrendingUp } from 'lucide-react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function AboutSection() {
   return (
@@ -10,7 +9,7 @@ export function AboutSection() {
           <div className="flex flex-row">
             {/* Left: Photo */}
             <div className="w-32 sm:w-48 md:w-64 lg:w-80 flex-shrink-0 bg-gray-100">
-              <ImageWithFallback
+              <img
                 src="/images/manoj-hs.webp"
                 alt="Manoj Thomas"
                 className="w-full h-full object-cover object-top"

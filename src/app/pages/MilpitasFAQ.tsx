@@ -3,6 +3,7 @@ import { useState } from 'react';
 import type { FormEvent, ChangeEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { RelatedCities } from '../components/RelatedCities';
+import { SEO } from '../components/SEO';
 
 interface FAQItem {
   question: string;
@@ -292,6 +293,13 @@ export function MilpitasFAQ() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Milpitas Real Estate FAQ | Home Buying Guide 2025"
+        description="Expert answers to common Milpitas home buying questions. Learn about prices, neighborhoods, and more from a Bay Area realtor with 15+ years experience."
+        canonical="https://cascaderealtors.com/milpitas"
+        city="Milpitas"
+        coordinates={{ lat: 37.4323, lng: -121.8996 }}
+      />
       {/* Header */}
       <header className="bg-gray-900 text-white py-6">
         <div className="max-w-4xl mx-auto px-6">

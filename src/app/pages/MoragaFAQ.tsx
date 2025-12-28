@@ -3,6 +3,7 @@ import { useState } from 'react';
 import type { FormEvent, ChangeEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { RelatedCities } from '../components/RelatedCities';
+import { SEO } from '../components/SEO';
 
 interface FAQItem {
   question: string;
@@ -292,6 +293,13 @@ export function MoragaFAQ() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Moraga Real Estate FAQ - Home Buying Guide | Cascade California Realty"
+        description="Expert answers to your Moraga real estate questions. Learn about home prices, schools, neighborhoods, and buying in Moraga from a 15+ year Bay Area expert."
+        canonical="https://cascaderealtors.com/moraga-faq"
+        city="Moraga"
+        coordinates={{ lat: 37.8349, lng: -122.1297 }}
+      />
       {/* Header */}
       <header className="bg-gray-900 text-white py-6">
         <div className="max-w-4xl mx-auto px-6">

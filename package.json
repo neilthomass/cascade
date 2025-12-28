@@ -1,10 +1,10 @@
 {
-  "name": "@figma/my-make-file",
+  "name": "cascade-california-realty",
   "private": true,
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "build": "vite build",
+    "build": "vite build && cp dist/index.html dist/404.html",
     "dev": "vite"
   },
   "dependencies": {

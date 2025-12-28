@@ -1,5 +1,4 @@
 import { MapPin, Bed, Bath, Square } from 'lucide-react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function PropertiesSection() {
 
@@ -93,7 +92,7 @@ export function PropertiesSection() {
             >
               {/* Image */}
               <div className="relative overflow-hidden aspect-[4/3] mb-6">
-                <ImageWithFallback
+                <img
                   src={property.image}
                   alt={property.title}
                   className="w-full h-full object-cover"
