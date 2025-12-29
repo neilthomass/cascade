@@ -35,7 +35,7 @@ export function Header() {
                 Home
               </button>
               <button onClick={() => scrollToSection('about')} className="text-sm tracking-wide text-gray-600 hover:text-gray-900 transition-colors duration-300">
-                About
+                Our Team
               </button>
               <button onClick={() => scrollToSection('properties')} className="text-sm tracking-wide text-gray-600 hover:text-gray-900 transition-colors duration-300">
                 Portfolio
@@ -65,7 +65,7 @@ export function Header() {
                   Home
                 </button>
                 <button onClick={() => scrollToSection('about')} className="text-sm tracking-wide text-gray-600 hover:text-gray-900 transition-colors text-left">
-                  About
+                  Our Team
                 </button>
                 <button onClick={() => scrollToSection('properties')} className="text-sm tracking-wide text-gray-600 hover:text-gray-900 transition-colors text-left">
                   Portfolio
