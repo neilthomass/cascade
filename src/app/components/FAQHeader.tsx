@@ -7,7 +7,7 @@ export function FAQHeader() {
         <Link to="/" className="flex items-end gap-2">
           <img src="/images/logo.webp" alt="Cascade California Realty Logo" className="h-12 w-auto mb-1 brightness-0 invert" />
           <div>
-            <div className="text-xl font-light tracking-[0.2em] mb-1">CASCADE</div>
+            <div className="text-xl font-bold tracking-[0.2em] mb-1">CASCADE</div>
             <div className="text-[10px] font-light text-gray-400 tracking-[0.2em]">CALIFORNIA REALTY</div>
           </div>
         </Link>

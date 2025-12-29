@@ -90,7 +90,7 @@ export function ContactSection() {
             <div>
               <div className="mb-16">
                 <p className="text-sm tracking-[0.2em] text-gray-500 mb-6">CONTACT</p>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-6 leading-tight">
+                <h2 className="text-5xl font-light text-gray-900 mb-6 leading-tight">
                   Get In Touch
                 </h2>
                 <p className="text-xl text-gray-600 font-light leading-relaxed">
@@ -145,7 +145,7 @@ export function ContactSection() {
           <div>
             <div className="mb-16">
               <p className="text-sm tracking-[0.2em] text-gray-500 mb-6">CONTACT</p>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-6 leading-tight">
+              <h2 className="text-5xl font-light text-gray-900 mb-6 leading-tight">
                 Get In Touch
               </h2>
               <p className="text-xl text-gray-600 font-light leading-relaxed">

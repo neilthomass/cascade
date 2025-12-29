@@ -10,7 +10,7 @@ export function Footer() {
           {/* Company Info */}
           <div className="md:col-span-2">
             <div className="mb-8">
-              <div className="text-xl font-light tracking-[0.2em] mb-1">CASCADE</div>
+              <div className="text-xl font-bold tracking-[0.2em] mb-1">CASCADE</div>
               <div className="text-[10px] font-light text-gray-500 tracking-[0.2em]">CALIFORNIA REALTY</div>
             </div>
             <p className="text-gray-400 font-light leading-relaxed mb-8 max-w-md">

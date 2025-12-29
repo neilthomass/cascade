@@ -23,22 +23,22 @@ export function Header() {
               <Link to="/" className="flex items-end gap-1 group">
                 <img src="/images/logo.webp" alt="Cascade California Realty Logo" className="h-16 w-auto mb-1" />
                 <div className="pb-0.5 text-center">
-                  <div className="text-xl font-light text-gray-900 tracking-[0.2em]">CASCADE</div>
+                  <div className="text-xl font-bold text-gray-900 tracking-[0.2em]">CASCADE</div>
                   <div className="text-[10px] font-light text-gray-500 tracking-[0.2em] mt-0.5">CALIFORNIA REALTY</div>
                 </div>
               </Link>
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-12">
+            <nav className="hidden lg:flex items-center gap-12">
               <button onClick={() => scrollToSection('home')} className="text-sm tracking-wide text-gray-600 hover:text-gray-900 transition-colors duration-300">
                 Home
               </button>
-              <button onClick={() => scrollToSection('properties')} className="text-sm tracking-wide text-gray-600 hover:text-gray-900 transition-colors duration-300">
-                Portfolio
-              </button>
               <button onClick={() => scrollToSection('about')} className="text-sm tracking-wide text-gray-600 hover:text-gray-900 transition-colors duration-300">
                 About
+              </button>
+              <button onClick={() => scrollToSection('properties')} className="text-sm tracking-wide text-gray-600 hover:text-gray-900 transition-colors duration-300">
+                Portfolio
               </button>
               <button onClick={() => scrollToSection('testimonials')} className="text-sm tracking-wide text-gray-600 hover:text-gray-900 transition-colors duration-300">
                 Testimonials
@@ -51,7 +51,7 @@ export function Header() {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 hover:bg-gray-50 transition-colors"
+              className="lg:hidden p-2 hover:bg-gray-50 transition-colors"
             >
               {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -59,16 +59,16 @@ export function Header() {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <nav className="md:hidden py-6 border-t border-gray-100">
+            <nav className="lg:hidden py-6 border-t border-gray-100">
               <div className="flex flex-col gap-6">
                 <button onClick={() => scrollToSection('home')} className="text-sm tracking-wide text-gray-600 hover:text-gray-900 transition-colors text-left">
                   Home
                 </button>
-                <button onClick={() => scrollToSection('properties')} className="text-sm tracking-wide text-gray-600 hover:text-gray-900 transition-colors text-left">
-                  Portfolio
-                </button>
                 <button onClick={() => scrollToSection('about')} className="text-sm tracking-wide text-gray-600 hover:text-gray-900 transition-colors text-left">
                   About
+                </button>
+                <button onClick={() => scrollToSection('properties')} className="text-sm tracking-wide text-gray-600 hover:text-gray-900 transition-colors text-left">
+                  Portfolio
                 </button>
                 <button onClick={() => scrollToSection('testimonials')} className="text-sm tracking-wide text-gray-600 hover:text-gray-900 transition-colors text-left">
                   Testimonials

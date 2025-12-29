@@ -52,15 +52,15 @@ export function TestimonialsSection() {
       image: '/images/65th.webp',
       text: 'I have purchased two homes using Manoj\'s services and was highly satisfied both times. He is not pushy, he is a great negotiator, and he is always on your side. I have seen many buyers get burned with agents who did not know the market or were not good at negotiation. I don\'t think I will ever use another agent\'s services in the Bay Area.'
     },
-    {
-      id: 6,
-      address: 'San Jose, CA',
-      type: 'First-Time Buyer',
-      price: '$1.27M',
-      rating: 5,
-      image: '',
-      text: 'Manoj is excellent at guiding first time buyers like myself. He explained all the details about home ownership and gave a fair, unbiased opinion. His communication and negotiation skills really helped close the deal in our favor. The entire process was smooth with no hiccups. I would highly recommend Manoj to anyone looking to own a home.'
-    }
+    // {
+    //   id: 6,
+    //   address: 'San Jose, CA',
+    //   type: 'First-Time Buyer',
+    //   price: '$1.27M',
+    //   rating: 5,
+    //   image: '',
+    //   text: 'Manoj is excellent at guiding first time buyers like myself. He explained all the details about home ownership and gave a fair, unbiased opinion. His communication and negotiation skills really helped close the deal in our favor. The entire process was smooth with no hiccups. I would highly recommend Manoj to anyone looking to own a home.'
+    // }
   ];
 
   // Clone first and last slides for infinite loop effect
@@ -176,10 +176,6 @@ export function TestimonialsSection() {
                         </div>
                       )}
 
-                      {/* Price Badge */}
-                      <div className="absolute top-6 left-6 bg-gray-900 text-white px-4 py-2">
-                        <span className="text-lg font-light">{testimonial.price}</span>
-                      </div>
                     </div>
 
                     {/* Content Section */}
