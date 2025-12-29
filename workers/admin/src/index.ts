@@ -686,8 +686,8 @@ async function handleCreateAgent(request: Request, env: Env): Promise<Response> 
         name, title, bio_text, email, phone,
         certifications, specialties, years_experience, social_links,
         languages, areas_served, education, awards, display_order, is_active,
-        lifetime_sales, avg_sale_price, clients_count
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+        lifetime_sales, avg_sale_price, clients_count, dre_number
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
     ).bind(
       body.name,
       body.title || null,
@@ -706,7 +706,8 @@ async function handleCreateAgent(request: Request, env: Env): Promise<Response> 
       body.is_active !== false ? 1 : 0,
       body.lifetime_sales || null,
       body.avg_sale_price || null,
-      body.clients_count || null
+      body.clients_count || null,
+      body.dre_number || null
     ).run();
 
     return successResponse({
@@ -806,6 +807,10 @@ async function handleUpdateAgent(request: Request, env: Env, id: string): Promis
     if (body.clients_count !== undefined) {
       updates.push('clients_count = ?');
       params.push(body.clients_count || null);
+    }
+    if (body.dre_number !== undefined) {
+      updates.push('dre_number = ?');
+      params.push(body.dre_number || null);
     }
 
     if (updates.length === 0) {
@@ -980,6 +985,7 @@ async function handleGetPublicAgents(request: Request, env: Env): Promise<Respon
         lifetime_sales: a.lifetime_sales,
         avg_sale_price: a.avg_sale_price,
         clients_count: a.clients_count,
+        dre_number: a.dre_number,
       };
     });
 

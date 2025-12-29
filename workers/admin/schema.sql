@@ -40,6 +40,7 @@ CREATE TABLE IF NOT EXISTS agent_bios (
   awards TEXT,             -- JSON array
   display_order INTEGER DEFAULT 0,
   is_active INTEGER DEFAULT 1,
+  dre_number TEXT,
   created_at TEXT DEFAULT (datetime('now')),
   updated_at TEXT DEFAULT (datetime('now'))
 );

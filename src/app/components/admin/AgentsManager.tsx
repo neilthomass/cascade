@@ -50,6 +50,7 @@ interface AgentBio {
   lifetime_sales: string | null;
   avg_sale_price: string | null;
   clients_count: number | null;
+  dre_number: string | null;
   created_at: string;
   updated_at: string;
 }
@@ -74,6 +75,7 @@ interface AgentForm {
   lifetime_sales: string;
   avg_sale_price: string;
   clients_count: string;
+  dre_number: string;
 }
 
 const emptyForm: AgentForm = {
@@ -96,6 +98,7 @@ const emptyForm: AgentForm = {
   lifetime_sales: "",
   avg_sale_price: "",
   clients_count: "",
+  dre_number: "",
 };
 
 export function AgentsManager() {
@@ -168,6 +171,7 @@ export function AgentsManager() {
       lifetime_sales: agent.lifetime_sales || "",
       avg_sale_price: agent.avg_sale_price || "",
       clients_count: agent.clients_count?.toString() || "",
+      dre_number: agent.dre_number || "",
     });
     setPhotoPreview(agent.photo_url ? getPhotoUrl(agent.photo_url) : null);
     setPhotoFile(null);
@@ -216,6 +220,7 @@ export function AgentsManager() {
         lifetime_sales: form.lifetime_sales || null,
         avg_sale_price: form.avg_sale_price || null,
         clients_count: form.clients_count ? parseInt(form.clients_count) : null,
+        dre_number: form.dre_number || null,
       };
 
       let agentId: number;
@@ -508,6 +513,19 @@ export function AgentsManager() {
                   placeholder="e.g., Broker / Owner"
                 />
               </div>
+            </div>
+
+            {/* DRE Number */}
+            <div className="w-1/2">
+              <label className="text-sm font-medium text-gray-700 block mb-1">
+                DRE Number
+              </label>
+              <Input
+                value={form.dre_number}
+                onChange={(e) => setForm({ ...form, dre_number: e.target.value })}
+                placeholder="e.g., 01234567"
+              />
+              <p className="text-xs text-gray-500 mt-1">California Real Estate License Number</p>
             </div>
 
             {/* Contact Info */}
