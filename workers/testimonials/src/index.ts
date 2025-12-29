@@ -423,12 +423,22 @@ export default {
           LIMIT 20`
         ).all();
 
-        // Convert photo keys to full URLs
+        // Convert photo keys to full URLs (preserve local paths and full URLs)
         const baseUrl = url.origin;
-        const results = testimonials.results.map((t: Record<string, unknown>) => ({
-          ...t,
-          photo_url: t.photo_url ? `${baseUrl}/photo/${encodeURIComponent(t.photo_url as string)}` : null,
-        }));
+        const results = testimonials.results.map((t: Record<string, unknown>) => {
+          const photoUrl = t.photo_url as string | null;
+          let finalPhotoUrl: string | null = null;
+          if (photoUrl) {
+            // Preserve local paths (start with /) and full URLs (start with http)
+            if (photoUrl.startsWith('/') || photoUrl.startsWith('http')) {
+              finalPhotoUrl = photoUrl;
+            } else {
+              // R2 key - convert to worker URL
+              finalPhotoUrl = `${baseUrl}/photo/${encodeURIComponent(photoUrl)}`;
+            }
+          }
+          return { ...t, photo_url: finalPhotoUrl };
+        });
 
         return jsonResponse({ testimonials: results }, 200);
       } catch (error) {

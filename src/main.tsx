@@ -46,6 +46,7 @@ import { HalfMoonBayFAQ } from "./app/pages/HalfMoonBayFAQ.tsx";
 import { NotFound } from "./app/pages/NotFound.tsx";
 import { CascadeFAQ } from "./app/pages/CascadeFAQ.tsx";
 import { SubmitTestimonialPage } from "./app/pages/SubmitTestimonialPage.tsx";
+import { AdminPage } from "./app/pages/admin/AdminPage.tsx";
 import "./styles/index.css";
 
 createRoot(document.getElementById("root")!).render(
@@ -104,6 +105,8 @@ createRoot(document.getElementById("root")!).render(
       <Route path="/south-san-francisco" element={<SouthSanFranciscoFAQ />} />
       <Route path="/pacifica" element={<PacificaFAQ />} />
       <Route path="/half-moon-bay" element={<HalfMoonBayFAQ />} />
+      {/* Admin Panel */}
+      <Route path="/admin/*" element={<AdminPage />} />
       {/* 404 - Must be last */}
       <Route path="*" element={<NotFound />} />
     </Routes>

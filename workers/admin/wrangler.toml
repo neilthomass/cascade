@@ -1,0 +1,17 @@
+name = "cascade-admin"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+[vars]
+FROM_EMAIL = "contact@cascaderealtors.com"
+
+# Reuse existing D1 database (same as testimonials worker)
+[[d1_databases]]
+binding = "DB"
+database_name = "cascade-testimonials"
+database_id = "2db2ee83-1ef9-464a-a877-f5bceae90497"
+
+# Reuse existing R2 bucket (for agent photos)
+[[r2_buckets]]
+binding = "PHOTOS"
+bucket_name = "cascade-testimonial-photos"

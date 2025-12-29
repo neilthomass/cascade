@@ -24,58 +24,9 @@ interface ApiTestimonial {
 
 const TESTIMONIALS_API = 'https://cascade-testimonials.manoj-thomas-c22.workers.dev/approved';
 
-// Fallback testimonials shown when API has no approved testimonials yet
-const fallbackTestimonials: Testimonial[] = [
-  {
-    id: 'fallback-1',
-    address: '5069 Pharlap Ave, San Jose, CA',
-    type: 'First-Time Buyer',
-    price: '$720K',
-    rating: 5,
-    image: '/images/5069-pharlap-ave-hero.webp',
-    text: 'When we started looking for a house, we weren\'t sure how to proceed. Manoj walked us through the process and really simplified it for us. He was very patient and understanding, and never pushed us into buying something we weren\'t fully satisfied with. He showed great professionalism and utmost respect for our choices. We would highly recommend Manoj to anybody.'
-  },
-  {
-    id: 'fallback-2',
-    address: '1824 Pine Hollow Cir, San Jose, CA',
-    type: 'First-Time Buyer',
-    price: '$820K',
-    rating: 5,
-    image: '/images/pine_hollow.webp',
-    text: 'Since we were first time buyers, we were initially overwhelmed with all the details. But Manoj guided us through the entire process with ease. He provided detailed analysis on all the houses we were interested in before we considered making an offer. His attention to detail gave us confidence in making a decision quickly. He was always available to answer our queries.'
-  },
-  {
-    id: 'fallback-3',
-    address: '214 Kent Place, San Ramon, CA',
-    type: 'First-Time Buyer',
-    price: '$875K',
-    rating: 5,
-    image: '/images/kent.webp',
-    text: 'Manoj is an excellent agent and a gem of a person. Throughout our search, he was patient and answered all our questions. He even stopped us from making hasty decisions. With his guidance, the whole process from offer to closing went very smoothly. We highly recommend him.'
-  },
-  {
-    id: 'fallback-4',
-    address: '7156 Emerald Ave, Dublin, CA',
-    type: 'Home Seller',
-    price: '$840K',
-    rating: 5,
-    image: '/images/emerald.webp',
-    text: 'Manoj is truly professional and well organized. I have dealt with other agents and Manoj outperforms all of them. He communicates very well with customers and clients. Looking forward to doing more transactions with him.'
-  },
-  {
-    id: 'fallback-5',
-    address: '3440 65th Ave, Oakland, CA',
-    type: 'Multi-Family Buyer',
-    price: '$782K',
-    rating: 5,
-    image: '/images/65th.webp',
-    text: 'I have purchased two homes using Manoj\'s services and was highly satisfied both times. He is not pushy, he is a great negotiator, and he is always on your side. I have seen many buyers get burned with agents who did not know the market or were not good at negotiation. I don\'t think I will ever use another agent\'s services in the Bay Area.'
-  },
-];
-
 function mapApiTestimonial(api: ApiTestimonial): Testimonial {
   return {
-    id: `api-${api.id}`,
+    id: `${api.id}`,
     address: api.property_address,
     type: api.display_type || 'Client',
     price: api.display_price || '',
@@ -89,27 +40,30 @@ export function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(1);
   const [isPaused, setIsPaused] = useState(false);
   const [enableTransition, setEnableTransition] = useState(true);
-  const [testimonials, setTestimonials] = useState<Testimonial[]>(fallbackTestimonials);
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [loading, setLoading] = useState(true);
 
   // Fetch approved testimonials from API
   useEffect(() => {
     async function fetchTestimonials() {
       try {
         const response = await fetch(TESTIMONIALS_API);
-        if (!response.ok) return;
+        if (!response.ok) {
+          setLoading(false);
+          return;
+        }
 
         const data = await response.json();
         if (data.testimonials && data.testimonials.length > 0) {
           const apiTestimonials = data.testimonials.map(mapApiTestimonial);
-          // Show API testimonials first, then fallbacks
-          setTestimonials([...apiTestimonials, ...fallbackTestimonials]);
-          // Reset carousel position when testimonials change to avoid index issues
+          setTestimonials(apiTestimonials);
           setCurrentIndex(1);
           setEnableTransition(false);
         }
       } catch (error) {
-        // Silently fall back to default testimonials
         console.error('Failed to fetch testimonials:', error);
+      } finally {
+        setLoading(false);
       }
     }
 
@@ -176,6 +130,29 @@ export function TestimonialsSection() {
     : currentIndex === testimonials.length + 1
       ? 0
       : currentIndex - 1;
+
+  // Don't render while loading or if no testimonials
+  if (loading) {
+    return (
+      <section id="testimonials" className="py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-3xl mb-16">
+            <p className="text-sm tracking-[0.2em] text-gray-500 mb-6">TESTIMONIALS</p>
+            <h2 className="text-5xl lg:text-6xl font-light text-gray-900 mb-6 leading-tight">
+              Client Stories
+            </h2>
+          </div>
+          <div className="bg-gray-50 p-16 text-center">
+            <p className="text-gray-500">Loading testimonials...</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (testimonials.length === 0) {
+    return null; // Don't show section if no testimonials
+  }
 
   return (
     <section id="testimonials" className="py-32 bg-white">
