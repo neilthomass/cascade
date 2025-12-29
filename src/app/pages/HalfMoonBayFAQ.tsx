@@ -10,7 +10,7 @@ import { SEO } from '../components/SEO';
 
 interface FAQItem {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 }
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
@@ -199,19 +199,19 @@ function ContactForm() {
 const faqs: FAQItem[] = [
   {
     question: "What is the average home price in Half Moon Bay?",
-    answer: "The median home price in Half Moon Bay is approximately $1.9 million as of 2024. This coastal San Mateo County community offers a unique combination of oceanfront properties, agricultural land, and traditional single-family homes. Prices vary significantly based on ocean views, with beachfront properties commanding premium prices often exceeding $3 million, while inland homes start around $1.2 million. The limited housing supply and strict coastal development regulations help maintain strong property values."
+    answer: <>The median home price in Half Moon Bay is approximately $1.9 million as of 2024. This coastal San Mateo County community offers a unique combination of oceanfront properties, agricultural land, and traditional single-family homes. Prices vary significantly based on ocean views, with beachfront properties commanding premium prices often exceeding $3 million, while inland homes start around $1.2 million. The limited housing supply and strict coastal development regulations help maintain strong property values. For personalized pricing insights tailored to your budget, <Link to="/contact" className="text-blue-600 hover:underline">connect with our Coastside specialists</Link>.</>
   },
   {
     question: "Is Half Moon Bay a good place to buy a home in 2025?",
-    answer: "Half Moon Bay offers compelling value for buyers seeking coastal living with a small-town atmosphere. The city's strict growth controls limit new development, creating scarcity that supports long-term appreciation. Key advantages include pristine beaches, agricultural heritage, and a tight-knit community feel just 30 miles from San Francisco. However, buyers should consider the commute factor (45-60 minutes to SF via Highway 92) and occasional fog. For those prioritizing quality of life over urban convenience, Half Moon Bay remains an excellent investment."
+    answer: <>Half Moon Bay offers compelling value for buyers seeking coastal living with a small-town atmosphere. The city's strict growth controls limit new development, creating scarcity that supports long-term appreciation. Key advantages include pristine beaches, agricultural heritage, and a tight-knit community feel just 30 miles from San Francisco. However, buyers should consider the commute factor (45-60 minutes to SF via Highway 92) and occasional fog. For those prioritizing quality of life over urban convenience, Half Moon Bay remains an excellent investment. The team at Cascade California Realty can help you weigh the pros and cons for your specific situation—<Link to="/contact" className="text-blue-600 hover:underline">schedule a consultation</Link> to discuss your goals.</>
   },
   {
     question: "What are the best neighborhoods in Half Moon Bay for families?",
-    answer: "Top family-friendly areas in Half Moon Bay include Miramar (beach access, community atmosphere), Princeton-by-the-Sea (harbor views, excellent schools nearby), and the Highlands area (newer homes, more sunny days). The downtown Main Street area offers walkability to shops and restaurants. Families appreciate the Cabrillo Unified School District, low crime rates, and abundance of outdoor activities. El Granada and Moss Beach, just north of Half Moon Bay, offer similar small-town charm with slightly more affordable options."
+    answer: <>Top family-friendly areas in Half Moon Bay include Miramar (beach access, community atmosphere), Princeton-by-the-Sea (harbor views, excellent schools nearby), and the Highlands area (newer homes, more sunny days). The downtown Main Street area offers walkability to shops and restaurants. Families appreciate the Cabrillo Unified School District, low crime rates, and abundance of outdoor activities. El Granada and Moss Beach, just north of Half Moon Bay, offer similar small-town charm with slightly more affordable options. Our agents at Cascade California Realty know these neighborhoods inside out—<Link to="/contact" className="text-blue-600 hover:underline">reach out for a neighborhood tour</Link>.</>
   },
   {
     question: "How much do I need to earn to buy a house in Half Moon Bay?",
-    answer: "To comfortably afford a median-priced home in Half Moon Bay ($1.9M), you typically need a household income of $425,000-$550,000, assuming a 20% down payment ($380,000) and following the 28% debt-to-income guideline. Many buyers are Silicon Valley professionals, remote workers, or retirees downsizing from the Peninsula. The high entry price reflects the coastal premium and limited inventory. Some buyers offset costs through vacation rentals, though local regulations restrict short-term rentals in many areas."
+    answer: <>To comfortably afford a median-priced home in Half Moon Bay ($1.9M), you typically need a household income of $425,000-$550,000, assuming a 20% down payment ($380,000) and following the 28% debt-to-income guideline. Many buyers are Silicon Valley professionals, remote workers, or retirees downsizing from the Peninsula. The high entry price reflects the coastal premium and limited inventory. Some buyers offset costs through vacation rentals, though local regulations restrict short-term rentals in many areas. Not sure where to start? <Link to="/contact" className="text-blue-600 hover:underline">Talk to our team</Link> about financing strategies that work for your income level.</>
   },
   {
     question: "What is the commute like from Half Moon Bay to San Francisco and Silicon Valley?",
@@ -223,7 +223,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "Are there any restrictions on building or renovating in Half Moon Bay?",
-    answer: "Yes, Half Moon Bay has significant development restrictions due to coastal zone regulations. Any construction near the coast requires Coastal Commission approval, which can be a lengthy process. The city emphasizes preserving agricultural land, ocean views, and small-town character. Setback requirements, height limits (usually 28 feet), and design review are standard. Historic properties have additional constraints. Budget extra time and costs for permits compared to inland communities. Working with architects and contractors experienced in coastal permitting is essential."
+    answer: <>Yes, Half Moon Bay has significant development restrictions due to coastal zone regulations. Any construction near the coast requires Coastal Commission approval, which can be a lengthy process. The city emphasizes preserving agricultural land, ocean views, and small-town character. Setback requirements, height limits (usually 28 feet), and design review are standard. Historic properties have additional constraints. Budget extra time and costs for permits compared to inland communities. Working with architects and contractors experienced in coastal permitting is essential. Cascade California Realty maintains relationships with trusted local contractors and permit specialists—<Link to="/contact" className="text-blue-600 hover:underline">ask us for referrals</Link>.</>
   },
   {
     question: "What is the weather like in Half Moon Bay?",
@@ -231,7 +231,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "What are the schools like in Half Moon Bay?",
-    answer: "Half Moon Bay is served by the Cabrillo Unified School District, which includes Cunha Intermediate School and Half Moon Bay High School. Elementary schools include Hatch Elementary and Farallone View Elementary. The district offers small class sizes and strong community involvement. Test scores are generally above state averages, though not as high as some Peninsula districts. The community values outdoor education, with programs emphasizing environmental science and ocean studies. Many families also consider private schools in nearby areas for additional options."
+    answer: <>Half Moon Bay is served by the Cabrillo Unified School District, which includes Cunha Intermediate School and Half Moon Bay High School. Elementary schools include Hatch Elementary and Farallone View Elementary. The district offers small class sizes and strong community involvement. Test scores are generally above state averages, though not as high as some Peninsula districts. The community values outdoor education, with programs emphasizing environmental science and ocean studies. Many families also consider private schools in nearby areas for additional options. Need help finding a home in the right school zone? <Link to="/contact" className="text-blue-600 hover:underline">Let us guide you</Link>.</>
   },
   {
     question: "What outdoor activities are available in Half Moon Bay?",
@@ -243,11 +243,11 @@ const faqs: FAQItem[] = [
   },
   {
     question: "What is the investment potential for Half Moon Bay real estate?",
-    answer: "Half Moon Bay real estate offers strong long-term investment potential due to limited supply, coastal location, and proximity to major employment centers. Historical appreciation has tracked or exceeded Bay Area averages. Key investment advantages include strict growth controls (preventing oversupply), increasing demand for coastal lifestyle properties, and the shift to remote work making location-dependent commuting less critical. Risks include commute times if remote work reverses, climate change impacts on coastal properties, and higher maintenance costs in the marine environment. 10+ year holds typically show strong returns."
+    answer: <>Half Moon Bay real estate offers strong long-term investment potential due to limited supply, coastal location, and proximity to major employment centers. Historical appreciation has tracked or exceeded Bay Area averages. Key investment advantages include strict growth controls (preventing oversupply), increasing demand for coastal lifestyle properties, and the shift to remote work making location-dependent commuting less critical. Risks include commute times if remote work reverses, climate change impacts on coastal properties, and higher maintenance costs in the marine environment. 10+ year holds typically show strong returns. Want to explore investment opportunities on the Coastside? <Link to="/contact" className="text-blue-600 hover:underline">Request a market analysis</Link> from our team.</>
   },
   {
     question: "Are there agricultural properties available in Half Moon Bay?",
-    answer: "Yes, Half Moon Bay retains significant agricultural heritage with farms, nurseries, and equestrian properties available, though they're increasingly rare and expensive. Properties with agricultural zoning or coastal side designations offer unique opportunities but come with restrictions on development. Many farms grow pumpkins, Christmas trees, flowers, or artichokes. Agricultural properties typically require larger down payments (25-30%) and specialized lenders. Buyers should understand water rights, land use restrictions, and the economics of farming. Some properties allow residential use with agricultural operations, offering a unique coastal farming lifestyle."
+    answer: <>Yes, Half Moon Bay retains significant agricultural heritage with farms, nurseries, and equestrian properties available, though they're increasingly rare and expensive. Properties with agricultural zoning or coastal side designations offer unique opportunities but come with restrictions on development. Many farms grow pumpkins, Christmas trees, flowers, or artichokes. Agricultural properties typically require larger down payments (25-30%) and specialized lenders. Buyers should understand water rights, land use restrictions, and the economics of farming. Some properties allow residential use with agricultural operations, offering a unique coastal farming lifestyle. Cascade California Realty has experience with agricultural and equestrian properties—<Link to="/contact" className="text-blue-600 hover:underline">get in touch</Link> to discuss available listings.</>
   },
   {
     question: "What are the HOA fees and costs in Half Moon Bay developments?",
@@ -255,15 +255,15 @@ const faqs: FAQItem[] = [
   },
   {
     question: "How does the coastal location affect home maintenance in Half Moon Bay?",
-    answer: "Coastal living in Half Moon Bay requires additional maintenance awareness. Salt air accelerates corrosion of metal fixtures, requiring regular inspection and replacement. Exterior paint needs more frequent attention, and wood siding requires proper sealing. Windows and doors need quality weatherstripping due to wind and moisture. Landscaping must account for salt tolerance and deer resistance. Roof maintenance is critical given winter rains. Budget 1.5-2% of home value annually for maintenance versus 1% inland. Despite higher costs, proper maintenance preserves value in this sought-after coastal market."
+    answer: <>Coastal living in Half Moon Bay requires additional maintenance awareness. Salt air accelerates corrosion of metal fixtures, requiring regular inspection and replacement. Exterior paint needs more frequent attention, and wood siding requires proper sealing. Windows and doors need quality weatherstripping due to wind and moisture. Landscaping must account for salt tolerance and deer resistance. Roof maintenance is critical given winter rains. Budget 1.5-2% of home value annually for maintenance versus 1% inland. Despite higher costs, proper maintenance preserves value in this sought-after coastal market. Our team can connect you with vetted local service providers who specialize in coastal homes—<Link to="/contact" className="text-blue-600 hover:underline">just ask</Link>.</>
   },
   {
     question: "What is the housing inventory situation in Half Moon Bay?",
-    answer: "Half Moon Bay has extremely limited housing inventory due to geographic constraints (ocean to the west, mountains to the east) and strict coastal development regulations. Typically only 20-40 homes are on the market at any time, creating a competitive environment. New construction is rare and highly regulated. This scarcity supports price appreciation but means buyers need patience and flexibility. Properties often sell quickly when priced correctly. The limited inventory also means less diversity in home styles and price points compared to larger markets. Working with an agent who knows the local market is essential."
+    answer: <>Half Moon Bay has extremely limited housing inventory due to geographic constraints (ocean to the west, mountains to the east) and strict coastal development regulations. Typically only 20-40 homes are on the market at any time, creating a competitive environment. New construction is rare and highly regulated. This scarcity supports price appreciation but means buyers need patience and flexibility. Properties often sell quickly when priced correctly. The limited inventory also means less diversity in home styles and price points compared to larger markets. Working with an agent who knows the local market is essential—<Link to="/contact" className="text-blue-600 hover:underline">contact Cascade California Realty</Link> to get notified about new listings before they hit the broader market.</>
   },
   {
     question: "Are there any concerns about coastal erosion or sea level rise in Half Moon Bay?",
-    answer: "Coastal erosion and sea level rise are important considerations for Half Moon Bay properties, particularly those near the ocean. Some areas have experienced bluff erosion, and long-term projections show increased risks from rising seas and storm intensity. Properties closest to the water may have disclosure requirements about coastal hazards. Buyers should review geological reports, obtain specialized coastal property inspections, and understand setback requirements. Not all properties are equally affected—elevated homes on stable ground face less risk than bluff-top or low-lying properties. Insurance costs and availability can be affected for high-risk properties."
+    answer: <>Coastal erosion and sea level rise are important considerations for Half Moon Bay properties, particularly those near the ocean. Some areas have experienced bluff erosion, and long-term projections show increased risks from rising seas and storm intensity. Properties closest to the water may have disclosure requirements about coastal hazards. Buyers should review geological reports, obtain specialized coastal property inspections, and understand setback requirements. Not all properties are equally affected—elevated homes on stable ground face less risk than bluff-top or low-lying properties. Insurance costs and availability can be affected for high-risk properties. Have questions about a specific property's risk profile? <Link to="/contact" className="text-blue-600 hover:underline">Our agents can walk you through the details</Link>.</>
   },
   {
     question: "What makes Half Moon Bay different from other coastal California towns?",
@@ -271,11 +271,11 @@ const faqs: FAQItem[] = [
   },
   {
     question: "What should I know about insurance for Half Moon Bay homes?",
-    answer: "Insurance for Half Moon Bay properties requires special attention. Standard homeowner's insurance doesn't cover earthquake damage, and separate earthquake insurance is highly recommended given the proximity to the San Andreas Fault. Coastal properties may face higher premiums and deductibles due to wind and water exposure. Flood insurance may be required for properties in FEMA flood zones. Some carriers have limited availability for coastal properties due to wildfire or landslide risks in nearby mountain areas. Shop multiple insurers and consider working with an insurance broker experienced in coastal properties to find comprehensive coverage at competitive rates."
+    answer: <>Insurance for Half Moon Bay properties requires special attention. Standard homeowner's insurance doesn't cover earthquake damage, and separate earthquake insurance is highly recommended given the proximity to the San Andreas Fault. Coastal properties may face higher premiums and deductibles due to wind and water exposure. Flood insurance may be required for properties in FEMA flood zones. Some carriers have limited availability for coastal properties due to wildfire or landslide risks in nearby mountain areas. Shop multiple insurers and consider working with an insurance broker experienced in coastal properties to find comprehensive coverage at competitive rates. We're happy to share our list of trusted insurance partners—<Link to="/contact" className="text-blue-600 hover:underline">reach out anytime</Link>.</>
   },
   {
     question: "How do I choose the right real estate agent for Half Moon Bay?",
-    answer: "Choosing a Half Moon Bay real estate agent requires finding someone with deep local expertise. Look for agents who live in or specialize in the Coastside communities, understand coastal permitting and restrictions, and have closed multiple transactions in Half Moon Bay specifically. They should know the microclimates, school attendance boundaries, water and septic issues common to the area, and the tight-knit community dynamics. Interview agents about their experience with coastal properties, agricultural land, and working with the Coastal Commission. References from recent buyers in Half Moon Bay are invaluable. The right agent makes navigating this unique market significantly easier."
+    answer: <>Choosing a Half Moon Bay real estate agent requires finding someone with deep local expertise. Look for agents who live in or specialize in the Coastside communities, understand coastal permitting and restrictions, and have closed multiple transactions in Half Moon Bay specifically. They should know the microclimates, school attendance boundaries, water and septic issues common to the area, and the tight-knit community dynamics. Interview agents about their experience with coastal properties, agricultural land, and working with the Coastal Commission. References from recent buyers in Half Moon Bay are invaluable. The right agent makes navigating this unique market significantly easier. At Cascade California Realty, we bring exactly this kind of local knowledge to every client—<Link to="/contact" className="text-blue-600 hover:underline">start the conversation today</Link>.</>
   }
 ];
 
@@ -297,8 +297,11 @@ export function HalfMoonBayFAQ() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Half Moon Bay Real Estate FAQ - Home Buying Guide | Cascade Realty"
-        description="Everything you need to know about buying a home in Half Moon Bay. Expert answers from a Bay Area real estate professional with 15+ years of experience."
+        title="Best Realtor in Half Moon Bay | Manoj Thomas - Top Half Moon Bay Real Estate Agent 2025"
+        description="Looking for the best realtor in Half Moon Bay? Manoj Thomas is the #1 rated Half Moon Bay real estate agent with 15+ years experience, $1B+ sales. Expert in Half Moon Bay homes and neighborhoods."
+        canonical="https://cascaderealtors.com/half-moon-bay"
+        city="Half Moon Bay"
+        county="San Mateo County"
         coordinates={{ lat: 37.4636, lng: -122.4286 }}
       />
       <FAQHeader />

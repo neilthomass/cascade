@@ -10,7 +10,7 @@ import { SEO } from '../components/SEO';
 
 interface FAQItem {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 }
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
@@ -199,15 +199,15 @@ function ContactForm() {
 const faqs: FAQItem[] = [
   {
     question: "What is the average home price in Mountain View?",
-    answer: "The median home price in Mountain View is approximately $2.1 million as of 2025. Prices vary significantly by property type—condos and townhomes typically range from $1.5 million to $1.8 million, while single-family homes often exceed $3 million, especially in desirable neighborhoods like Old Mountain View and Cuesta Park. The city's proximity to Google headquarters and other major tech employers has consistently driven strong appreciation in home values."
+    answer: <>The median home price in Mountain View is approximately $2.1 million as of 2025. Prices vary significantly by property type—condos and townhomes typically range from $1.5 million to $1.8 million, while single-family homes often exceed $3 million, especially in desirable neighborhoods like Old Mountain View and Cuesta Park. The city's proximity to Google headquarters and other major tech employers has consistently driven strong appreciation in home values. For a personalized market analysis, <Link to="/contact" className="text-blue-600 hover:underline">reach out to our team</Link> for current pricing in your target neighborhoods.</>
   },
   {
     question: "Is Mountain View a good place to invest in real estate?",
-    answer: "Mountain View offers exceptional investment potential for 2025 and beyond. As home to Google's global headquarters and surrounded by major tech companies like Meta, LinkedIn, and Microsoft, the area benefits from strong employment fundamentals. Excellent Caltrain connectivity makes commuting easy to San Francisco and throughout the Peninsula. The limited housing supply combined with high-paying tech jobs creates sustained demand. Long-term appreciation has consistently outpaced many Bay Area markets."
+    answer: <>Mountain View offers exceptional investment potential for 2025 and beyond. As home to Google's global headquarters and surrounded by major tech companies like Meta, LinkedIn, and Microsoft, the area benefits from strong employment fundamentals. Excellent Caltrain connectivity makes commuting easy to San Francisco and throughout the Peninsula. The limited housing supply combined with high-paying tech jobs creates sustained demand. Long-term appreciation has consistently outpaced many Bay Area markets. The agents at Cascade California Realty can help you identify properties with the strongest investment fundamentals—<Link to="/contact" className="text-blue-600 hover:underline">schedule a consultation</Link> to discuss your goals.</>
   },
   {
     question: "What are the best neighborhoods in Mountain View?",
-    answer: "Top neighborhoods in Mountain View include Old Mountain View (charming downtown feel, walkable to Castro Street, historic homes), Cuesta Park (highly rated schools, family-friendly, newer construction), Waverly Park (quiet streets, excellent schools, convenient location), and Shoreline (waterfront proximity, tech worker favorite, modern condos). Each offers distinct character—Old Mountain View attracts those wanting walkability and charm, while Cuesta Park appeals to families prioritizing top schools and newer homes."
+    answer: <>Top neighborhoods in Mountain View include Old Mountain View (charming downtown feel, walkable to Castro Street, historic homes), Cuesta Park (highly rated schools, family-friendly, newer construction), Waverly Park (quiet streets, excellent schools, convenient location), and Shoreline (waterfront proximity, tech worker favorite, modern condos). Each offers distinct character—Old Mountain View attracts those wanting walkability and charm, while Cuesta Park appeals to families prioritizing top schools and newer homes. Our team knows every block in Mountain View—<Link to="/contact" className="text-blue-600 hover:underline">let us help you find the right fit</Link>.</>
   },
   {
     question: "How is Castro Street and the downtown area?",
@@ -215,7 +215,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "How does Caltrain access affect Mountain View home values?",
-    answer: "Mountain View has two Caltrain stations—Mountain View and San Antonio—providing exceptional transit connectivity. This is a major value driver, enabling car-free commutes to San Francisco (45 minutes), Palo Alto, Redwood City, and San Jose. Homes within walking distance of Caltrain stations typically command 10-15% premiums. With the ongoing Caltrain electrification project improving service frequency and speed, transit-oriented properties are expected to appreciate further. Many tech workers prioritize Caltrain access when choosing where to live."
+    answer: <>Mountain View has two Caltrain stations—Mountain View and San Antonio—providing exceptional transit connectivity. This is a major value driver, enabling car-free commutes to San Francisco (45 minutes), Palo Alto, Redwood City, and San Jose. Homes within walking distance of Caltrain stations typically command 10-15% premiums. With the ongoing Caltrain electrification project improving service frequency and speed, transit-oriented properties are expected to appreciate further. Many tech workers prioritize Caltrain access when choosing where to live. If transit proximity is important to you, <Link to="/contact" className="text-blue-600 hover:underline">connect with Cascade California Realty</Link> for listings near the stations.</>
   },
   {
     question: "What tech companies are near Mountain View?",
@@ -223,15 +223,15 @@ const faqs: FAQItem[] = [
   },
   {
     question: "How much do I need to earn to buy a home in Mountain View?",
-    answer: "To comfortably afford Mountain View's median home price of $2.1 million, you typically need a household income of $450,000-$550,000, assuming a 20% down payment ($420,000) and following the 28% debt-to-income ratio guideline. For condos starting around $1.5 million, incomes of $325,000-$400,000 are generally sufficient. Many Mountain View buyers work in tech with equity compensation that helps with down payments. Dual-income tech households are common in the area."
+    answer: <>To comfortably afford Mountain View's median home price of $2.1 million, you typically need a household income of $450,000-$550,000, assuming a 20% down payment ($420,000) and following the 28% debt-to-income ratio guideline. For condos starting around $1.5 million, incomes of $325,000-$400,000 are generally sufficient. Many Mountain View buyers work in tech with equity compensation that helps with down payments. Dual-income tech households are common in the area. Not sure where you stand? <Link to="/contact" className="text-blue-600 hover:underline">Talk to our specialists</Link> who can connect you with lenders experienced in tech compensation packages.</>
   },
   {
     question: "What are the schools like in Mountain View?",
-    answer: "Mountain View is primarily served by Mountain View Whisman School District for elementary and middle schools, with students attending Mountain View Los Altos High School District for high school. Top-rated schools include Stevenson Elementary, Bubb Elementary, and Crittenden Middle School. Los Altos High School (serving parts of Mountain View) is highly regarded. Test scores and college preparation rates are strong. Many families specifically target homes in Cuesta Park and Waverly Park areas for their school assignments. Private school options are also available nearby."
+    answer: <>Mountain View is primarily served by Mountain View Whisman School District for elementary and middle schools, with students attending Mountain View Los Altos High School District for high school. Top-rated schools include Stevenson Elementary, Bubb Elementary, and Crittenden Middle School. Los Altos High School (serving parts of Mountain View) is highly regarded. Test scores and college preparation rates are strong. Many families specifically target homes in Cuesta Park and Waverly Park areas for their school assignments. Private school options are also available nearby. School boundaries can be complex—<Link to="/contact" className="text-blue-600 hover:underline">ask us</Link> to verify school assignments for any property you're considering.</>
   },
   {
     question: "Are there options for first-time buyers in Mountain View?",
-    answer: "First-time buyers in Mountain View face challenges due to high prices but have several strategies. Condos and townhomes ($1.5M-$1.8M range) offer more accessible entry points than single-family homes. Some buyers target neighborhoods bordering Mountain View in Sunnyvale or Los Altos for better value. FHA loans with 3.5% down payment and conventional loans with 3% down can reduce upfront costs, though PMI applies. Many tech employees leverage stock options and signing bonuses for down payments. Dual-income tech households often succeed as first-time buyers here."
+    answer: <>First-time buyers in Mountain View face challenges due to high prices but have several strategies. Condos and townhomes ($1.5M-$1.8M range) offer more accessible entry points than single-family homes. Some buyers target neighborhoods bordering Mountain View in Sunnyvale or Los Altos for better value. FHA loans with 3.5% down payment and conventional loans with 3% down can reduce upfront costs, though PMI applies. Many tech employees leverage stock options and signing bonuses for down payments. Dual-income tech households often succeed as first-time buyers here. Cascade California Realty has helped many first-time buyers navigate this market successfully—<Link to="/contact" className="text-blue-600 hover:underline">get in touch</Link> for personalized guidance.</>
   },
   {
     question: "What is the commute like from Mountain View?",
@@ -243,19 +243,19 @@ const faqs: FAQItem[] = [
   },
   {
     question: "How competitive is the Mountain View housing market?",
-    answer: "Mountain View's housing market is highly competitive, especially for well-located single-family homes and properties near Caltrain or top schools. Desirable listings often receive multiple offers, particularly in the $2M-$3M range popular with tech professionals. Homes in Old Mountain View and Cuesta Park can sell above asking price. Successful buyers typically: get fully pre-approved with large down payments, write clean offers with minimal contingencies, act quickly on new listings, and work with agents experienced in competing with tech-savvy buyers who often pay all cash or make very strong offers."
+    answer: <>Mountain View's housing market is highly competitive, especially for well-located single-family homes and properties near Caltrain or top schools. Desirable listings often receive multiple offers, particularly in the $2M-$3M range popular with tech professionals. Homes in Old Mountain View and Cuesta Park can sell above asking price. Successful buyers typically: get fully pre-approved with large down payments, write clean offers with minimal contingencies, act quickly on new listings, and work with agents experienced in competing with tech-savvy buyers who often pay all cash or make very strong offers. Having a skilled negotiator in your corner makes a real difference—<Link to="/contact" className="text-blue-600 hover:underline">our Mountain View experts</Link> know how to craft winning offers.</>
   },
   {
     question: "What is the rental market like in Mountain View?",
-    answer: "Mountain View has a strong rental market driven by Google employees and other tech workers. Single-family homes rent for $5,000-$8,000+ monthly, while 2-bedroom condos typically rent for $4,000-$5,500. Vacancy rates are low and turnover is relatively quick. Many property owners successfully rent to tech professionals on shorter-term assignments. Proximity to Caltrain, Castro Street, and major employers commands premium rents. Some buyers purchase investment properties or house-hack by renting rooms to offset mortgage costs. Rental income can help with qualification for some buyers."
+    answer: <>Mountain View has a strong rental market driven by Google employees and other tech workers. Single-family homes rent for $5,000-$8,000+ monthly, while 2-bedroom condos typically rent for $4,000-$5,500. Vacancy rates are low and turnover is relatively quick. Many property owners successfully rent to tech professionals on shorter-term assignments. Proximity to Caltrain, Castro Street, and major employers commands premium rents. Some buyers purchase investment properties or house-hack by renting rooms to offset mortgage costs. Rental income can help with qualification for some buyers. Interested in investment properties? <Link to="/contact" className="text-blue-600 hover:underline">Reach out to Cascade California Realty</Link> for insights on the best opportunities.</>
   },
   {
     question: "What are the HOA fees like in Mountain View condos?",
-    answer: "Mountain View condo HOA fees typically range from $500-$900 per month depending on the complex, amenities, and age. Fees cover building insurance, exterior maintenance, common areas, water/garbage, and reserve funds. Complexes with pools, gyms, or doormen have higher fees. When evaluating condos, review HOA financial documents, reserve fund levels, and special assessment history. Well-managed HOAs maintain property values better. Some newer luxury developments near Castro Street or Shoreline can have fees exceeding $1,000 monthly but include more extensive amenities and services."
+    answer: <>Mountain View condo HOA fees typically range from $500-$900 per month depending on the complex, amenities, and age. Fees cover building insurance, exterior maintenance, common areas, water/garbage, and reserve funds. Complexes with pools, gyms, or doormen have higher fees. When evaluating condos, review HOA financial documents, reserve fund levels, and special assessment history. Well-managed HOAs maintain property values better. Some newer luxury developments near Castro Street or Shoreline can have fees exceeding $1,000 monthly but include more extensive amenities and services. We can help you review HOA documents and spot potential red flags—<Link to="/contact" className="text-blue-600 hover:underline">contact us</Link> for assistance.</>
   },
   {
     question: "Should I buy near Google headquarters?",
-    answer: "Buying near Google's campus in Mountain View has several advantages: walkability or short bike commute for Google employees, proximity to amenities Google has attracted to the area, strong rental demand if you relocate, and consistent appreciation due to employment concentration. However, these benefits are priced in—homes within a mile of Googleplex command premiums. Consider whether the convenience justifies the cost versus living slightly farther away with Caltrain or shuttle access. Google's long-term presence and continued expansion support sustained property values in the area."
+    answer: <>Buying near Google's campus in Mountain View has several advantages: walkability or short bike commute for Google employees, proximity to amenities Google has attracted to the area, strong rental demand if you relocate, and consistent appreciation due to employment concentration. However, these benefits are priced in—homes within a mile of Googleplex command premiums. Consider whether the convenience justifies the cost versus living slightly farther away with Caltrain or shuttle access. Google's long-term presence and continued expansion support sustained property values in the area. <Link to="/contact" className="text-blue-600 hover:underline">Let our team</Link> help you weigh the trade-offs based on your specific situation.</>
   },
   {
     question: "What types of homes are common in Mountain View?",
@@ -263,19 +263,19 @@ const faqs: FAQItem[] = [
   },
   {
     question: "How does Mountain View compare to Palo Alto or Los Altos?",
-    answer: "Mountain View offers better value than neighboring Palo Alto (median $3.5M+) and Los Altos (median $4M+) while maintaining excellent schools, tech employment access, and quality of life. You get more house for your money in Mountain View. Castro Street rivals University Avenue (Palo Alto) for dining and walkability. Caltrain access is comparable or better. Schools are strong, though Palo Alto and Los Altos have slight edges in test scores. Mountain View attracts buyers who want Silicon Valley benefits without paying the Palo Alto premium, making it popular with practical tech professionals."
+    answer: <>Mountain View offers better value than neighboring Palo Alto (median $3.5M+) and Los Altos (median $4M+) while maintaining excellent schools, tech employment access, and quality of life. You get more house for your money in Mountain View. Castro Street rivals University Avenue (Palo Alto) for dining and walkability. Caltrain access is comparable or better. Schools are strong, though Palo Alto and Los Altos have slight edges in test scores. Mountain View attracts buyers who want Silicon Valley benefits without paying the Palo Alto premium, making it popular with practical tech professionals. Still deciding between cities? <Link to="/contact" className="text-blue-600 hover:underline">Our agents serve the entire region</Link> and can show you options in multiple areas.</>
   },
   {
     question: "What questions should I ask when buying a home in Mountain View?",
-    answer: "Essential questions for Mountain View home purchases include: 1) What school attendance area is the property in? 2) How far is the walk/bike to Caltrain stations? 3) What is the noise level from Highway 101 or flight paths? 4) Has the home been updated or are major systems original? 5) What are the property taxes and any supplemental assessments? 6) For condos, what are HOA reserves and any planned special assessments? 7) Is the home in a flood zone (near Shoreline)? 8) What is included in the sale? 9) How long has it been on market and why is the seller moving? 10) Are there any pending development projects nearby?"
+    answer: <>Essential questions for Mountain View home purchases include: 1) What school attendance area is the property in? 2) How far is the walk/bike to Caltrain stations? 3) What is the noise level from Highway 101 or flight paths? 4) Has the home been updated or are major systems original? 5) What are the property taxes and any supplemental assessments? 6) For condos, what are HOA reserves and any planned special assessments? 7) Is the home in a flood zone (near Shoreline)? 8) What is included in the sale? 9) How long has it been on market and why is the seller moving? 10) Are there any pending development projects nearby? A good agent will research these for you—<Link to="/contact" className="text-blue-600 hover:underline">Cascade California Realty</Link> is here to help.</>
   },
   {
     question: "What is the process for buying a home in Mountain View?",
-    answer: "The Mountain View home buying process typically takes 30-45 days from accepted offer to closing. Key steps: 1) Get pre-approved for a mortgage with a lender familiar with high-cost Bay Area markets, 2) Work with a local agent who knows Mountain View neighborhoods and competing with tech buyers, 3) Tour properties and attend open houses quickly as good listings move fast, 4) Make competitive offers—often above asking for desirable homes, 5) Complete inspections within 17 days typically, 6) Remove contingencies when satisfied, 7) Final loan approval and closing. Be prepared to move quickly and compete with well-qualified tech industry buyers."
+    answer: <>The Mountain View home buying process typically takes 30-45 days from accepted offer to closing. Key steps: 1) Get pre-approved for a mortgage with a lender familiar with high-cost Bay Area markets, 2) Work with a local agent who knows Mountain View neighborhoods and competing with tech buyers, 3) Tour properties and attend open houses quickly as good listings move fast, 4) Make competitive offers—often above asking for desirable homes, 5) Complete inspections within 17 days typically, 6) Remove contingencies when satisfied, 7) Final loan approval and closing. Be prepared to move quickly and compete with well-qualified tech industry buyers. Ready to start? <Link to="/contact" className="text-blue-600 hover:underline">Contact Cascade California Realty</Link> to begin your home search with experienced local guidance.</>
   },
   {
     question: "Are there any hidden costs of buying in Mountain View?",
-    answer: "Beyond the purchase price, Mountain View buyers should budget for: closing costs (2-3% of purchase price), property transfer tax (varies by price, roughly $1.15 per $1,000), title insurance, inspection fees ($500-$1,500), HOA fees for condos ($500-$900+/month), earthquake insurance (recommended, $1,500-$3,000 annually), potential seismic retrofitting for older homes, and landscape maintenance (many properties have significant yards). Some neighborhoods have Mello-Roos taxes or special assessments. Budget 1-2% of home value annually for maintenance, especially for older homes that may need updated systems, roofing, or HVAC."
+    answer: <>Beyond the purchase price, Mountain View buyers should budget for: closing costs (2-3% of purchase price), property transfer tax (varies by price, roughly $1.15 per $1,000), title insurance, inspection fees ($500-$1,500), HOA fees for condos ($500-$900+/month), earthquake insurance (recommended, $1,500-$3,000 annually), potential seismic retrofitting for older homes, and landscape maintenance (many properties have significant yards). Some neighborhoods have Mello-Roos taxes or special assessments. Budget 1-2% of home value annually for maintenance, especially for older homes that may need updated systems, roofing, or HVAC. We help clients understand the full financial picture before making an offer—<Link to="/contact" className="text-blue-600 hover:underline">reach out</Link> for a detailed cost breakdown.</>
   }
 ];
 
@@ -297,10 +297,11 @@ export function MountainViewFAQ() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Mountain View Real Estate FAQ | Home Buying Guide 2025"
-        description="Expert answers to common Mountain View home buying questions. Learn about prices, neighborhoods, and more from a Bay Area realtor with 15+ years experience."
+        title="Best Realtor in Mountain View | Manoj Thomas - Top Mountain View Real Estate Agent 2025"
+        description="Looking for the best realtor in Mountain View? Manoj Thomas is the #1 rated Mountain View real estate agent with 15+ years experience, $1B+ sales. Expert near Google HQ."
         canonical="https://cascaderealtors.com/mountain-view"
         city="Mountain View"
+        county="Santa Clara County"
         coordinates={{ lat: 37.3861, lng: -122.0839 }}
       />
       <FAQHeader />

@@ -10,7 +10,7 @@ import { SEO } from '../components/SEO';
 
 interface FAQItem {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 }
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
@@ -199,11 +199,11 @@ function ContactForm() {
 const faqs: FAQItem[] = [
   {
     question: "What is the average home price in Hillsborough?",
-    answer: "The median home price in Hillsborough is approximately $5.5 million, making it one of the most exclusive communities in the San Francisco Bay Area. However, prices range dramatically—from $3-4 million for smaller homes or properties needing renovation, to $10 million, $20 million, or more for premier estates on large lots. Many properties feature sprawling grounds of one to several acres, with custom architecture and luxury amenities that command premium pricing."
+    answer: <>The median home price in Hillsborough is approximately $5.5 million, making it one of the most exclusive communities in the San Francisco Bay Area. However, prices range dramatically—from $3-4 million for smaller homes or properties needing renovation, to $10 million, $20 million, or more for premier estates on large lots. Many properties feature sprawling grounds of one to several acres, with custom architecture and luxury amenities that command premium pricing. For current pricing insights tailored to your search, <Link to="/contact" className="text-blue-600 hover:underline">reach out to our team</Link>.</>
   },
   {
     question: "Why are Hillsborough homes so expensive?",
-    answer: "Hillsborough's ultra-luxury pricing reflects several unique factors: strict half-acre minimum lot requirements ensure spacious properties with privacy, the town's complete ban on commercial development creates an exclusive residential sanctuary, top-rated Hillsborough City School District attracts affluent families, and the prestigious address carries significant social cachet. The limited inventory of only about 1,500 homes, combined with high demand from tech executives and business leaders, drives sustained appreciation."
+    answer: <>Hillsborough's ultra-luxury pricing reflects several unique factors: strict half-acre minimum lot requirements ensure spacious properties with privacy, the town's complete ban on commercial development creates an exclusive residential sanctuary, top-rated Hillsborough City School District attracts affluent families, and the prestigious address carries significant social cachet. The limited inventory of only about 1,500 homes, combined with high demand from tech executives and business leaders, drives sustained appreciation. At Cascade California Realty, we help buyers navigate this exclusive market with confidence.</>
   },
   {
     question: "What is the minimum lot size in Hillsborough?",
@@ -219,15 +219,15 @@ const faqs: FAQItem[] = [
   },
   {
     question: "What is the entry-level price for a home in Hillsborough?",
-    answer: "Entry-level homes in Hillsborough typically start around $3-4 million, usually for smaller properties (under 3,000 square feet) or homes requiring significant renovation on minimum half-acre lots. These represent opportunities for buyers to enter the market and potentially add value through updates. However, truly move-in-ready homes with modern amenities and good condition typically start closer to $5-6 million. Given the median of $5.5 million, budget at least $4 million to find viable options."
+    answer: <>Entry-level homes in Hillsborough typically start around $3-4 million, usually for smaller properties (under 3,000 square feet) or homes requiring significant renovation on minimum half-acre lots. These represent opportunities for buyers to enter the market and potentially add value through updates. However, truly move-in-ready homes with modern amenities and good condition typically start closer to $5-6 million. Given the median of $5.5 million, budget at least $4 million to find viable options. <Link to="/contact" className="text-blue-600 hover:underline">Connect with Cascade California Realty</Link> to explore available properties in your price range.</>
   },
   {
     question: "What types of homes are common in Hillsborough?",
-    answer: "Hillsborough features an eclectic mix of architectural styles reflecting different eras: grand Mediterranean and Italian Renaissance estates from the 1920s-30s, mid-century modern masterpieces from the 1950s-60s, traditional Georgian and Colonial revival homes, and contemporary custom estates built in recent decades. Many properties are architecturally significant, and several homes are designated historic landmarks. Buyers can find everything from 1920s estates needing restoration to ultra-modern new construction with smart home technology."
+    answer: <>Hillsborough features an eclectic mix of architectural styles reflecting different eras: grand Mediterranean and Italian Renaissance estates from the 1920s-30s, mid-century modern masterpieces from the 1950s-60s, traditional Georgian and Colonial revival homes, and contemporary custom estates built in recent decades. Many properties are architecturally significant, and several homes are designated historic landmarks. Buyers can find everything from 1920s estates needing restoration to ultra-modern new construction with smart home technology. If you have a specific architectural style in mind, <Link to="/contact" className="text-blue-600 hover:underline">let Cascade California Realty know</Link>—we can curate a tailored selection.</>
   },
   {
     question: "Is Hillsborough a good investment?",
-    answer: "Hillsborough has demonstrated strong long-term appreciation due to its scarcity, prestige, excellent schools, and proximity to Silicon Valley wealth. While the ultra-luxury market can be more volatile than mid-range housing, Hillsborough's limited supply (only about 1,500 homes) and consistent demand from high-net-worth buyers provide stability. Properties here are often generational holdings. The investment case is strongest for buyers planning to hold 10+ years and those who value the lifestyle and school quality alongside financial returns."
+    answer: <>Hillsborough has demonstrated strong long-term appreciation due to its scarcity, prestige, excellent schools, and proximity to Silicon Valley wealth. While the ultra-luxury market can be more volatile than mid-range housing, Hillsborough's limited supply (only about 1,500 homes) and consistent demand from high-net-worth buyers provide stability. Properties here are often generational holdings. The investment case is strongest for buyers planning to hold 10+ years and those who value the lifestyle and school quality alongside financial returns. Our team at Cascade California Realty can provide detailed market analysis to inform your decision—<Link to="/contact" className="text-blue-600 hover:underline">get in touch</Link>.</>
   },
   {
     question: "What are property taxes like in Hillsborough?",
@@ -239,7 +239,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "How private and secure is Hillsborough?",
-    answer: "Hillsborough offers exceptional privacy and security. Large lot sizes (minimum 0.5 acres) provide natural buffer between homes, mature trees and landscaping create secluded estates, and the town has its own highly-rated police department with extremely low crime rates. Many properties have gated entries, security systems, and privacy hedges. The residential-only nature means minimal through-traffic. Hillsborough consistently ranks as one of the safest communities in California, making it ideal for families and executives seeking discretion."
+    answer: <>Hillsborough offers exceptional privacy and security. Large lot sizes (minimum 0.5 acres) provide natural buffer between homes, mature trees and landscaping create secluded estates, and the town has its own highly-rated police department with extremely low crime rates. Many properties have gated entries, security systems, and privacy hedges. The residential-only nature means minimal through-traffic. Hillsborough consistently ranks as one of the safest communities in California, making it ideal for families and executives seeking discretion. Cascade California Realty understands the importance of privacy for our clients—<Link to="/contact" className="text-blue-600 hover:underline">let us know your requirements</Link>.</>
   },
   {
     question: "What is the commute like from Hillsborough?",
@@ -247,7 +247,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "Can I build or renovate a home in Hillsborough?",
-    answer: "Yes, but Hillsborough has strict building regulations and design review processes. All exterior changes require approval from the Planning Department and often the Design Review Board to ensure compatibility with the neighborhood character. The town encourages architectural excellence and maintains high standards. Many buyers purchase older estates with renovation plans—budget extra time (6-12 months) for permitting beyond typical construction timelines. Working with architects and contractors experienced in Hillsborough's requirements is essential."
+    answer: <>Yes, but Hillsborough has strict building regulations and design review processes. All exterior changes require approval from the Planning Department and often the Design Review Board to ensure compatibility with the neighborhood character. The town encourages architectural excellence and maintains high standards. Many buyers purchase older estates with renovation plans—budget extra time (6-12 months) for permitting beyond typical construction timelines. Working with architects and contractors experienced in Hillsborough's requirements is essential. <Link to="/contact" className="text-blue-600 hover:underline">Ask us</Link> about properties with renovation potential and trusted local contractors.</>
   },
   {
     question: "What amenities and activities are available in Hillsborough?",
@@ -255,15 +255,15 @@ const faqs: FAQItem[] = [
   },
   {
     question: "Is Hillsborough family-friendly?",
-    answer: "Absolutely. Hillsborough is quintessentially family-oriented with award-winning K-8 schools, extremely safe streets with very low crime, spacious yards perfect for children and pets, active community programs and events, and neighbors who share similar family values. The lack of commercial activity means no traffic congestion and safe environments for kids to play. Many families span multiple generations here—children who grew up in Hillsborough often return to raise their own families, testament to the strong community and quality of life."
+    answer: <>Absolutely. Hillsborough is quintessentially family-oriented with award-winning K-8 schools, extremely safe streets with very low crime, spacious yards perfect for children and pets, active community programs and events, and neighbors who share similar family values. The lack of commercial activity means no traffic congestion and safe environments for kids to play. Many families span multiple generations here—children who grew up in Hillsborough often return to raise their own families, testament to the strong community and quality of life. Our Cascade California Realty agents are happy to share neighborhood insights for families—<Link to="/contact" className="text-blue-600 hover:underline">contact us</Link> to learn more.</>
   },
   {
     question: "What should I know before buying a home in Hillsborough?",
-    answer: "Key considerations for Hillsborough buyers include: budget beyond purchase price for estate maintenance, landscaping, and utilities (large homes on big lots have significant operating costs); understand the strict design review process if planning renovations; there are no stores or restaurants in town—you'll drive to nearby cities for everything; excellent schools are a major draw but high school options require research (Burlingame High or private schools); and the market moves slower than typical Bay Area real estate—expect longer marketing times but also serious, qualified buyers."
+    answer: <>Key considerations for Hillsborough buyers include: budget beyond purchase price for estate maintenance, landscaping, and utilities (large homes on big lots have significant operating costs); understand the strict design review process if planning renovations; there are no stores or restaurants in town—you'll drive to nearby cities for everything; excellent schools are a major draw but high school options require research (Burlingame High or private schools); and the market moves slower than typical Bay Area real estate—expect longer marketing times but also serious, qualified buyers. The experts at Cascade California Realty can walk you through every consideration—<Link to="/contact" className="text-blue-600 hover:underline">schedule a consultation</Link>.</>
   },
   {
     question: "How competitive is the Hillsborough real estate market?",
-    answer: "Hillsborough's ultra-luxury market is less frenetic than mid-range Bay Area housing but still competitive for the best properties. Well-priced, well-maintained estates in desirable locations attract multiple qualified buyers. However, the market is more nuanced—buyers at this price point conduct extensive due diligence, often taking weeks to evaluate properties. Off-market transactions are common, and relationships with experienced luxury real estate agents matter significantly. Properties can sit longer than mass-market homes, but quality estates with proper pricing sell reliably."
+    answer: <>Hillsborough's ultra-luxury market is less frenetic than mid-range Bay Area housing but still competitive for the best properties. Well-priced, well-maintained estates in desirable locations attract multiple qualified buyers. However, the market is more nuanced—buyers at this price point conduct extensive due diligence, often taking weeks to evaluate properties. Off-market transactions are common, and relationships with experienced luxury real estate agents matter significantly. Properties can sit longer than mass-market homes, but quality estates with proper pricing sell reliably. Cascade California Realty maintains access to exclusive off-market listings—<Link to="/contact" className="text-blue-600 hover:underline">inquire about pocket listings</Link>.</>
   },
   {
     question: "What are the property maintenance costs in Hillsborough?",
@@ -271,11 +271,11 @@ const faqs: FAQItem[] = [
   },
   {
     question: "Are there any first-time buyer opportunities in Hillsborough?",
-    answer: "Hillsborough is not a first-time buyer market in the traditional sense—there are no affordable housing programs or entry-level pricing. However, 'first-time' luxury buyers (perhaps moving from a starter home or relocating with significant equity/income) might consider smaller properties needing updates in the $3-4 million range. These homes offer opportunity to enter this prestigious community and add value through renovation. Working with a real estate professional experienced in Hillsborough's luxury market is essential for identifying these opportunities."
+    answer: <>Hillsborough is not a first-time buyer market in the traditional sense—there are no affordable housing programs or entry-level pricing. However, "first-time" luxury buyers (perhaps moving from a starter home or relocating with significant equity/income) might consider smaller properties needing updates in the $3-4 million range. These homes offer opportunity to enter this prestigious community and add value through renovation. Working with a real estate professional experienced in Hillsborough's luxury market is essential for identifying these opportunities. <Link to="/contact" className="text-blue-600 hover:underline">Reach out to Cascade California Realty</Link> to discuss your options.</>
   },
   {
     question: "How do I choose the right real estate agent for Hillsborough?",
-    answer: "Selecting an agent for Hillsborough requires finding someone with specific luxury market expertise: deep knowledge of Hillsborough's unique regulations, zoning, and design review process; established relationships with other agents and off-market deal flow; experience with $5M+ transactions and sophisticated buyers; understanding of estate features, architecture, and land value; and discretion working with high-net-worth clients. Interview multiple agents, ask about recent Hillsborough sales, and ensure they understand the nuances of this exclusive market. Track record in ultra-luxury matters immensely."
+    answer: <>Selecting an agent for Hillsborough requires finding someone with specific luxury market expertise: deep knowledge of Hillsborough's unique regulations, zoning, and design review process; established relationships with other agents and off-market deal flow; experience with $5M+ transactions and sophisticated buyers; understanding of estate features, architecture, and land value; and discretion working with high-net-worth clients. Interview multiple agents, ask about recent Hillsborough sales, and ensure they understand the nuances of this exclusive market. Track record in ultra-luxury matters immensely. At Cascade California Realty, we specialize in Peninsula luxury real estate with over 15 years of experience—<Link to="/contact" className="text-blue-600 hover:underline">start a conversation with our team</Link>.</>
   }
 ];
 
@@ -297,8 +297,11 @@ export function HillsboroughFAQ() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Hillsborough Real Estate FAQ - Home Buying Guide | Cascade Realty"
-        description="Everything you need to know about buying a home in Hillsborough. Expert answers from a Bay Area real estate professional with 15+ years of experience."
+        title="Best Realtor in Hillsborough | Manoj Thomas - Top Hillsborough Real Estate Agent 2025"
+        description="Looking for the best realtor in Hillsborough? Manoj Thomas is the #1 rated Hillsborough real estate agent with 15+ years experience, $1B+ sales. Expert in Hillsborough homes and neighborhoods."
+        canonical="https://cascaderealtors.com/hillsborough"
+        city="Hillsborough"
+        county="San Mateo County"
         coordinates={{ lat: 37.5741, lng: -122.3794 }}
       />
       <FAQHeader />

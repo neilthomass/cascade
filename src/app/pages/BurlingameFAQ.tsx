@@ -10,7 +10,7 @@ import { SEO } from '../components/SEO';
 
 interface FAQItem {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 }
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
@@ -199,11 +199,11 @@ function ContactForm() {
 const faqs: FAQItem[] = [
   {
     question: "What is the average home price in Burlingame?",
-    answer: "The median home price in Burlingame is approximately $2.4 million as of 2024, making it one of the Peninsula's most prestigious communities. Prices vary by neighborhood—from around $1.5 million for condos and smaller homes to $5 million or more for estates in Burlingame Hills. The city's excellent schools, downtown charm, and convenient location justify premium pricing. Single-family homes consistently appreciate due to limited inventory and high demand."
+    answer: <>The median home price in Burlingame is approximately $2.4 million as of 2024, making it one of the Peninsula's most prestigious communities. Prices vary by neighborhood—from around $1.5 million for condos and smaller homes to $5 million or more for estates in Burlingame Hills. The city's excellent schools, downtown charm, and convenient location justify premium pricing. Single-family homes consistently appreciate due to limited inventory and high demand. For a personalized pricing analysis based on your criteria, <Link to="/contact" className="text-blue-600 hover:underline">reach out to our Burlingame specialists</Link>.</>
   },
   {
     question: "Is Burlingame a good place to buy a home in 2025?",
-    answer: "Burlingame offers exceptional value for buyers in 2025. The city combines small-town charm with world-class amenities, including excellent public schools, a walkable downtown on Broadway, and unbeatable transit access via Caltrain and proximity to SFO Airport. With a population of just over 30,000, Burlingame maintains a tight-knit community feel while offering Peninsula convenience. The stable market, strong school district, and limited housing supply support long-term appreciation."
+    answer: <>Burlingame offers exceptional value for buyers in 2025. The city combines small-town charm with world-class amenities, including excellent public schools, a walkable downtown on Broadway, and unbeatable transit access via Caltrain and proximity to SFO Airport. With a population of just over 30,000, Burlingame maintains a tight-knit community feel while offering Peninsula convenience. The stable market, strong school district, and limited housing supply support long-term appreciation. Our team at Cascade California Realty can help you identify the best opportunities—<Link to="/contact" className="text-blue-600 hover:underline">let's discuss your goals</Link>.</>
   },
   {
     question: "What makes Broadway Avenue in Burlingame special?",
@@ -211,11 +211,11 @@ const faqs: FAQItem[] = [
   },
   {
     question: "How are the schools in Burlingame?",
-    answer: "Burlingame School District is consistently rated among the top districts in San Mateo County, with excellent API scores and test results. The district serves approximately 3,000 students across five elementary schools, one intermediate school, and feeds into top-rated high schools. Strong parent involvement, well-funded programs, and experienced teachers create exceptional educational outcomes. Many families specifically choose Burlingame for the schools, making homes in the district highly sought-after."
+    answer: <>Burlingame School District is consistently rated among the top districts in San Mateo County, with excellent API scores and test results. The district serves approximately 3,000 students across five elementary schools, one intermediate school, and feeds into top-rated high schools. Strong parent involvement, well-funded programs, and experienced teachers create exceptional educational outcomes. Many families specifically choose Burlingame for the schools, making homes in the district highly sought-after. If schools are a priority, <Link to="/contact" className="text-blue-600 hover:underline">connect with us</Link> to explore homes in the best attendance areas.</>
   },
   {
     question: "What are the best neighborhoods in Burlingame?",
-    answer: "Top Burlingame neighborhoods include Burlingame Hills (luxury estates with views, larger lots), Ray Park (family-friendly, excellent schools, mid-century homes), and Downtown/Central Burlingame (walkable to Broadway, charming older homes). The Easton Addition offers craftsman-style homes on tree-lined streets, while the Lyon-Hoag area provides more affordable entry points. Each neighborhood has distinct character—Hills for luxury and views, Ray Park for families, Downtown for walkability."
+    answer: <>Top Burlingame neighborhoods include Burlingame Hills (luxury estates with views, larger lots), Ray Park (family-friendly, excellent schools, mid-century homes), and Downtown/Central Burlingame (walkable to Broadway, charming older homes). The Easton Addition offers craftsman-style homes on tree-lined streets, while the Lyon-Hoag area provides more affordable entry points. Each neighborhood has distinct character—Hills for luxury and views, Ray Park for families, Downtown for walkability. Want help finding your ideal Burlingame neighborhood? <Link to="/contact" className="text-blue-600 hover:underline">Schedule a consultation with Cascade California Realty</Link>.</>
   },
   {
     question: "How is Caltrain access from Burlingame?",
@@ -239,15 +239,15 @@ const faqs: FAQItem[] = [
   },
   {
     question: "How competitive is the Burlingame housing market?",
-    answer: "Burlingame's housing market is highly competitive, especially for well-maintained homes in desirable neighborhoods like Burlingame Hills and Ray Park. Limited inventory and strong demand often result in multiple offers and sales at or above asking price. Buyers typically need strong pre-approvals, quick decision-making, and sometimes creative offers. Homes in top school attendance areas and walkable to downtown or Caltrain receive particular interest. Working with an experienced local agent familiar with Burlingame's micro-markets is essential."
+    answer: <>Burlingame's housing market is highly competitive, especially for well-maintained homes in desirable neighborhoods like Burlingame Hills and Ray Park. Limited inventory and strong demand often result in multiple offers and sales at or above asking price. Buyers typically need strong pre-approvals, quick decision-making, and sometimes creative offers. Homes in top school attendance areas and walkable to downtown or Caltrain receive particular interest. Having an experienced local agent is essential in this market—<Link to="/contact" className="text-blue-600 hover:underline">the Cascade California Realty team</Link> knows how to navigate competitive situations and craft winning offers.</>
   },
   {
     question: "What types of homes are available in Burlingame?",
-    answer: "Burlingame features diverse housing stock including: mid-century modern homes (especially in Ray Park and Easton Addition), craftsman bungalows (downtown areas), Spanish and Tudor revivals (central neighborhoods), luxury estates (Burlingame Hills), contemporary new construction, and condos/townhomes. Most homes were built between 1920-1970, offering character and established neighborhoods. Lot sizes range from small urban lots to expansive hillside parcels. This variety accommodates different budgets, though prices generally start around $1.5M."
+    answer: <>Burlingame features diverse housing stock including: mid-century modern homes (especially in Ray Park and Easton Addition), craftsman bungalows (downtown areas), Spanish and Tudor revivals (central neighborhoods), luxury estates (Burlingame Hills), contemporary new construction, and condos/townhomes. Most homes were built between 1920-1970, offering character and established neighborhoods. Lot sizes range from small urban lots to expansive hillside parcels. This variety accommodates different budgets, though prices generally start around $1.5M. <Link to="/contact" className="text-blue-600 hover:underline">Tell us what you're looking for</Link> and we'll match you with available properties.</>
   },
   {
     question: "What is the investment potential in Burlingame real estate?",
-    answer: "Burlingame offers strong investment potential due to multiple factors: limited housing supply, consistently high demand, excellent schools attracting families, strong rental market, Peninsula job growth, and infrastructure improvements (Caltrain electrification). Historical appreciation has been solid, and the city's desirability continues increasing. Proximity to major employment centers (SF, Silicon Valley, airport) provides economic stability. Quality of life factors—downtown, schools, parks—support long-term value. For 5-10+ year holds, Burlingame typically outperforms regional averages."
+    answer: <>Burlingame offers strong investment potential due to multiple factors: limited housing supply, consistently high demand, excellent schools attracting families, strong rental market, Peninsula job growth, and infrastructure improvements (Caltrain electrification). Historical appreciation has been solid, and the city's desirability continues increasing. Proximity to major employment centers (SF, Silicon Valley, airport) provides economic stability. Quality of life factors—downtown, schools, parks—support long-term value. For 5-10+ year holds, Burlingame typically outperforms regional averages. Curious about specific investment strategies? <Link to="/contact" className="text-blue-600 hover:underline">Get in touch with our advisors</Link>.</>
   },
   {
     question: "What are property taxes in Burlingame?",
@@ -259,11 +259,11 @@ const faqs: FAQItem[] = [
   },
   {
     question: "What are HOA fees like in Burlingame condos?",
-    answer: "Burlingame condo HOA fees typically range from $400-$800 per month depending on the complex, age, amenities, and size. Fees cover building insurance, common area maintenance, water/garbage, and reserve funds. Burlingame has fewer large condo complexes than neighboring cities, with many smaller, well-maintained buildings. When evaluating condos, review HOA financial documents, reserve funds, and recent special assessments. Well-managed HOAs maintain property values and provide hassle-free living."
+    answer: <>Burlingame condo HOA fees typically range from $400-$800 per month depending on the complex, age, amenities, and size. Fees cover building insurance, common area maintenance, water/garbage, and reserve funds. Burlingame has fewer large condo complexes than neighboring cities, with many smaller, well-maintained buildings. When evaluating condos, review HOA financial documents, reserve funds, and recent special assessments. Well-managed HOAs maintain property values and provide hassle-free living. We can help you analyze HOA financials before making an offer—<Link to="/contact" className="text-blue-600 hover:underline">ask us about condo opportunities</Link>.</>
   },
   {
     question: "What should I look for when buying a home in Burlingame?",
-    answer: "When buying in Burlingame, prioritize: school attendance area (if you have children), walkability to downtown Broadway, Caltrain access, lot size and orientation, home condition and update needs, tree coverage and landscaping, neighborhood character, and parking availability. Key inspections include foundation, roof, electrical/plumbing systems, and sewer lateral. Understand any HOA or neighborhood restrictions. Consider future needs—will you want to expand or remodel? Work with an agent familiar with Burlingame's neighborhoods and disclosure requirements."
+    answer: <>When buying in Burlingame, prioritize: school attendance area (if you have children), walkability to downtown Broadway, Caltrain access, lot size and orientation, home condition and update needs, tree coverage and landscaping, neighborhood character, and parking availability. Key inspections include foundation, roof, electrical/plumbing systems, and sewer lateral. Understand any HOA or neighborhood restrictions. Consider future needs—will you want to expand or remodel? Our agents at Cascade California Realty are well-versed in Burlingame disclosures and can guide you through the entire process—<Link to="/contact" className="text-blue-600 hover:underline">start the conversation here</Link>.</>
   },
   {
     question: "Is there new construction in Burlingame?",
@@ -271,11 +271,11 @@ const faqs: FAQItem[] = [
   },
   {
     question: "What is the lifestyle like in Burlingame?",
-    answer: "Burlingame offers a refined, family-oriented lifestyle combining Peninsula convenience with small-town charm. Residents enjoy walking to downtown for coffee and shopping, dining at excellent restaurants, attending community events, and using nearby parks. The strong sense of community, excellent schools, and safe neighborhoods attract professionals and families. Proximity to San Francisco, Silicon Valley, and SFO provides career opportunities while maintaining suburban quality of life. Tree-lined streets, architectural diversity, and civic pride create a distinctive, highly desirable environment."
+    answer: <>Burlingame offers a refined, family-oriented lifestyle combining Peninsula convenience with small-town charm. Residents enjoy walking to downtown for coffee and shopping, dining at excellent restaurants, attending community events, and using nearby parks. The strong sense of community, excellent schools, and safe neighborhoods attract professionals and families. Proximity to San Francisco, Silicon Valley, and SFO provides career opportunities while maintaining suburban quality of life. Tree-lined streets, architectural diversity, and civic pride create a distinctive, highly desirable environment. Ready to make Burlingame home? <Link to="/contact" className="text-blue-600 hover:underline">Let Cascade California Realty show you around</Link>.</>
   },
   {
     question: "How do I choose a real estate agent in Burlingame?",
-    answer: "Choose a Burlingame agent based on: deep local knowledge (they should know neighborhoods, schools, and market trends intimately), recent transaction history in Burlingame (10+ deals annually shows active involvement), familiarity with different property types and price points, communication style matching your preferences, and references from past clients. Interview 2-3 agents before deciding. Look for someone who asks about your needs rather than just promoting themselves. In Burlingame's competitive market, an experienced local agent's guidance on pricing, negotiations, and inspections is invaluable."
+    answer: <>Choose a Burlingame agent based on: deep local knowledge (they should know neighborhoods, schools, and market trends intimately), recent transaction history in Burlingame (10+ deals annually shows active involvement), familiarity with different property types and price points, communication style matching your preferences, and references from past clients. Interview 2-3 agents before deciding. Look for someone who asks about your needs rather than just promoting themselves. In Burlingame's competitive market, an experienced local agent's guidance on pricing, negotiations, and inspections is invaluable. <Link to="/contact" className="text-blue-600 hover:underline">Meet the Cascade California Realty team</Link> and see if we're the right fit for your search.</>
   }
 ];
 
@@ -297,8 +297,11 @@ export function BurlingameFAQ() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Burlingame Real Estate FAQ - Home Buying Guide | Cascade Realty"
-        description="Everything you need to know about buying a home in Burlingame. Expert answers from a Bay Area real estate professional with 15+ years of experience."
+        title="Best Realtor in Burlingame | Manoj Thomas - Top Burlingame Real Estate Agent 2025"
+        description="Looking for the best realtor in Burlingame? Manoj Thomas is the #1 rated Burlingame real estate agent with 15+ years experience, $1B+ sales. Expert in Burlingame homes and neighborhoods."
+        canonical="https://cascaderealtors.com/burlingame"
+        city="Burlingame"
+        county="San Mateo County"
         coordinates={{ lat: 37.5841, lng: -122.3660 }}
       />
       <FAQHeader />

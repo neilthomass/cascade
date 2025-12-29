@@ -45,6 +45,8 @@ import { PacificaFAQ } from "./app/pages/PacificaFAQ.tsx";
 import { HalfMoonBayFAQ } from "./app/pages/HalfMoonBayFAQ.tsx";
 import { NotFound } from "./app/pages/NotFound.tsx";
 import { CascadeFAQ } from "./app/pages/CascadeFAQ.tsx";
+import { ChoosingRealtorFAQ } from "./app/pages/ChoosingRealtorFAQ.tsx";
+import { ContactPage } from "./app/pages/ContactPage.tsx";
 import { SubmitTestimonialPage } from "./app/pages/SubmitTestimonialPage.tsx";
 import { AdminPage } from "./app/pages/admin/AdminPage.tsx";
 import "./styles/index.css";
@@ -55,6 +57,10 @@ createRoot(document.getElementById("root")!).render(
       <Route path="/" element={<App />} />
       {/* Company FAQ */}
       <Route path="/faq" element={<CascadeFAQ />} />
+      {/* Choosing a Realtor Guide */}
+      <Route path="/choosing-a-realtor" element={<ChoosingRealtorFAQ />} />
+      {/* Contact */}
+      <Route path="/contact" element={<ContactPage />} />
       {/* Submit Testimonial */}
       <Route path="/submit-testimonial" element={<SubmitTestimonialPage />} />
       {/* San Francisco */}

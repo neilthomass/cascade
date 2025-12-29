@@ -10,7 +10,8 @@ const ALLOWED_ADMINS = [
   'manojthomas@berkeley.edu',
   'neilthomas@berkeley.edu',
   'manojthomas@gmail.com',
-  'nathanthomas707@gmail.com'
+  'nathanthomas707@gmail.com',
+  'jinu@cascadecaliforniarealty.com'
 ];
 
 // Configuration
@@ -22,6 +23,8 @@ const OTP_LENGTH = 6;
 const ALLOWED_ORIGINS = [
   'https://cascadecaliforniarealty.com',
   'https://www.cascadecaliforniarealty.com',
+  'https://cascaderealtors.com',
+  'https://www.cascaderealtors.com',
   'http://localhost:5173',
   'http://localhost:4173',
 ];

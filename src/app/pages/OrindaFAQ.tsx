@@ -10,7 +10,7 @@ import { SEO } from '../components/SEO';
 
 interface FAQItem {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 }
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
@@ -199,19 +199,19 @@ function ContactForm() {
 const faqs: FAQItem[] = [
   {
     question: "What is the average home price in Orinda?",
-    answer: "The median home price in Orinda is approximately $2 million as of 2025. Orinda is known for its premium real estate market, featuring spacious single-family homes on large lots with hillside views. Prices typically range from $1.5 million for smaller homes to $5 million or more for luxury estates with expansive properties. The higher price point reflects Orinda's exceptional schools, safe neighborhoods, and desirable semi-rural character while still being accessible to San Francisco and Oakland."
+    answer: <>The median home price in Orinda is approximately $2 million as of 2025. Orinda is known for its premium real estate market, featuring spacious single-family homes on large lots with hillside views. Prices typically range from $1.5 million for smaller homes to $5 million or more for luxury estates with expansive properties. The higher price point reflects Orinda's exceptional schools, safe neighborhoods, and desirable semi-rural character while still being accessible to San Francisco and Oakland. For a personalized market analysis, <Link to="/contact" className="text-blue-600 hover:underline">reach out to our Orinda specialists</Link> who can help you understand current pricing trends.</>
   },
   {
     question: "Why are Orinda schools so highly rated?",
-    answer: "Orinda Union School District consistently ranks among the top school districts in California. The district serves a tight-knit community with strong parental involvement and excellent funding through local measures. Elementary schools like Sleepy Hollow, Wagner Ranch, and Glorietta receive top marks, while Orinda Intermediate School prepares students for highly-rated Miramonte High School. Test scores regularly exceed state averages, and students benefit from robust academic programs, arts education, and athletics. This educational excellence is a primary reason families choose Orinda."
+    answer: <>Orinda Union School District consistently ranks among the top school districts in California. The district serves a tight-knit community with strong parental involvement and excellent funding through local measures. Elementary schools like Sleepy Hollow, Wagner Ranch, and Glorietta receive top marks, while Orinda Intermediate School prepares students for highly-rated Miramonte High School. Test scores regularly exceed state averages, and students benefit from robust academic programs, arts education, and athletics. This educational excellence is a primary reason families choose Orinda. If school boundaries are a priority for your home search, <Link to="/contact" className="text-blue-600 hover:underline">our team can help verify attendance zones</Link> for any property you're considering.</>
   },
   {
     question: "Is Orinda a good place to raise a family?",
-    answer: "Orinda is exceptional for families and is often cited as one of the best family communities in the Bay Area. The city offers award-winning public schools, extremely low crime rates, abundant parks and open spaces, and a genuine small-town atmosphere. The community is highly engaged with excellent youth programs, strong Little League and soccer programs, and family-oriented events at the Orinda Theatre and Community Center. The safe, walkable neighborhoods and nature access provide children with an ideal environment to grow up in."
+    answer: <>Orinda is exceptional for families and is often cited as one of the best family communities in the Bay Area. The city offers award-winning public schools, extremely low crime rates, abundant parks and open spaces, and a genuine small-town atmosphere. The community is highly engaged with excellent youth programs, strong Little League and soccer programs, and family-oriented events at the Orinda Theatre and Community Center. The safe, walkable neighborhoods and nature access provide children with an ideal environment to grow up in. <Link to="/contact" className="text-blue-600 hover:underline">Connect with Cascade California Realty</Link> to explore family-friendly neighborhoods that match your lifestyle.</>
   },
   {
     question: "How is the commute from Orinda to San Francisco?",
-    answer: "Orinda offers excellent commute options to San Francisco despite its suburban setting. The Orinda BART station provides direct service to downtown San Francisco in about 25-30 minutes, making it highly convenient for daily commuters. By car via Highway 24 and the Caldecott Tunnel, the drive typically takes 30-45 minutes depending on traffic. Many residents appreciate the reverse commute to tech jobs in Walnut Creek and the East Bay, which is often just 10-15 minutes. The BART access is a major selling point for professionals who want suburban living with easy city access."
+    answer: <>Orinda offers excellent commute options to San Francisco despite its suburban setting. The Orinda BART station provides direct service to downtown San Francisco in about 25-30 minutes, making it highly convenient for daily commuters. By car via Highway 24 and the Caldecott Tunnel, the drive typically takes 30-45 minutes depending on traffic. Many residents appreciate the reverse commute to tech jobs in Walnut Creek and the East Bay, which is often just 10-15 minutes. The BART access is a major selling point for professionals who want suburban living with easy city access. Our agents at Cascade California Realty can show you homes within walking distance of BART—<Link to="/contact" className="text-blue-600 hover:underline">let us know your commute priorities</Link>.</>
   },
   {
     question: "What is the lifestyle like in Orinda?",
@@ -219,7 +219,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "What outdoor activities are available in Orinda?",
-    answer: "Orinda is a paradise for outdoor enthusiasts with immediate access to world-class hiking and biking. Briones Regional Park offers over 6,000 acres of trails with stunning views, while Tilden Regional Park is minutes away with hiking, a botanic garden, and Lake Anza. The Lafayette-Moraga Regional Trail is perfect for cycling and running. Many homes back directly onto open space, providing private trail access. The mild climate allows year-round outdoor recreation, and the community embraces an active, nature-oriented lifestyle."
+    answer: <>Orinda is a paradise for outdoor enthusiasts with immediate access to world-class hiking and biking. Briones Regional Park offers over 6,000 acres of trails with stunning views, while Tilden Regional Park is minutes away with hiking, a botanic garden, and Lake Anza. The Lafayette-Moraga Regional Trail is perfect for cycling and running. Many homes back directly onto open space, providing private trail access. The mild climate allows year-round outdoor recreation, and the community embraces an active, nature-oriented lifestyle. Looking for a home with trail access? <Link to="/contact" className="text-blue-600 hover:underline">Tell us what outdoor features matter most to you</Link>.</>
   },
   {
     question: "Does Orinda have good shopping and dining?",
@@ -227,7 +227,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "What are property taxes like in Orinda?",
-    answer: "Orinda property taxes are approximately 1.2-1.3% of assessed value annually, which includes the base 1% Proposition 13 rate plus Contra Costa County assessments and local school bonds. For a $2 million home, expect annual property taxes around $24,000-$26,000. Thanks to Prop 13, your assessed value can only increase by a maximum of 2% per year, making long-term ownership predictable. The higher taxes support the exceptional school system and city services that make Orinda so desirable."
+    answer: <>Orinda property taxes are approximately 1.2-1.3% of assessed value annually, which includes the base 1% Proposition 13 rate plus Contra Costa County assessments and local school bonds. For a $2 million home, expect annual property taxes around $24,000-$26,000. Thanks to Prop 13, your assessed value can only increase by a maximum of 2% per year, making long-term ownership predictable. The higher taxes support the exceptional school system and city services that make Orinda so desirable. Have questions about the true cost of ownership? <Link to="/contact" className="text-blue-600 hover:underline">Our team is happy to walk you through the numbers</Link>.</>
   },
   {
     question: "Is Orinda a safe place to live?",
@@ -235,15 +235,15 @@ const faqs: FAQItem[] = [
   },
   {
     question: "What types of homes are available in Orinda?",
-    answer: "Orinda real estate consists primarily of single-family homes on substantial lots, typically ranging from 0.25 to 2+ acres. Architectural styles include California ranch homes, mid-century modern, Mediterranean villas, and custom contemporary designs. Many homes feature hillside locations with expansive views of Mount Diablo, the hills, or wooded settings. Properties often include mature landscaping, pools, and outdoor entertaining spaces. There are few condos or townhomes—Orinda is predominantly a single-family home market appealing to families seeking space and privacy."
+    answer: <>Orinda real estate consists primarily of single-family homes on substantial lots, typically ranging from 0.25 to 2+ acres. Architectural styles include California ranch homes, mid-century modern, Mediterranean villas, and custom contemporary designs. Many homes feature hillside locations with expansive views of Mount Diablo, the hills, or wooded settings. Properties often include mature landscaping, pools, and outdoor entertaining spaces. There are few condos or townhomes—Orinda is predominantly a single-family home market appealing to families seeking space and privacy. Whether you prefer a classic ranch or a contemporary estate, <Link to="/contact" className="text-blue-600 hover:underline">Cascade California Realty can match you with your ideal home style</Link>.</>
   },
   {
     question: "How is the Orinda real estate market performing?",
-    answer: "Orinda's real estate market remains strong and stable, driven by consistent demand from families prioritizing top schools and quality of life. The market is less volatile than San Francisco, with steady appreciation over time. Inventory is typically limited, as many residents stay long-term once they find their ideal home. Well-priced homes in good condition often receive multiple offers, especially during spring and summer when families want to move before the school year. The $2 million median reflects the premium nature of the community."
+    answer: <>Orinda's real estate market remains strong and stable, driven by consistent demand from families prioritizing top schools and quality of life. The market is less volatile than San Francisco, with steady appreciation over time. Inventory is typically limited, as many residents stay long-term once they find their ideal home. Well-priced homes in good condition often receive multiple offers, especially during spring and summer when families want to move before the school year. The $2 million median reflects the premium nature of the community. Want to stay ahead of new listings? <Link to="/contact" className="text-blue-600 hover:underline">Get in touch with our Orinda market experts</Link> for early access to properties.</>
   },
   {
     question: "What should I know about Orinda's fire risk?",
-    answer: "Like many Bay Area hillside communities, Orinda is in a wildfire risk area and has experienced devastating fires in the past. The city has implemented rigorous fire safety measures including vegetation management requirements, home hardening standards, and evacuation planning. Homeowners should budget for defensible space maintenance and consider fire-resistant landscaping. Many homes have been retrofitted with fire-resistant materials. Insurance can be more expensive and harder to obtain—work with an insurance specialist familiar with California's FAIR Plan if needed. The risk is manageable with proper preparation."
+    answer: <>Like many Bay Area hillside communities, Orinda is in a wildfire risk area and has experienced devastating fires in the past. The city has implemented rigorous fire safety measures including vegetation management requirements, home hardening standards, and evacuation planning. Homeowners should budget for defensible space maintenance and consider fire-resistant landscaping. Many homes have been retrofitted with fire-resistant materials. Insurance can be more expensive and harder to obtain—work with an insurance specialist familiar with California's FAIR Plan if needed. The risk is manageable with proper preparation. <Link to="/contact" className="text-blue-600 hover:underline">Ask our team</Link> about fire safety features when evaluating specific properties.</>
   },
   {
     question: "Are there HOA fees in Orinda?",
@@ -255,11 +255,11 @@ const faqs: FAQItem[] = [
   },
   {
     question: "How does Orinda compare to neighboring Lafayette and Moraga?",
-    answer: "Orinda, Lafayette, and Moraga form the highly desirable Lamorinda region, each with distinct character. Orinda is the most residential and hillside-focused with the most premium pricing and top-rated schools. Lafayette has a more vibrant downtown with shopping and dining, slightly lower prices, and excellent schools through the Acalanes Union High School District. Moraga offers a similar suburban feel to Orinda with slightly more affordable options. All three share excellent schools, BART access, and family-friendly environments. Orinda stands out for its peaceful, nature-oriented lifestyle and school quality."
+    answer: <>Orinda, Lafayette, and Moraga form the highly desirable Lamorinda region, each with distinct character. Orinda is the most residential and hillside-focused with the most premium pricing and top-rated schools. Lafayette has a more vibrant downtown with shopping and dining, slightly lower prices, and excellent schools through the Acalanes Union High School District. Moraga offers a similar suburban feel to Orinda with slightly more affordable options. All three share excellent schools, BART access, and family-friendly environments. Orinda stands out for its peaceful, nature-oriented lifestyle and school quality. Comparing options across Lamorinda? <Link to="/contact" className="text-blue-600 hover:underline">We serve all three communities</Link> and can help you find the right fit.</>
   },
   {
     question: "Is Orinda a good investment for real estate?",
-    answer: "Orinda is an excellent long-term real estate investment for several reasons: consistently strong demand from families, limited housing supply due to hillside geography and zoning, exceptional schools that maintain desirability, and proximity to employment centers via BART. Properties appreciate steadily, though not as dramatically as San Francisco. The investment case is strongest if you plan to hold 7+ years and can benefit from Prop 13 tax protections. Rental demand is solid from families relocating to the area. The quality of life and school system ensure ongoing appeal."
+    answer: <>Orinda is an excellent long-term real estate investment for several reasons: consistently strong demand from families, limited housing supply due to hillside geography and zoning, exceptional schools that maintain desirability, and proximity to employment centers via BART. Properties appreciate steadily, though not as dramatically as San Francisco. The investment case is strongest if you plan to hold 7+ years and can benefit from Prop 13 tax protections. Rental demand is solid from families relocating to the area. The quality of life and school system ensure ongoing appeal. Ready to explore investment opportunities in Orinda? <Link to="/contact" className="text-blue-600 hover:underline">Our agents can guide you through the market</Link>.</>
   },
   {
     question: "What is the weather like in Orinda?",
@@ -267,7 +267,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "What are the best neighborhoods in Orinda?",
-    answer: "Orinda's most sought-after neighborhoods include Sleepy Hollow (prestigious homes, top elementary school, pool and tennis club), Orindawoods (private community, security gate, resort-style amenities), Miner Road area (large estates, privacy, views), and the Village area (walkability to downtown and BART). Each neighborhood has distinct character—some feature mid-century homes, others contemporary estates. All benefit from excellent schools and low crime. Choice often comes down to lot size preferences, view orientation, and proximity to schools or BART."
+    answer: <>Orinda's most sought-after neighborhoods include Sleepy Hollow (prestigious homes, top elementary school, pool and tennis club), Orindawoods (private community, security gate, resort-style amenities), Miner Road area (large estates, privacy, views), and the Village area (walkability to downtown and BART). Each neighborhood has distinct character—some feature mid-century homes, others contemporary estates. All benefit from excellent schools and low crime. Choice often comes down to lot size preferences, view orientation, and proximity to schools or BART. Not sure which neighborhood is right for you? <Link to="/contact" className="text-blue-600 hover:underline">Schedule a neighborhood tour with Cascade California Realty</Link> to find your perfect fit.</>
   },
   {
     question: "How is public transportation in Orinda?",
@@ -275,7 +275,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "What should I look for when buying a home in Orinda?",
-    answer: "When buying in Orinda, key considerations include: hillside stability and drainage (many homes are on slopes), sewer lateral condition (older systems may need replacement), fire safety features and defensible space, HVAC systems (many older homes lack AC), foundation condition on hillside lots, roof condition and age, and school attendance boundaries if that's important. Get comprehensive inspections including geological review for hillside properties. Understand fire insurance requirements and costs. Review any CC&Rs or HOA rules. Work with an agent experienced in Orinda's unique hillside real estate market."
+    answer: <>When buying in Orinda, key considerations include: hillside stability and drainage (many homes are on slopes), sewer lateral condition (older systems may need replacement), fire safety features and defensible space, HVAC systems (many older homes lack AC), foundation condition on hillside lots, roof condition and age, and school attendance boundaries if that's important. Get comprehensive inspections including geological review for hillside properties. Understand fire insurance requirements and costs. Review any CC&Rs or HOA rules. <Link to="/contact" className="text-blue-600 hover:underline">Work with the Cascade California Realty team</Link>—our agents have deep expertise in Orinda's unique hillside real estate and can help you navigate these considerations with confidence.</>
   }
 ];
 
@@ -297,10 +297,11 @@ export function OrindaFAQ() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Orinda Real Estate FAQ - Home Buying Guide | Cascade California Realty"
-        description="Expert answers to your Orinda real estate questions. Learn about home prices, schools, neighborhoods, and buying in Orinda from a 15+ year Bay Area expert."
-        canonical="https://cascaderealtors.com/orinda-faq"
+        title="Best Realtor in Orinda | Manoj Thomas - Top Orinda Real Estate Agent 2025"
+        description="Looking for the best realtor in Orinda? Manoj Thomas is the #1 rated Orinda real estate agent with 15+ years experience, $1B+ sales. Expert in Orinda homes and neighborhoods."
+        canonical="https://cascaderealtors.com/orinda"
         city="Orinda"
+        county="Contra Costa County"
         coordinates={{ lat: 37.8771, lng: -122.1797 }}
       />
       <FAQHeader />

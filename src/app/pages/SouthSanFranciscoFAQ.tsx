@@ -10,7 +10,7 @@ import { SEO } from '../components/SEO';
 
 interface FAQItem {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 }
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
@@ -199,7 +199,7 @@ function ContactForm() {
 const faqs: FAQItem[] = [
   {
     question: "What is the average home price in South San Francisco?",
-    answer: "The median home price in South San Francisco is approximately $1.2 million as of 2024. This makes it more affordable than neighboring cities like San Francisco ($1.35M), Daly City, and San Mateo. Prices vary by property type—condos start around $600,000-$800,000, while single-family homes typically range from $1M to $1.5M. The city's strong biotech employment base and excellent location keep property values stable with steady appreciation potential."
+    answer: <>The median home price in South San Francisco is approximately $1.2 million as of 2024. This makes it more affordable than neighboring cities like San Francisco ($1.35M), Daly City, and San Mateo. Prices vary by property type—condos start around $600,000-$800,000, while single-family homes typically range from $1M to $1.5M. The city's strong biotech employment base and excellent location keep property values stable with steady appreciation potential. For current market data tailored to your budget, <Link to="/contact" className="text-blue-600 hover:underline">reach out to our South San Francisco specialists</Link>.</>
   },
   {
     question: "Why is South San Francisco called the 'Biotech Capital of the World'?",
@@ -207,7 +207,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "Is South San Francisco a good place to buy a home in 2025?",
-    answer: "South San Francisco offers excellent value for 2025 homebuyers. With median prices about 10-15% lower than neighboring cities, strong employment growth in biotech, BART access for commuters, and proximity to SFO airport, it's an attractive option for professionals and families. The city is undergoing significant redevelopment downtown with new housing, retail, and amenities. For buyers seeking Peninsula location with San Francisco access at a more accessible price point, South San Francisco is worth serious consideration."
+    answer: <>South San Francisco offers excellent value for 2025 homebuyers. With median prices about 10-15% lower than neighboring cities, strong employment growth in biotech, BART access for commuters, and proximity to SFO airport, it's an attractive option for professionals and families. The city is undergoing significant redevelopment downtown with new housing, retail, and amenities. For buyers seeking Peninsula location with San Francisco access at a more accessible price point, South San Francisco is worth serious consideration. The team at Cascade California Realty can help you identify emerging opportunities in this evolving market—<Link to="/contact" className="text-blue-600 hover:underline">schedule a consultation</Link> to learn more.</>
   },
   {
     question: "How is the commute from South San Francisco?",
@@ -215,7 +215,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "What are the best neighborhoods in South San Francisco for families?",
-    answer: "Top family-friendly neighborhoods include Westborough (quiet residential streets, good schools, parks), Buri Buri (established neighborhood, larger lots, community feel), and Winston Manor (newer homes, family-oriented, close to schools). The Terrabay area offers newer construction with bay views. These neighborhoods feature South San Francisco Unified schools, parks like Orange Memorial Park and Centennial Way, and safe, walkable streets. Many families appreciate the diversity, strong community connections, and more spacious homes compared to San Francisco."
+    answer: <>Top family-friendly neighborhoods include Westborough (quiet residential streets, good schools, parks), Buri Buri (established neighborhood, larger lots, community feel), and Winston Manor (newer homes, family-oriented, close to schools). The Terrabay area offers newer construction with bay views. These neighborhoods feature South San Francisco Unified schools, parks like Orange Memorial Park and Centennial Way, and safe, walkable streets. Many families appreciate the diversity, strong community connections, and more spacious homes compared to San Francisco. Our agents at Cascade California Realty know these neighborhoods inside and out—<Link to="/contact" className="text-blue-600 hover:underline">let us help you find the right fit for your family</Link>.</>
   },
   {
     question: "How are the schools in South San Francisco?",
@@ -223,7 +223,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "What makes South San Francisco more affordable than neighboring cities?",
-    answer: "Several factors contribute to South San Francisco's relative affordability: historically industrial zoning (now transitioning), less prestigious reputation compared to Burlingame or San Mateo, and more diverse housing stock including condos and townhomes. The city has more multi-family housing and higher density in some areas. However, this affordability gap is narrowing as buyers discover the value proposition—excellent location, BART access, strong employment, and improving amenities. Smart buyers are recognizing South San Francisco as an undervalued Peninsula city."
+    answer: <>Several factors contribute to South San Francisco's relative affordability: historically industrial zoning (now transitioning), less prestigious reputation compared to Burlingame or San Mateo, and more diverse housing stock including condos and townhomes. The city has more multi-family housing and higher density in some areas. However, this affordability gap is narrowing as buyers discover the value proposition—excellent location, BART access, strong employment, and improving amenities. Smart buyers are recognizing South San Francisco as an undervalued Peninsula city. Want to act before prices catch up? <Link to="/contact" className="text-blue-600 hover:underline">Connect with Cascade California Realty</Link> for insider knowledge on the best value opportunities.</>
   },
   {
     question: "What major employers are in South San Francisco?",
@@ -235,7 +235,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "What is the investment potential for South San Francisco real estate?",
-    answer: "South San Francisco shows strong investment potential based on several factors: growing biotech employment creating housing demand, ongoing downtown revitalization, BART access increasing desirability, relative affordability compared to neighbors, and limited Bay Area housing supply. The city is actively planning mixed-use developments and infrastructure improvements. Historical appreciation has been steady, and the narrowing price gap with adjacent cities suggests continued growth. For investors seeking Peninsula exposure with better price entry points, South San Francisco merits serious consideration."
+    answer: <>South San Francisco shows strong investment potential based on several factors: growing biotech employment creating housing demand, ongoing downtown revitalization, BART access increasing desirability, relative affordability compared to neighbors, and limited Bay Area housing supply. The city is actively planning mixed-use developments and infrastructure improvements. Historical appreciation has been steady, and the narrowing price gap with adjacent cities suggests continued growth. For investors seeking Peninsula exposure with better price entry points, South San Francisco merits serious consideration. Cascade California Realty has helped numerous investors build wealth through strategic South San Francisco purchases—<Link to="/contact" className="text-blue-600 hover:underline">speak with us about investment opportunities</Link>.</>
   },
   {
     question: "How diverse is South San Francisco?",
@@ -251,11 +251,11 @@ const faqs: FAQItem[] = [
   },
   {
     question: "Is South San Francisco good for young professionals?",
-    answer: "South San Francisco is increasingly attractive for young professionals, especially those in biotech, healthcare, and tech industries. Benefits include: walkable BART access to San Francisco nightlife and culture, growing local restaurant and brewery scene, more affordable entry point than SF proper, proximity to outdoor recreation (trails, bay access), and shorter commutes if working locally. The city is younger and more dynamic than typical suburbs, with new developments targeting professionals. While not as urban as San Francisco, it offers a practical balance of affordability, location, and lifestyle for career-focused buyers."
+    answer: <>South San Francisco is increasingly attractive for young professionals, especially those in biotech, healthcare, and tech industries. Benefits include: walkable BART access to San Francisco nightlife and culture, growing local restaurant and brewery scene, more affordable entry point than SF proper, proximity to outdoor recreation (trails, bay access), and shorter commutes if working locally. The city is younger and more dynamic than typical suburbs, with new developments targeting professionals. While not as urban as San Francisco, it offers a practical balance of affordability, location, and lifestyle for career-focused buyers. If you're ready to make your first purchase, <Link to="/contact" className="text-blue-600 hover:underline">Cascade California Realty specializes in guiding first-time buyers</Link> through the process.</>
   },
   {
     question: "What should I know about buying a condo in South San Francisco?",
-    answer: "South San Francisco has numerous condo developments, particularly near downtown and BART stations, ranging from $600,000 to $900,000 for 2-bedroom units. Key considerations include: HOA fees ($400-$700/month typical), building age and condition, parking (often included), BART noise in some locations, and rental restrictions if you're considering investment. Newer developments near El Camino Real and downtown offer modern amenities. Condos provide an affordable entry point and low-maintenance lifestyle. Always review HOA financials, reserves, and meeting minutes before purchasing. Many condos attract young professionals and downsizers."
+    answer: <>South San Francisco has numerous condo developments, particularly near downtown and BART stations, ranging from $600,000 to $900,000 for 2-bedroom units. Key considerations include: HOA fees ($400-$700/month typical), building age and condition, parking (often included), BART noise in some locations, and rental restrictions if you're considering investment. Newer developments near El Camino Real and downtown offer modern amenities. Condos provide an affordable entry point and low-maintenance lifestyle. Always review HOA financials, reserves, and meeting minutes before purchasing. Many condos attract young professionals and downsizers. Our team at Cascade California Realty can help you navigate HOA documents and identify well-managed buildings—<Link to="/contact" className="text-blue-600 hover:underline">get in touch for expert condo guidance</Link>.</>
   },
   {
     question: "How does South San Francisco compare to Daly City?",
@@ -263,19 +263,19 @@ const faqs: FAQItem[] = [
   },
   {
     question: "What are the hidden costs of buying a home in South San Francisco?",
-    answer: "Beyond purchase price, budget for: closing costs (2-3% of price), San Mateo County transfer tax ($1.10 per $1,000), title insurance, home inspection ($500-$1,000), HOA fees for condos ($400-$700/month), homeowners insurance ($1,500-$2,500/year), potential aircraft noise mitigation if under flight paths, and typical Peninsula maintenance costs. Some older homes may need foundation work, electrical/plumbing updates, or energy efficiency improvements. Earthquake insurance is recommended but not required ($1,000-$3,000/year). Properties near biotech facilities should be evaluated for any environmental considerations, though modern facilities have strict regulations."
+    answer: <>Beyond purchase price, budget for: closing costs (2-3% of price), San Mateo County transfer tax ($1.10 per $1,000), title insurance, home inspection ($500-$1,000), HOA fees for condos ($400-$700/month), homeowners insurance ($1,500-$2,500/year), potential aircraft noise mitigation if under flight paths, and typical Peninsula maintenance costs. Some older homes may need foundation work, electrical/plumbing updates, or energy efficiency improvements. Earthquake insurance is recommended but not required ($1,000-$3,000/year). Properties near biotech facilities should be evaluated for any environmental considerations, though modern facilities have strict regulations. Having an experienced agent helps you anticipate these costs—<Link to="/contact" className="text-blue-600 hover:underline">Cascade California Realty provides transparent guidance</Link> so there are no surprises.</>
   },
   {
     question: "What is the best time of year to buy a home in South San Francisco?",
-    answer: "South San Francisco's market follows typical Bay Area patterns with spring (March-May) bringing the most inventory and competition. Summer sees continued activity, especially from families coordinating with school schedules. Fall can offer opportunities with less competition, and winter typically has the least inventory but also fewer buyers. However, South San Francisco's market is less seasonal than some Peninsula cities due to year-round biotech hiring and relocations. The best time depends more on your personal readiness, financing, and finding the right property than seasonal timing. Good opportunities arise throughout the year."
+    answer: <>South San Francisco's market follows typical Bay Area patterns with spring (March-May) bringing the most inventory and competition. Summer sees continued activity, especially from families coordinating with school schedules. Fall can offer opportunities with less competition, and winter typically has the least inventory but also fewer buyers. However, South San Francisco's market is less seasonal than some Peninsula cities due to year-round biotech hiring and relocations. The best time depends more on your personal readiness, financing, and finding the right property than seasonal timing. Good opportunities arise throughout the year. When you're ready to start looking, <Link to="/contact" className="text-blue-600 hover:underline">contact our team</Link>—we'll help you move quickly when the right home appears.</>
   },
   {
     question: "Are there first-time homebuyer programs available in South San Francisco?",
-    answer: "First-time buyers in South San Francisco can access several programs: CalHFA offers down payment assistance and affordable loan programs for qualified buyers throughout California. San Mateo County has the Mortgage Assistance Program providing loans up to $200,000 for down payment and closing costs (income limits apply). Federal programs include FHA loans (3.5% down), VA loans (0% down for veterans), and conventional loans with as little as 3% down. The city occasionally offers BMR (Below Market Rate) units through new developments. Working with a knowledgeable local agent helps identify all available assistance options."
+    answer: <>First-time buyers in South San Francisco can access several programs: CalHFA offers down payment assistance and affordable loan programs for qualified buyers throughout California. San Mateo County has the Mortgage Assistance Program providing loans up to $200,000 for down payment and closing costs (income limits apply). Federal programs include FHA loans (3.5% down), VA loans (0% down for veterans), and conventional loans with as little as 3% down. The city occasionally offers BMR (Below Market Rate) units through new developments. Working with a knowledgeable local agent helps identify all available assistance options. <Link to="/contact" className="text-blue-600 hover:underline">Reach out to Cascade California Realty</Link>—we can connect you with trusted lenders who specialize in first-time buyer programs.</>
   },
   {
     question: "What questions should I ask when buying a home in South San Francisco?",
-    answer: "Essential questions for South San Francisco purchases include: 1) Is the property under an airport flight path (check noise levels)? 2) What is the commute time to your workplace at peak hours? 3) Which school attendance boundaries does the property fall within? 4) Are there any planned developments nearby? 5) What are the HOA fees and what do they cover? 6) Has the property been tested for foundation issues or soil stability? 7) What is included in the sale? 8) How long has it been on market and why is the seller moving? 9) What is the neighborhood's walkability and access to amenities? Your agent should help investigate each thoroughly and provide local market context."
+    answer: <>Essential questions for South San Francisco purchases include: 1) Is the property under an airport flight path (check noise levels)? 2) What is the commute time to your workplace at peak hours? 3) Which school attendance boundaries does the property fall within? 4) Are there any planned developments nearby? 5) What are the HOA fees and what do they cover? 6) Has the property been tested for foundation issues or soil stability? 7) What is included in the sale? 8) How long has it been on market and why is the seller moving? 9) What is the neighborhood's walkability and access to amenities? A skilled agent should investigate each question thoroughly and provide local market context. <Link to="/contact" className="text-blue-600 hover:underline">The Cascade California Realty team is here to help</Link>—we know the right questions to ask and the answers that matter.</>
   }
 ];
 
@@ -297,8 +297,11 @@ export function SouthSanFranciscoFAQ() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="South San Francisco Real Estate FAQ - Home Buying Guide | Cascade Realty"
-        description="Everything you need to know about buying a home in South San Francisco. Expert answers from a Bay Area real estate professional with 15+ years of experience."
+        title="Best Realtor in South San Francisco | Manoj Thomas - Top South San Francisco Real Estate Agent 2025"
+        description="Looking for the best realtor in South San Francisco? Manoj Thomas is the #1 rated South San Francisco real estate agent with 15+ years experience, $1B+ sales. Expert in South San Francisco homes and neighborhoods."
+        canonical="https://cascaderealtors.com/south-san-francisco"
+        city="South San Francisco"
+        county="San Mateo County"
         coordinates={{ lat: 37.6547, lng: -122.4077 }}
       />
       <FAQHeader />

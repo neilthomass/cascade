@@ -10,7 +10,7 @@ import { SEO } from '../components/SEO';
 
 interface FAQItem {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 }
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
@@ -199,15 +199,15 @@ function ContactForm() {
 const faqs: FAQItem[] = [
   {
     question: "What is the average home price in Milpitas?",
-    answer: "The median home price in Milpitas is approximately $1.45 million as of 2025. Milpitas offers exceptional value compared to neighboring cities in Silicon Valley—providing modern homes, excellent schools, and proximity to major tech employers at prices often 10-20% lower than comparable areas in San Jose or Fremont. The market has remained strong due to limited inventory, growing tech presence, and the new BART extension making commutes easier."
+    answer: <>The median home price in Milpitas is approximately $1.45 million as of 2025. Milpitas offers exceptional value compared to neighboring cities in Silicon Valley—providing modern homes, excellent schools, and proximity to major tech employers at prices often 10-20% lower than comparable areas in San Jose or Fremont. The market has remained strong due to limited inventory, growing tech presence, and the new BART extension making commutes easier. For a personalized market analysis based on your budget, <Link to="/contact" className="text-blue-600 hover:underline">connect with our Milpitas specialists</Link>.</>
   },
   {
     question: "Is Milpitas a good place to buy a home in 2025?",
-    answer: "Milpitas is an excellent investment opportunity in 2025. The city offers a rare combination of affordability (by Silicon Valley standards), strong appreciation potential, and improving infrastructure including the BART extension. With a population of over 80,000, Milpitas has transformed from a suburban community into a thriving tech hub with major employers like Cisco Systems, Western Digital, and numerous startups. The diverse community, quality schools, and strategic location make it ideal for families and investors alike."
+    answer: <>Milpitas is an excellent investment opportunity in 2025. The city offers a rare combination of affordability (by Silicon Valley standards), strong appreciation potential, and improving infrastructure including the BART extension. With a population of over 80,000, Milpitas has transformed from a suburban community into a thriving tech hub with major employers like Cisco Systems, Western Digital, and numerous startups. The diverse community, quality schools, and strategic location make it ideal for families and investors alike. The team at Cascade California Realty has helped dozens of buyers find their ideal Milpitas home—<Link to="/contact" className="text-blue-600 hover:underline">reach out to discuss your options</Link>.</>
   },
   {
     question: "How does the BART extension benefit Milpitas homeowners?",
-    answer: "The Milpitas BART station, which opened in 2020, has been transformative for property values and quality of life. It provides direct access to San Francisco, Oakland, and the broader Bay Area without driving. Homes within a mile of the BART station have seen premium appreciation of 15-25% compared to pre-BART prices. The station has also spurred transit-oriented development with new housing, retail, and dining options. For tech workers commuting to San Francisco or Oakland, BART makes Milpitas a highly practical choice while maintaining Silicon Valley proximity."
+    answer: <>The Milpitas BART station, which opened in 2020, has been transformative for property values and quality of life. It provides direct access to San Francisco, Oakland, and the broader Bay Area without driving. Homes within a mile of the BART station have seen premium appreciation of 15-25% compared to pre-BART prices. The station has also spurred transit-oriented development with new housing, retail, and dining options. For tech workers commuting to San Francisco or Oakland, BART makes Milpitas a highly practical choice while maintaining Silicon Valley proximity. Our agents at Cascade California Realty can show you which BART-adjacent properties offer the best value—<Link to="/contact" className="text-blue-600 hover:underline">schedule a consultation</Link>.</>
   },
   {
     question: "What makes Milpitas attractive for Silicon Valley workers?",
@@ -219,7 +219,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "What are the best neighborhoods in Milpitas for families?",
-    answer: "Top family-friendly neighborhoods in Milpitas include Sunnyhills (newer homes, excellent schools, family-oriented), Parktown (established community, larger lots, quiet streets), and areas near Calaveras Hills (hillside locations, better views, premium properties). The neighborhoods around Russell City Elementary and Rancho Milpitas Middle School are particularly sought-after for their school quality. Most Milpitas neighborhoods are safe and family-friendly, with the city ranking well for low crime rates. Newer developments near the BART station offer modern amenities and walkability."
+    answer: <>Top family-friendly neighborhoods in Milpitas include Sunnyhills (newer homes, excellent schools, family-oriented), Parktown (established community, larger lots, quiet streets), and areas near Calaveras Hills (hillside locations, better views, premium properties). The neighborhoods around Russell City Elementary and Rancho Milpitas Middle School are particularly sought-after for their school quality. Most Milpitas neighborhoods are safe and family-friendly, with the city ranking well for low crime rates. Newer developments near the BART station offer modern amenities and walkability. Want insider knowledge on which streets offer the best value? <Link to="/contact" className="text-blue-600 hover:underline">Let us guide your search</Link>.</>
   },
   {
     question: "How are the schools in Milpitas?",
@@ -231,7 +231,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "Is Milpitas more affordable than other Silicon Valley cities?",
-    answer: "Yes, Milpitas offers significantly better affordability than most Silicon Valley cities. With a median price of $1.45M, it's notably less expensive than Cupertino ($2.8M), Palo Alto ($3.5M+), or even San Jose's better neighborhoods ($1.8M+). You get newer construction, larger homes, and often better lot sizes for the money. This affordability doesn't mean compromising on location—Milpitas provides the same proximity to tech jobs, quality schools, and Bay Area amenities at a fraction of the cost. It's considered one of the last affordable entry points into Silicon Valley."
+    answer: <>Yes, Milpitas offers significantly better affordability than most Silicon Valley cities. With a median price of $1.45M, it's notably less expensive than Cupertino ($2.8M), Palo Alto ($3.5M+), or even San Jose's better neighborhoods ($1.8M+). You get newer construction, larger homes, and often better lot sizes for the money. This affordability doesn't mean compromising on location—Milpitas provides the same proximity to tech jobs, quality schools, and Bay Area amenities at a fraction of the cost. It's considered one of the last affordable entry points into Silicon Valley. <Link to="/contact" className="text-blue-600 hover:underline">Talk to our team at Cascade California Realty</Link> to find hidden gems before they hit the open market.</>
   },
   {
     question: "What tech companies are located in Milpitas?",
@@ -247,7 +247,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "What is the investment potential for Milpitas real estate?",
-    answer: "Milpitas shows strong investment potential due to several catalysts: 1) BART extension continues to drive appreciation in transit-oriented areas, 2) Growing tech employment base creates housing demand, 3) Limited available land constrains supply, 4) Relative affordability attracts first-time buyers and investors priced out of other areas, 5) Infrastructure improvements and new developments enhance city appeal. Historical appreciation has tracked or exceeded Santa Clara County averages. Rental demand is strong from tech workers, making it viable for buy-and-hold investors. The combination of growth drivers suggests continued upward price pressure."
+    answer: <>Milpitas shows strong investment potential due to several catalysts: 1) BART extension continues to drive appreciation in transit-oriented areas, 2) Growing tech employment base creates housing demand, 3) Limited available land constrains supply, 4) Relative affordability attracts first-time buyers and investors priced out of other areas, 5) Infrastructure improvements and new developments enhance city appeal. Historical appreciation has tracked or exceeded Santa Clara County averages. Rental demand is strong from tech workers, making it viable for buy-and-hold investors. The combination of growth drivers suggests continued upward price pressure. Whether you're buying your first home or building a portfolio, <Link to="/contact" className="text-blue-600 hover:underline">our investment-savvy agents can help you identify the right opportunities</Link>.</>
   },
   {
     question: "Are there HOA fees in Milpitas communities?",
@@ -255,7 +255,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "What should I know about buying a new construction home in Milpitas?",
-    answer: "Milpitas has several active new construction developments, particularly near BART and in previously undeveloped areas. Benefits include modern floor plans, energy efficiency, warranty coverage, and current building codes (earthquake, fire safety). Expect prices from $1.3M-$2M+ depending on size and location. Work with builders like KB Home, Lennar, and others active in the area. Key considerations: HOA fees are typically higher, Mello-Roos taxes may apply (special assessments for infrastructure), and initial landscaping is your responsibility. New construction often appreciates well as the neighborhood matures and amenities develop."
+    answer: <>Milpitas has several active new construction developments, particularly near BART and in previously undeveloped areas. Benefits include modern floor plans, energy efficiency, warranty coverage, and current building codes (earthquake, fire safety). Expect prices from $1.3M-$2M+ depending on size and location. Work with builders like KB Home, Lennar, and others active in the area. Key considerations: HOA fees are typically higher, Mello-Roos taxes may apply (special assessments for infrastructure), and initial landscaping is your responsibility. New construction often appreciates well as the neighborhood matures and amenities develop. Navigating builder contracts can be tricky—<Link to="/contact" className="text-blue-600 hover:underline">our experienced agents at Cascade California Realty</Link> ensure you get the best deal and avoid common pitfalls.</>
   },
   {
     question: "How does Milpitas compare to Fremont for home buyers?",
@@ -267,15 +267,15 @@ const faqs: FAQItem[] = [
   },
   {
     question: "Are there any first-time homebuyer programs for Milpitas?",
-    answer: "First-time buyers in Milpitas can access several assistance programs. Santa Clara County offers down payment assistance through its Housing Authority. CalHFA provides state-level programs including down payment assistance and first-time buyer loans with competitive rates. FHA loans (3.5% down) and conventional loans (3% down for first-time buyers) are available through most lenders. Some employers in Silicon Valley offer housing assistance or down payment grants. Given Milpitas' relative affordability, first-time buyers often find it more accessible than neighboring cities. Working with a lender experienced in these programs is essential to maximize benefits."
+    answer: <>First-time buyers in Milpitas can access several assistance programs. Santa Clara County offers down payment assistance through its Housing Authority. CalHFA provides state-level programs including down payment assistance and first-time buyer loans with competitive rates. FHA loans (3.5% down) and conventional loans (3% down for first-time buyers) are available through most lenders. Some employers in Silicon Valley offer housing assistance or down payment grants. Given Milpitas' relative affordability, first-time buyers often find it more accessible than neighboring cities. Working with a lender experienced in these programs is essential to maximize benefits. <Link to="/contact" className="text-blue-600 hover:underline">Reach out to Cascade California Realty</Link>—we work closely with trusted lenders who specialize in first-time buyer financing.</>
   },
   {
     question: "What questions should I ask when buying a home in Milpitas?",
-    answer: "Essential questions for Milpitas home purchases include: 1) Is the property in a flood zone? (Some areas near creeks require review), 2) What are the HOA fees and what do they cover?, 3) Are there Mello-Roos or special assessment taxes?, 4) What is the school attendance area?, 5) How close is it to BART or major highways?, 6) What year was the home built and are there any warranty coverages?, 7) Has the home had any foundation or structural issues?, 8) What's included in the sale?, 9) What is the neighborhood like for noise (Great Mall traffic, highway)?, 10) Are there any planned developments nearby? Your agent should help investigate thoroughly."
+    answer: <>Essential questions for Milpitas home purchases include: 1) Is the property in a flood zone? (Some areas near creeks require review), 2) What are the HOA fees and what do they cover?, 3) Are there Mello-Roos or special assessment taxes?, 4) What is the school attendance area?, 5) How close is it to BART or major highways?, 6) What year was the home built and are there any warranty coverages?, 7) Has the home had any foundation or structural issues?, 8) What's included in the sale?, 9) What is the neighborhood like for noise (Great Mall traffic, highway)?, 10) Are there any planned developments nearby? A dedicated agent will investigate all of this for you—<Link to="/contact" className="text-blue-600 hover:underline">contact us</Link> and we'll handle the due diligence.</>
   },
   {
     question: "How do I choose the right real estate agent in Milpitas?",
-    answer: "Choose a Milpitas agent based on: local expertise (they should know specific neighborhoods, schools, and developments intimately), experience with the price point you're considering, understanding of the diverse community and languages spoken (many agents serve Mandarin, Cantonese, Vietnamese, and Hindi-speaking clients), knowledge of new construction processes if relevant, and strong negotiation skills. Interview 2-3 agents before deciding. Look for someone familiar with BART-area development, HOA complexities, and Milpitas' rapid growth patterns. In this competitive market, an experienced local agent's guidance on timing, pricing, and strategy is invaluable."
+    answer: <>Choose a Milpitas agent based on: local expertise (they should know specific neighborhoods, schools, and developments intimately), experience with the price point you're considering, understanding of the diverse community and languages spoken (many agents serve Mandarin, Cantonese, Vietnamese, and Hindi-speaking clients), knowledge of new construction processes if relevant, and strong negotiation skills. Interview 2-3 agents before deciding. Look for someone familiar with BART-area development, HOA complexities, and Milpitas' rapid growth patterns. In this competitive market, an experienced local agent's guidance on timing, pricing, and strategy is invaluable. At Cascade California Realty, our Milpitas specialists check every box—<Link to="/contact" className="text-blue-600 hover:underline">get in touch for a no-obligation conversation</Link>.</>
   }
 ];
 
@@ -297,10 +297,11 @@ export function MilpitasFAQ() {
   return (
     <div className="min-h-screen bg-white">
       <SEO
-        title="Milpitas Real Estate FAQ | Home Buying Guide 2025"
-        description="Expert answers to common Milpitas home buying questions. Learn about prices, neighborhoods, and more from a Bay Area realtor with 15+ years experience."
+        title="Best Realtor in Milpitas | Manoj Thomas - Top Milpitas Real Estate Agent 2025"
+        description="Looking for the best realtor in Milpitas? Manoj Thomas is the #1 rated Milpitas real estate agent with 15+ years experience, $1B+ sales. Expert in Milpitas homes and neighborhoods."
         canonical="https://cascaderealtors.com/milpitas"
         city="Milpitas"
+        county="Santa Clara County"
         coordinates={{ lat: 37.4323, lng: -121.8996 }}
       />
       <FAQHeader />
