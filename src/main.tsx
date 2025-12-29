@@ -45,6 +45,7 @@ import { PacificaFAQ } from "./app/pages/PacificaFAQ.tsx";
 import { HalfMoonBayFAQ } from "./app/pages/HalfMoonBayFAQ.tsx";
 import { NotFound } from "./app/pages/NotFound.tsx";
 import { CascadeFAQ } from "./app/pages/CascadeFAQ.tsx";
+import { SubmitTestimonialPage } from "./app/pages/SubmitTestimonialPage.tsx";
 import "./styles/index.css";
 
 createRoot(document.getElementById("root")!).render(
@@ -53,6 +54,8 @@ createRoot(document.getElementById("root")!).render(
       <Route path="/" element={<App />} />
       {/* Company FAQ */}
       <Route path="/faq" element={<CascadeFAQ />} />
+      {/* Submit Testimonial */}
+      <Route path="/submit-testimonial" element={<SubmitTestimonialPage />} />
       {/* San Francisco */}
       <Route path="/sfo" element={<SanFranciscoFAQ />} />
       {/* Santa Clara County */}
