@@ -16,7 +16,7 @@ interface Agent {
   dre_number: string | null;
 }
 
-const AGENTS_API = 'https://cascade-admin.manoj-thomas-c22.workers.dev/agents/public';
+const AGENTS_API = 'https://cascaderealtors.com/api/admin/agents/public';
 
 function CompanyValues() {
   return (

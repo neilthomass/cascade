@@ -7,7 +7,7 @@ import { AgentsManager } from "../../components/admin/AgentsManager";
 import { Button } from "../../components/ui/button";
 import { LogOut, MessageSquare, Users, Menu, X } from "lucide-react";
 
-const API_BASE = "https://cascade-admin.manoj-thomas-c22.workers.dev";
+const API_BASE = "https://cascaderealtors.com/api/admin";
 
 type AuthState = "loading" | "unauthenticated" | "awaiting-otp" | "authenticated";
 
