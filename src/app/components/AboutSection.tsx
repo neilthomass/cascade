@@ -76,7 +76,11 @@ export function AboutSection() {
         if (response.ok) {
           const data = await response.json();
           if (data.data?.agents?.length > 0) {
-            setAgents(data.data.agents);
+            // Only show Manoj Thomas
+            const filteredAgents = data.data.agents.filter(
+              (agent: Agent) => agent.name.toLowerCase().includes('manoj thomas')
+            );
+            setAgents(filteredAgents);
           }
         }
       } catch (error) {

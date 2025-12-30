@@ -59,7 +59,7 @@ export function Hero() {
               <div className="text-xs tracking-[0.1em] text-gray-500">YEARS EXPERIENCE</div>
             </div>
             <div className="px-6 lg:px-12 py-8">
-              <div className="text-3xl lg:text-4xl font-light text-gray-900 mb-1">$1B+</div>
+              <div className="text-3xl lg:text-4xl font-light text-gray-900 mb-1">$500M+</div>
               <div className="text-xs tracking-[0.1em] text-gray-500">LIFETIME SALES</div>
             </div>
             <div className="px-6 lg:px-12 py-8">
@@ -67,8 +67,8 @@ export function Hero() {
               <div className="text-xs tracking-[0.1em] text-gray-500">TRANSACTIONS</div>
             </div>
             <div className="px-6 lg:px-12 py-8">
-              <div className="text-3xl lg:text-4xl font-light text-gray-900 mb-1">5.0</div>
-              <div className="text-xs tracking-[0.1em] text-gray-500">CLIENT RATING</div>
+              <div className="text-3xl lg:text-4xl font-light text-gray-900 mb-1">100%</div>
+              <div className="text-xs tracking-[0.1em] text-gray-500">SATISFACTION</div>
             </div>
           </div>
         </div>
