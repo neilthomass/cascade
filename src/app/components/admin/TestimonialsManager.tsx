@@ -31,7 +31,7 @@ import {
   Plus,
   Upload,
 } from "lucide-react";
-import { API_BASE } from "../../pages/admin/AdminPage";
+import { API_BASE, getAuthHeaders } from "../../pages/admin/AdminPage";
 
 interface Testimonial {
   id: number;
@@ -100,7 +100,7 @@ export function TestimonialsManager() {
       }
 
       const response = await fetch(`${API_BASE}/testimonials?${params}`, {
-        credentials: "include",
+        headers: getAuthHeaders(),
       });
 
       if (response.ok) {
@@ -159,8 +159,7 @@ export function TestimonialsManager() {
 
       const response = await fetch(`${API_BASE}/testimonials/${editingTestimonial.id}`, {
         method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
+        headers: { "Content-Type": "application/json", ...getAuthHeaders() },
         body: JSON.stringify(updatePayload),
       });
 
@@ -178,8 +177,7 @@ export function TestimonialsManager() {
     try {
       await fetch(`${API_BASE}/testimonials/${id}`, {
         method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
+        headers: { "Content-Type": "application/json", ...getAuthHeaders() },
         body: JSON.stringify({ status: "approved" }),
       });
       fetchTestimonials();
@@ -192,8 +190,7 @@ export function TestimonialsManager() {
     try {
       await fetch(`${API_BASE}/testimonials/${id}`, {
         method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
+        headers: { "Content-Type": "application/json", ...getAuthHeaders() },
         body: JSON.stringify({ status: "rejected" }),
       });
       fetchTestimonials();
@@ -209,7 +206,7 @@ export function TestimonialsManager() {
     try {
       const response = await fetch(`${API_BASE}/testimonials/${deletingId}`, {
         method: "DELETE",
-        credentials: "include",
+        headers: getAuthHeaders(),
       });
 
       if (response.ok) {
@@ -239,8 +236,7 @@ export function TestimonialsManager() {
 
       const response = await fetch(`${API_BASE}/testimonials`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
+        headers: { "Content-Type": "application/json", ...getAuthHeaders() },
         body: JSON.stringify({
           ...createForm,
           photo: photoBase64,

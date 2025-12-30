@@ -8,6 +8,23 @@ import { Button } from "../../components/ui/button";
 import { LogOut, MessageSquare, Users, Menu, X } from "lucide-react";
 
 const API_BASE = "https://cascaderealtors.com/api/admin";
+const TOKEN_KEY = "cascade_admin_token";
+
+// Helper to get auth headers
+export function getAuthHeaders(): HeadersInit {
+  const token = localStorage.getItem(TOKEN_KEY);
+  return token ? { Authorization: `Bearer ${token}` } : {};
+}
+
+// Helper for authenticated fetch
+export async function authFetch(url: string, options: RequestInit = {}): Promise<Response> {
+  const headers = new Headers(options.headers);
+  const token = localStorage.getItem(TOKEN_KEY);
+  if (token) {
+    headers.set("Authorization", `Bearer ${token}`);
+  }
+  return fetch(url, { ...options, headers });
+}
 
 type AuthState = "loading" | "unauthenticated" | "awaiting-otp" | "authenticated";
 
@@ -25,18 +42,26 @@ export function AdminPage() {
   const location = useLocation();
 
   const checkAuth = useCallback(async () => {
+    const token = localStorage.getItem(TOKEN_KEY);
+    if (!token) {
+      setAuthState("unauthenticated");
+      return;
+    }
+
     try {
       const response = await fetch(`${API_BASE}/auth/me`, {
-        credentials: "include",
+        headers: { Authorization: `Bearer ${token}` },
       });
       if (response.ok) {
         const data = await response.json();
         setEmail(data.data.email);
         setAuthState("authenticated");
       } else {
+        localStorage.removeItem(TOKEN_KEY);
         setAuthState("unauthenticated");
       }
     } catch {
+      localStorage.removeItem(TOKEN_KEY);
       setAuthState("unauthenticated");
     }
   }, []);
@@ -50,7 +75,6 @@ export function AdminPage() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: inputEmail }),
-      credentials: "include",
     });
 
     if (response.ok) {
@@ -68,12 +92,13 @@ export function AdminPage() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: pendingEmail, code }),
-      credentials: "include",
     });
 
     const data = await response.json();
 
     if (response.ok) {
+      // Store token in localStorage
+      localStorage.setItem(TOKEN_KEY, data.data.token);
       setEmail(data.data.email);
       setAuthState("authenticated");
       navigate("/admin/testimonials");
@@ -84,10 +109,12 @@ export function AdminPage() {
   };
 
   const handleLogout = async () => {
+    const token = localStorage.getItem(TOKEN_KEY);
     await fetch(`${API_BASE}/auth/logout`, {
       method: "POST",
-      credentials: "include",
+      headers: token ? { Authorization: `Bearer ${token}` } : {},
     });
+    localStorage.removeItem(TOKEN_KEY);
     setEmail(null);
     setAuthState("unauthenticated");
     navigate("/admin");

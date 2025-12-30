@@ -27,7 +27,7 @@ import {
   Upload,
   X,
 } from "lucide-react";
-import { API_BASE } from "../../pages/admin/AdminPage";
+import { API_BASE, getAuthHeaders } from "../../pages/admin/AdminPage";
 
 interface AgentBio {
   id: number;
@@ -124,7 +124,7 @@ export function AgentsManager() {
     setLoading(true);
     try {
       const response = await fetch(`${API_BASE}/agents`, {
-        credentials: "include",
+        headers: getAuthHeaders(),
       });
 
       if (response.ok) {
@@ -229,8 +229,7 @@ export function AgentsManager() {
         // Update existing agent
         const response = await fetch(`${API_BASE}/agents/${editingAgent.id}`, {
           method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          credentials: "include",
+          headers: { "Content-Type": "application/json", ...getAuthHeaders() },
           body: JSON.stringify(payload),
         });
 
@@ -240,8 +239,7 @@ export function AgentsManager() {
         // Create new agent
         const response = await fetch(`${API_BASE}/agents`, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
-          credentials: "include",
+          headers: { "Content-Type": "application/json", ...getAuthHeaders() },
           body: JSON.stringify(payload),
         });
 
@@ -257,8 +255,7 @@ export function AgentsManager() {
           const base64 = reader.result as string;
           await fetch(`${API_BASE}/agents/${agentId}/photo`, {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
-            credentials: "include",
+            headers: { "Content-Type": "application/json", ...getAuthHeaders() },
             body: JSON.stringify({ photo: base64 }),
           });
           fetchAgents();
@@ -282,7 +279,7 @@ export function AgentsManager() {
     try {
       const response = await fetch(`${API_BASE}/agents/${deletingId}`, {
         method: "DELETE",
-        credentials: "include",
+        headers: getAuthHeaders(),
       });
 
       if (response.ok) {

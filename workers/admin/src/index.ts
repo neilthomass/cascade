@@ -137,16 +137,24 @@ function getCookieValue(request: Request, name: string): string | null {
 }
 
 function setSessionCookie(token: string, maxAge: number): string {
-  return `admin_session=${token}; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=${maxAge}; Domain=cascaderealtors.com`;
+  return `admin_session=${token}; Path=/; HttpOnly; Secure; SameSite=None; Max-Age=${maxAge}`;
 }
 
 function clearSessionCookie(): string {
-  return 'admin_session=; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=0; Domain=cascaderealtors.com';
+  return 'admin_session=; Path=/; HttpOnly; Secure; SameSite=None; Max-Age=0';
 }
 
-// Auth middleware
+// Auth middleware - supports both cookie and Authorization header
 async function getAuthenticatedUser(request: Request, env: Env): Promise<string | null> {
-  const token = getCookieValue(request, 'admin_session');
+  // Try Authorization header first (for localStorage approach)
+  const authHeader = request.headers.get('Authorization');
+  let token = authHeader?.startsWith('Bearer ') ? authHeader.slice(7) : null;
+
+  // Fall back to cookie
+  if (!token) {
+    token = getCookieValue(request, 'admin_session');
+  }
+
   if (!token) return null;
 
   const session = await env.DB.prepare(
@@ -287,7 +295,7 @@ async function handleVerifyOTP(request: Request, env: Env): Promise<Response> {
     ).bind(email, token, expiresAt).run();
 
     return successResponse(
-      { email, message: 'Login successful.' },
+      { email, token, message: 'Login successful.' },
       200,
       { 'Set-Cookie': setSessionCookie(token, SESSION_EXPIRY_DAYS * 24 * 60 * 60) }
     );
@@ -298,7 +306,14 @@ async function handleVerifyOTP(request: Request, env: Env): Promise<Response> {
 }
 
 async function handleLogout(request: Request, env: Env): Promise<Response> {
-  const token = getCookieValue(request, 'admin_session');
+  // Try Authorization header first
+  const authHeader = request.headers.get('Authorization');
+  let token = authHeader?.startsWith('Bearer ') ? authHeader.slice(7) : null;
+
+  // Fall back to cookie
+  if (!token) {
+    token = getCookieValue(request, 'admin_session');
+  }
 
   if (token) {
     await env.DB.prepare(
@@ -1040,7 +1055,7 @@ export default {
         headers: {
           'Access-Control-Allow-Origin': origin,
           'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type',
+          'Access-Control-Allow-Headers': 'Content-Type, Authorization',
           'Access-Control-Allow-Credentials': 'true',
         },
       });
