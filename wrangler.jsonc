@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "cascade-california-realty",
+  "name": "cascade",
   "pages_build_output_dir": "dist",
-  "compatibility_date": "2024-12-30"
+  "compatibility_date": "2024-12-01"
 }
