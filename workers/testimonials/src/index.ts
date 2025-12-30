@@ -356,7 +356,9 @@ async function handleApproveReject(
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
-    const path = url.pathname;
+    // Strip /api/testimonials prefix if present (for Cloudflare route proxy)
+    const rawPath = url.pathname;
+    const path = rawPath.replace(/^\/api\/testimonials/, '') || '/';
 
     // Handle CORS preflight
     if (request.method === 'OPTIONS') {

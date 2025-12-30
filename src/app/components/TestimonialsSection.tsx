@@ -22,7 +22,7 @@ interface ApiTestimonial {
   approved_at: string;
 }
 
-const TESTIMONIALS_API = 'https://cascaderealtors.com/api/testimonials/approved';
+const TESTIMONIALS_API = 'https://www.cascaderealtors.com/api/testimonials/approved';
 
 function mapApiTestimonial(api: ApiTestimonial): Testimonial {
   return {

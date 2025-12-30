@@ -370,7 +370,7 @@ async function handleGetTestimonials(request: Request, env: Env): Promise<Respon
         finalPhotoUrl = photoUrl;
       } else {
         // R2 key - convert to worker URL
-        finalPhotoUrl = `https://cascaderealtors.com/api/testimonials/photo/${encodeURIComponent(photoUrl)}`;
+        finalPhotoUrl = `https://www.cascaderealtors.com/api/testimonials/photo/${encodeURIComponent(photoUrl)}`;
       }
     }
     return { ...t, photo_url: finalPhotoUrl };
@@ -965,7 +965,7 @@ async function handleGetPublicAgents(request: Request, env: Env): Promise<Respon
         if (photoUrl.startsWith('/') || photoUrl.startsWith('http')) {
           finalPhotoUrl = photoUrl;
         } else {
-          finalPhotoUrl = `https://cascaderealtors.com/api/admin/photo/${encodeURIComponent(photoUrl)}`;
+          finalPhotoUrl = `https://www.cascaderealtors.com/api/admin/photo/${encodeURIComponent(photoUrl)}`;
         }
       }
 
@@ -1028,7 +1028,9 @@ async function handleGetAgentPhoto(request: Request, env: Env, key: string): Pro
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
-    const path = url.pathname;
+    // Strip /api/admin prefix if present (for Cloudflare route proxy)
+    const rawPath = url.pathname;
+    const path = rawPath.replace(/^\/api\/admin/, '') || '/';
     const method = request.method;
     const origin = getCorsOrigin(request);
 
