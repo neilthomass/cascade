@@ -137,11 +137,11 @@ function getCookieValue(request: Request, name: string): string | null {
 }
 
 function setSessionCookie(token: string, maxAge: number): string {
-  return `admin_session=${token}; Path=/api/admin; HttpOnly; Secure; SameSite=Lax; Max-Age=${maxAge}`;
+  return `admin_session=${token}; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=${maxAge}; Domain=cascaderealtors.com`;
 }
 
 function clearSessionCookie(): string {
-  return 'admin_session=; Path=/api/admin; HttpOnly; Secure; SameSite=Lax; Max-Age=0';
+  return 'admin_session=; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=0; Domain=cascaderealtors.com';
 }
 
 // Auth middleware
