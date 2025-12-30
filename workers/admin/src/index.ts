@@ -370,7 +370,7 @@ async function handleGetTestimonials(request: Request, env: Env): Promise<Respon
         finalPhotoUrl = photoUrl;
       } else {
         // R2 key - convert to worker URL
-        finalPhotoUrl = `https://www.cascaderealtors.com/api/testimonials/photo/${encodeURIComponent(photoUrl)}`;
+        finalPhotoUrl = `https://cascaderealtors.com/api/testimonials/photo/${encodeURIComponent(photoUrl)}`;
       }
     }
     return { ...t, photo_url: finalPhotoUrl };
@@ -965,7 +965,7 @@ async function handleGetPublicAgents(request: Request, env: Env): Promise<Respon
         if (photoUrl.startsWith('/') || photoUrl.startsWith('http')) {
           finalPhotoUrl = photoUrl;
         } else {
-          finalPhotoUrl = `https://www.cascaderealtors.com/api/admin/photo/${encodeURIComponent(photoUrl)}`;
+          finalPhotoUrl = `https://cascaderealtors.com/api/admin/photo/${encodeURIComponent(photoUrl)}`;
         }
       }
 

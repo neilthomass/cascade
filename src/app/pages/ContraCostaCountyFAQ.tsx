@@ -28,7 +28,7 @@ function ContactForm() {
     setStatus('submitting');
 
     try {
-      const response = await fetch('https://www.cascaderealtors.com/api/contact', {
+      const response = await fetch('https://cascaderealtors.com/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
