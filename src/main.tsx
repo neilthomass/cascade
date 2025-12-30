@@ -49,6 +49,14 @@ import { ChoosingRealtorFAQ } from "./app/pages/ChoosingRealtorFAQ.tsx";
 import { ContactPage } from "./app/pages/ContactPage.tsx";
 import { SubmitTestimonialPage } from "./app/pages/SubmitTestimonialPage.tsx";
 import { AdminPage } from "./app/pages/admin/AdminPage.tsx";
+import { SiliconValleyFAQ } from "./app/pages/SiliconValleyFAQ.tsx";
+import { BayAreaFAQ } from "./app/pages/BayAreaFAQ.tsx";
+import { SantaClaraCountyFAQ } from "./app/pages/SantaClaraCountyFAQ.tsx";
+import { SanMateoCountyFAQ } from "./app/pages/SanMateoCountyFAQ.tsx";
+import { AlamedaCountyFAQ } from "./app/pages/AlamedaCountyFAQ.tsx";
+import { ContraCostaCountyFAQ } from "./app/pages/ContraCostaCountyFAQ.tsx";
+import { TriValleyFAQ } from "./app/pages/TriValleyFAQ.tsx";
+import { PeninsulaFAQ } from "./app/pages/PeninsulaFAQ.tsx";
 import "./styles/index.css";
 
 createRoot(document.getElementById("root")!).render(
@@ -111,6 +119,15 @@ createRoot(document.getElementById("root")!).render(
       <Route path="/south-san-francisco" element={<SouthSanFranciscoFAQ />} />
       <Route path="/pacifica" element={<PacificaFAQ />} />
       <Route path="/half-moon-bay" element={<HalfMoonBayFAQ />} />
+      {/* Regional & County Pages */}
+      <Route path="/silicon-valley" element={<SiliconValleyFAQ />} />
+      <Route path="/bay-area" element={<BayAreaFAQ />} />
+      <Route path="/santa-clara-county" element={<SantaClaraCountyFAQ />} />
+      <Route path="/san-mateo-county" element={<SanMateoCountyFAQ />} />
+      <Route path="/alameda-county" element={<AlamedaCountyFAQ />} />
+      <Route path="/contra-costa-county" element={<ContraCostaCountyFAQ />} />
+      <Route path="/tri-valley" element={<TriValleyFAQ />} />
+      <Route path="/peninsula" element={<PeninsulaFAQ />} />
       {/* Admin Panel */}
       <Route path="/admin/*" element={<AdminPage />} />
       {/* 404 - Must be last */}
