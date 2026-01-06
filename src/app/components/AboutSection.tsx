@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Award, GraduationCap, Building2, TrendingUp, Star, User, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Award, GraduationCap, Building2, TrendingUp, Star, User, ChevronLeft, ChevronRight, MessageCircle, ArrowRight } from 'lucide-react';
+import { AskManojModal } from './AskManojModal';
 
 interface Agent {
   id: number;
@@ -68,6 +69,7 @@ export function AboutSection() {
   const [agents, setAgents] = useState<Agent[]>([]);
   const [expandedAgentId, setExpandedAgentId] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
+  const [isAskModalOpen, setIsAskModalOpen] = useState(false);
 
   useEffect(() => {
     async function fetchAgents() {
@@ -204,6 +206,46 @@ export function AboutSection() {
             </div>
           </div>
         </div>
+
+        {/* Ask Manoj CTA - Separate bar below profile */}
+        <button
+          onClick={() => setIsAskModalOpen(true)}
+          className="group flex items-center bg-white border border-gray-200 hover:border-gray-900 transition-all duration-500 mb-8 overflow-hidden w-full text-left cursor-pointer"
+        >
+          {/* Left accent strip */}
+          <div className="w-1 self-stretch bg-gray-200 group-hover:bg-gray-900 transition-colors duration-500" />
+
+          {/* Icon section */}
+          <div className="w-12 sm:w-14 self-stretch bg-gray-900 flex items-center justify-center">
+            <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+          </div>
+
+          {/* Text content */}
+          <div className="flex-1 flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
+            <div>
+              <span
+                className="text-sm sm:text-base text-gray-900 tracking-tight"
+                style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+              >
+                Have a question?
+              </span>
+              <span className="hidden sm:inline text-sm text-gray-400 font-light ml-3">
+                Get personalized guidance from Manoj
+              </span>
+            </div>
+
+            {/* Arrow */}
+            <div className="flex items-center gap-2">
+              <span className="hidden md:inline text-xs tracking-[0.15em] text-gray-400 group-hover:text-gray-600 transition-colors uppercase">
+                Ask Now
+              </span>
+              <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-gray-900 group-hover:translate-x-1 transition-all duration-300" />
+            </div>
+          </div>
+        </button>
+
+        {/* Ask Manoj Modal */}
+        <AskManojModal isOpen={isAskModalOpen} onClose={() => setIsAskModalOpen(false)} />
 
         {/* Team Section */}
         {teamAgents.length > 0 && (

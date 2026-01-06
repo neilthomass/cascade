@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ask Manoj Button - Prototype</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-900: #111827;
+      --gold: #b8860b;
+      --gold-light: #d4a84b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--gray-50);
+      min-height: 100vh;
+      padding: 60px 24px;
+    }
+
+    .prototype-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      letter-spacing: 0.15em;
+      color: var(--gray-500);
+      margin-bottom: 40px;
+      text-transform: uppercase;
+    }
+
+    .variant-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      margin-top: 48px;
+    }
+
+    .variant-label:first-of-type {
+      margin-top: 0;
+    }
+
+    /* ============================================
+       VARIANT 1: Compact CTA Card
+       Left-aligned card, no button on right
+       ============================================ */
+    .ask-card-v1 {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      padding: 24px 32px;
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .ask-card-v1::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--black);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .ask-card-v1:hover {
+      border-color: var(--gray-900);
+      box-shadow: 0 8px 40px -12px rgba(0, 0, 0, 0.15);
+    }
+
+    .ask-card-v1:hover::before {
+      transform: scaleY(1);
+    }
+
+    .ask-card-v1-content {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .ask-card-v1-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .ask-card-v1-icon svg {
+      width: 22px;
+      height: 22px;
+      color: var(--white);
+    }
+
+    .ask-card-v1-text h3 {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--gray-900);
+      margin-bottom: 2px;
+    }
+
+    .ask-card-v1-text p {
+      font-size: 13px;
+      color: var(--gray-500);
+      font-weight: 300;
+    }
+
+    .ask-card-v1-arrow {
+      width: 32px;
+      height: 32px;
+      background: var(--gray-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .ask-card-v1:hover .ask-card-v1-arrow {
+      background: var(--black);
+    }
+
+    .ask-card-v1-arrow svg {
+      width: 14px;
+      height: 14px;
+      color: var(--gray-500);
+      transition: all 0.3s ease;
+    }
+
+    .ask-card-v1:hover .ask-card-v1-arrow svg {
+      color: var(--white);
+      transform: translateX(2px);
+    }
+
+    /* ============================================
+       VARIANT 2: Floating Corner Button
+       Elegant floating action button with reveal
+       ============================================ */
+    .ask-fab-v2 {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      z-index: 1000;
+    }
+
+    .ask-fab-v2-button {
+      width: 64px;
+      height: 64px;
+      background: var(--black);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ask-fab-v2-button::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--gray-700), var(--black));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .ask-fab-v2-button:hover::before {
+      opacity: 1;
+    }
+
+    .ask-fab-v2-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.4);
+    }
+
+    .ask-fab-v2-button svg {
+      width: 28px;
+      height: 28px;
+      color: var(--white);
+      position: relative;
+      z-index: 1;
+      transition: transform 0.3s ease;
+    }
+
+    .ask-fab-v2-button:hover svg {
+      transform: rotate(-10deg) scale(1.1);
+    }
+
+    .ask-fab-v2-tooltip {
+      position: absolute;
+      right: calc(100% + 16px);
+      top: 50%;
+      transform: translateY(-50%) translateX(10px);
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      padding: 12px 20px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+      box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.1);
+    }
+
+    .ask-fab-v2-button:hover + .ask-fab-v2-tooltip,
+    .ask-fab-v2:hover .ask-fab-v2-tooltip {
+      opacity: 1;
+      transform: translateY(-50%) translateX(0);
+    }
+
+    .ask-fab-v2-tooltip span {
+      font-size: 13px;
+      color: var(--gray-900);
+      font-weight: 400;
+    }
+
+    .ask-fab-v2-tooltip strong {
+      font-family: var(--font-heading);
+      font-style: italic;
+    }
+
+    /* ============================================
+       VARIANT 3: Minimal Text Link
+       Ultra-refined inline text treatment
+       ============================================ */
+    .ask-link-v3 {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid var(--gray-200);
+      text-decoration: none;
+    }
+
+    .ask-link-v3:hover {
+      border-color: var(--black);
+    }
+
+    .ask-link-v3-text {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--gray-900);
+      font-style: italic;
+    }
+
+    .ask-link-v3-arrow {
+      width: 32px;
+      height: 32px;
+      background: var(--gray-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .ask-link-v3:hover .ask-link-v3-arrow {
+      background: var(--black);
+    }
+
+    .ask-link-v3-arrow svg {
+      width: 14px;
+      height: 14px;
+      color: var(--gray-600);
+      transition: all 0.3s ease;
+    }
+
+    .ask-link-v3:hover .ask-link-v3-arrow svg {
+      color: var(--white);
+      transform: translateX(2px);
+    }
+
+    /* ============================================
+       VARIANT 4: Bold Statement Banner
+       Full-width banner with dramatic presence
+       ============================================ */
+    .ask-banner-v4 {
+      background: var(--black);
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ask-banner-v4::before {
+      content: '?';
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--font-heading);
+      font-size: 200px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.03);
+      pointer-events: none;
+    }
+
+    .ask-banner-v4-content h3 {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .ask-banner-v4-content h3 em {
+      font-style: italic;
+    }
+
+    .ask-banner-v4-content p {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 300;
+      letter-spacing: 0.02em;
+    }
+
+    .ask-banner-v4-btn {
+      background: var(--white);
+      color: var(--black);
+      border: none;
+      padding: 16px 36px;
+      font-family: var(--font-body);
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .ask-banner-v4-btn:hover {
+      background: var(--gray-100);
+      transform: scale(1.02);
+    }
+
+    /* ============================================
+       VARIANT 5: Conversational Bubble
+       Friendly, approachable speech-bubble style
+       ============================================ */
+    .ask-bubble-v5 {
+      position: relative;
+      display: inline-block;
+    }
+
+    .ask-bubble-v5-card {
+      background: var(--white);
+      border: 2px solid var(--gray-900);
+      padding: 24px 32px;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .ask-bubble-v5-card::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 32px;
+      width: 24px;
+      height: 24px;
+      background: var(--white);
+      border-right: 2px solid var(--gray-900);
+      border-bottom: 2px solid var(--gray-900);
+      transform: rotate(45deg);
+    }
+
+    .ask-bubble-v5-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px -10px rgba(0, 0, 0, 0.15);
+    }
+
+    .ask-bubble-v5-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .ask-bubble-v5-text {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--gray-900);
+      line-height: 1.3;
+    }
+
+    .ask-bubble-v5-text em {
+      font-style: italic;
+      color: var(--gray-700);
+    }
+
+    .ask-bubble-v5-cta {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .ask-bubble-v5-card:hover .ask-bubble-v5-cta {
+      color: var(--gray-900);
+    }
+
+    .ask-bubble-v5-cta svg {
+      width: 14px;
+      height: 14px;
+      transition: transform 0.3s ease;
+    }
+
+    .ask-bubble-v5-card:hover .ask-bubble-v5-cta svg {
+      transform: translateX(4px);
+    }
+
+    /* ============================================
+       VARIANT 6: Integrated Profile CTA
+       Sits elegantly below/beside the profile card
+       ============================================ */
+    .ask-profile-v6 {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+    }
+
+    .ask-profile-v6-left {
+      flex: 1;
+      padding: 32px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid var(--gray-200);
+    }
+
+    .ask-profile-v6-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .ask-profile-v6-heading {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--gray-900);
+      margin-bottom: 8px;
+    }
+
+    .ask-profile-v6-subtext {
+      font-size: 14px;
+      color: var(--gray-500);
+      font-weight: 300;
+    }
+
+    .ask-profile-v6-right {
+      width: 200px;
+      background: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ask-profile-v6-right::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--gray-800), var(--black));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .ask-profile-v6-right:hover::before {
+      opacity: 1;
+    }
+
+    .ask-profile-v6-btn {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .ask-profile-v6-btn svg {
+      width: 32px;
+      height: 32px;
+      color: var(--white);
+      margin-bottom: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .ask-profile-v6-right:hover .ask-profile-v6-btn svg {
+      transform: scale(1.1);
+    }
+
+    .ask-profile-v6-btn span {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.8);
+      text-transform: uppercase;
+    }
+
+    /* Divider */
+    .divider {
+      height: 1px;
+      background: var(--gray-200);
+      margin: 48px 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .ask-card-v1 {
+        padding: 20px 24px;
+        gap: 16px;
+      }
+
+      .ask-card-v1-content {
+        gap: 16px;
+      }
+
+      .ask-card-v1-icon {
+        width: 44px;
+        height: 44px;
+      }
+
+      .ask-card-v1-text h3 {
+        font-size: 16px;
+      }
+
+      .ask-card-v1-text p {
+        font-size: 12px;
+      }
+
+      .ask-card-v1-arrow {
+        width: 28px;
+        height: 28px;
+        margin-left: 4px;
+      }
+
+      .ask-banner-v4 {
+        flex-direction: column;
+        text-align: center;
+        padding: 32px 24px;
+      }
+
+      .ask-profile-v6 {
+        flex-direction: column;
+      }
+
+      .ask-profile-v6-left {
+        border-right: none;
+        border-bottom: 1px solid var(--gray-200);
+        text-align: center;
+      }
+
+      .ask-profile-v6-right {
+        width: 100%;
+        padding: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="prototype-container">
+    <h2 class="section-title">Ask Manoj — Button Prototypes</h2>
+
+    <!-- Variant 1: Compact CTA Card -->
+    <p class="variant-label">Variant 1 — Compact CTA Card</p>
+    <div class="ask-card-v1">
+      <div class="ask-card-v1-content">
+        <div class="ask-card-v1-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
+          </svg>
+        </div>
+        <div class="ask-card-v1-text">
+          <h3>Have a Question?</h3>
+          <p>Get personalized guidance from Manoj</p>
+        </div>
+      </div>
+      <div class="ask-card-v1-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+        </svg>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Variant 3: Minimal Text Link -->
+    <p class="variant-label">Variant 2 — Minimal Text Link</p>
+    <a href="#" class="ask-link-v3">
+      <span class="ask-link-v3-text">Have a quick question for Manoj?</span>
+      <span class="ask-link-v3-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+        </svg>
+      </span>
+    </a>
+
+    <div class="divider"></div>
+
+    <!-- Variant 4: Bold Statement Banner -->
+    <p class="variant-label">Variant 3 — Bold Statement Banner</p>
+    <div class="ask-banner-v4">
+      <div class="ask-banner-v4-content">
+        <h3>Have a <em>question</em> about the market?</h3>
+        <p>No commitment required — just honest advice from a local expert</p>
+      </div>
+      <button class="ask-banner-v4-btn">Ask Manoj Now</button>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Variant 5: Conversational Bubble -->
+    <p class="variant-label">Variant 4 — Conversational Bubble</p>
+    <div class="ask-bubble-v5">
+      <div class="ask-bubble-v5-card">
+        <div class="ask-bubble-v5-label">Direct Access</div>
+        <div class="ask-bubble-v5-text">
+          Got a <em>quick question?</em><br>
+          Ask Manoj directly.
+        </div>
+        <div class="ask-bubble-v5-cta">
+          Start a conversation
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Variant 6: Integrated Profile CTA -->
+    <p class="variant-label">Variant 5 — Integrated Profile CTA</p>
+    <div class="ask-profile-v6">
+      <div class="ask-profile-v6-left">
+        <div class="ask-profile-v6-eyebrow">Direct Line</div>
+        <div class="ask-profile-v6-heading">Questions about buying or selling?</div>
+        <div class="ask-profile-v6-subtext">Skip the forms — get straight answers from Manoj</div>
+      </div>
+      <div class="ask-profile-v6-right">
+        <div class="ask-profile-v6-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+          </svg>
+          <span>Ask Now</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Floating FAB (Variant 2) - Fixed position -->
+  <div class="ask-fab-v2">
+    <button class="ask-fab-v2-button">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+      </svg>
+    </button>
+    <div class="ask-fab-v2-tooltip">
+      <span>Ask <strong>Manoj</strong> a question</span>
+    </div>
+  </div>
+
+</body>
+</html>
